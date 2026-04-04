@@ -1,24 +1,28 @@
 """
-Step 4: LLM classification via Ollama (local, free).
-Goal: Leverage high-reasoning local LLMs to categorize posts with human-level accuracy.
+Step 4: LLM classification (local + cloud providers).
+Goal: Categorize posts with a configurable LLM provider for stage2-ready enrichment.
 
-High-level architecture (mirrors llm_tests/analyze_reddit_all_llms.py):
-  1. Discovery: Finds available Ollama models (e.g., qwen3, llama3.1)
-  2. Batching: Groups posts (10 at a time) for efficient context window use
-  3. Processing: Calls local LLM API with growth-focused system prompts
-  4. Validation: Strips thinking tags and markdown to extract clean JSON
-  5. Merge: Joins classification fields into the final dataset
+High-level architecture:
+    1. Provider select: Uses .env to choose ollama/openai/gemini/anthropic.
+    2. Discovery: For Ollama, finds a pulled local model.
+    3. Batching: Groups posts (10 at a time) for efficient prompt context.
+    4. Processing: Calls selected provider with growth-focused system prompts.
+    5. Validation: Strips thinking tags and markdown to extract clean JSON.
+    6. Merge: Joins classification fields into the final dataset.
 
 Reads from: output/step3_nlp/ (NLP-enriched data)
-Writes to: output/clean/ (The final project dataset ready for stage2 analysis)
+Writes to: output/clean/ (Final dataset ready for stage2 analysis)
 
-Requirements:
-  - Local Ollama server: https://ollama.com
-  - Pulled model: 'ollama pull qwen3:8b' or similar
+Env selection examples:
+    - LLM_PROVIDER=ollama
+    - LLM_PROVIDER=openai
+    - LLM_PROVIDER=gemini
+    - LLM_PROVIDER=anthropic
 """
 import os
 import json
 import time
+from datetime import datetime, timezone
 import requests
 import pandas as pd
 from dotenv import load_dotenv
@@ -29,11 +33,22 @@ IN_DIR = os.path.join(STAGE1_DIR, "output", "step3_nlp")
 OUT_DIR = os.path.join(STAGE1_DIR, "output", "clean")
 os.makedirs(OUT_DIR, exist_ok=True)
 
-# ── Ollama config ────────────────────────────────────────────────────────────
+# ── Provider config ──────────────────────────────────────────────────────────
+ENV_PATH = ".env"
+SUPPORTED_PROVIDERS = {"ollama", "openai", "gemini", "anthropic"}
+
+# Provider model defaults can be overridden in .env
+DEFAULT_MODELS = {
+    "ollama": "qwen3:8b",
+    "openai": "gpt-4o-mini",
+    "gemini": "gemini-1.5-flash",
+    "anthropic": "claude-sonnet-4-20250514",
+}
+
 OLLAMA_BASE_URL = "http://localhost:11434"
 # Preference list for local models (descending order)
 OLLAMA_MODELS = ["qwen3:38b", "qwen3:8b", "llama3.1:8b", "mistral:7b", "gemma2:9b"]
-BATCH_SIZE = 10  # Balanced for 8B-14B models on consumer hardware
+BATCH_SIZE = 20  # Balanced for 8B-14B models on consumer hardware
 
 # ── Classification schema ───────────────────────────────────────────────────
 # Defines the exact categorical values required for downstream stage2 charts.
@@ -73,6 +88,44 @@ Constraint: Return ONLY a valid raw JSON array of objects.
 
 # ── Internal utilities ───────────────────────────────────────────────────────
 
+def get_selected_provider():
+    """Return validated provider from environment."""
+    aliases = {"claude": "anthropic"}
+    provider = os.getenv("LLM_PROVIDER", "openai").strip().lower()
+    provider = aliases.get(provider, provider)
+    if provider not in SUPPORTED_PROVIDERS:
+        print(f"    Invalid LLM_PROVIDER='{provider}', falling back to 'anthropic'.")
+        return "anthropic"
+    return provider
+
+
+def get_provider_model(provider):
+    """Resolve model name for selected provider from environment defaults."""
+    env_key = f"{provider.upper()}_MODEL"
+    return os.getenv(env_key, DEFAULT_MODELS[provider]).strip()
+
+
+def check_provider_ready(provider):
+    """Return (is_ready, model, reason)."""
+    model = get_provider_model(provider)
+
+    if provider == "ollama":
+        selected = check_ollama_available()
+        if not selected:
+            return False, None, "Ollama not reachable or no model pulled"
+        return True, selected, "ok"
+
+    key_map = {
+        "openai": "OPENAI_API_KEY",
+        "gemini": "GEMINI_API_KEY",
+        "anthropic": "ANTHROPIC_API_KEY",
+    }
+    api_key = os.getenv(key_map[provider], "").strip()
+    if not api_key:
+        return False, None, f"Missing {key_map[provider]}"
+
+    return True, model, "ok"
+
 def check_ollama_available():
     """
     Scans the local Ollama API to find an active server and pulled models.
@@ -106,6 +159,139 @@ def check_ollama_available():
     except Exception as e:
         print(f"    Connection check error: {e}")
         return None
+
+
+def _to_int_or_none(value):
+    """Convert numeric-like values to int, else None."""
+    try:
+        if value is None:
+            return None
+        return int(value)
+    except (TypeError, ValueError):
+        return None
+
+
+def append_usage_row(usage_csv_path, row):
+    """Append one batch usage row to CSV, creating file with header if needed."""
+    usage_df = pd.DataFrame([row])
+    exists = os.path.exists(usage_csv_path)
+    usage_df.to_csv(
+        usage_csv_path,
+        mode="a",
+        index=False,
+        header=not exists,
+        encoding="utf-8",
+    )
+
+
+def call_provider_response(provider, model, prompt):
+    """Call selected LLM provider and return (response_text, usage_dict)."""
+    if provider == "ollama":
+        resp = requests.post(
+            f"{OLLAMA_BASE_URL}/api/generate",
+            json={
+                "model": model,
+                "prompt": prompt,
+                "stream": False,
+                "options": {"temperature": 0.3, "num_predict": 8192},
+            },
+            timeout=300,
+        )
+        resp.raise_for_status()
+        data = resp.json()
+        usage = {
+            "prompt_tokens": _to_int_or_none(data.get("prompt_eval_count")),
+            "completion_tokens": _to_int_or_none(data.get("eval_count")),
+            "total_tokens": _to_int_or_none(
+                (data.get("prompt_eval_count") or 0) + (data.get("eval_count") or 0)
+            ),
+        }
+        return data.get("response", ""), usage
+
+    if provider == "openai":
+        api_key = os.getenv("OPENAI_API_KEY", "").strip()
+        resp = requests.post(
+            "https://api.openai.com/v1/chat/completions",
+            headers={
+                "Authorization": f"Bearer {api_key}",
+                "Content-Type": "application/json",
+            },
+            json={
+                "model": model,
+                "temperature": 0.3,
+                "messages": [
+                    {"role": "system", "content": SYSTEM_PROMPT},
+                    {"role": "user", "content": prompt},
+                ],
+            },
+            timeout=120,
+        )
+        resp.raise_for_status()
+        data = resp.json()
+        usage_raw = data.get("usage", {})
+        usage = {
+            "prompt_tokens": _to_int_or_none(usage_raw.get("prompt_tokens")),
+            "completion_tokens": _to_int_or_none(usage_raw.get("completion_tokens")),
+            "total_tokens": _to_int_or_none(usage_raw.get("total_tokens")),
+        }
+        return data["choices"][0]["message"]["content"], usage
+
+    if provider == "gemini":
+        api_key = os.getenv("GEMINI_API_KEY", "").strip()
+        url = (
+            f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
+            f"?key={api_key}"
+        )
+        resp = requests.post(
+            url,
+            headers={"Content-Type": "application/json"},
+            json={
+                "contents": [{"parts": [{"text": f"{SYSTEM_PROMPT}\n\n{prompt}"}]}],
+                "generationConfig": {"temperature": 0.3},
+            },
+            timeout=120,
+        )
+        resp.raise_for_status()
+        data = resp.json()
+        usage_raw = data.get("usageMetadata", {})
+        usage = {
+            "prompt_tokens": _to_int_or_none(usage_raw.get("promptTokenCount")),
+            "completion_tokens": _to_int_or_none(usage_raw.get("candidatesTokenCount")),
+            "total_tokens": _to_int_or_none(usage_raw.get("totalTokenCount")),
+        }
+        return data["candidates"][0]["content"]["parts"][0]["text"], usage
+
+    if provider == "anthropic":
+        api_key = os.getenv("ANTHROPIC_API_KEY", "").strip()
+        resp = requests.post(
+            "https://api.anthropic.com/v1/messages",
+            headers={
+                "x-api-key": api_key,
+                "anthropic-version": "2023-06-01",
+                "content-type": "application/json",
+            },
+            json={
+                "model": model,
+                "max_tokens": 4096,
+                "temperature": 0.3,
+                "system": SYSTEM_PROMPT,
+                "messages": [{"role": "user", "content": prompt}],
+            },
+            timeout=120,
+        )
+        resp.raise_for_status()
+        data = resp.json()
+        usage_raw = data.get("usage", {})
+        input_tokens = _to_int_or_none(usage_raw.get("input_tokens"))
+        output_tokens = _to_int_or_none(usage_raw.get("output_tokens"))
+        usage = {
+            "prompt_tokens": input_tokens,
+            "completion_tokens": output_tokens,
+            "total_tokens": _to_int_or_none((input_tokens or 0) + (output_tokens or 0)),
+        }
+        return data["content"][0]["text"], usage
+
+    raise ValueError(f"Unsupported provider: {provider}")
 
 
 def format_posts_for_llm(posts, start_idx=0):
@@ -173,11 +359,11 @@ def parse_llm_json(response_text):
 
 # ── Classification Logic ────────────────────────────────────────────────────
 
-def classify_batch_ollama(df, model, batch_size=BATCH_SIZE):
+def classify_batch(df, provider, model, platform, out_path, usage_csv_path, batch_size=BATCH_SIZE):
     """
-    Loop through dataframe chunks and send to Ollama API.
-    - Mirrors the batching structure used in production LLM benchmarks.
-    - Automatically retries with None-padding if JSON parsing fails for a specific batch.
+    Loop through dataframe chunks and send to selected provider API.
+    - Mirrors batching structure used in production LLM benchmarks.
+    - Uses None-padding if parsing fails to keep row alignment stable.
     """
     posts = df.to_dict("records")
     all_results = []
@@ -189,25 +375,46 @@ def classify_batch_ollama(df, model, batch_size=BATCH_SIZE):
         batch_num = i // batch_size + 1
         
         posts_text = format_posts_for_llm(batch, i)
-        prompt = (f"{SYSTEM_PROMPT}\n\nTask: Classify these {len(batch)} posts. "
-                  f"Return JSON array ONLY.\n\n{posts_text}")
+        prompt = (
+            f"Task: Classify these {len(batch)} posts. "
+            f"Return JSON array ONLY.\n\n{posts_text}"
+        )
+
+        started_at = datetime.now(timezone.utc)
+        batch_usage = {
+            "batch_id": batch_num,
+            "platform": platform,
+            "provider": provider,
+            "model": model,
+            "post_count": len(batch),
+            "start_row": i,
+            "end_row": i + len(batch) - 1,
+            "prompt_tokens": None,
+            "completion_tokens": None,
+            "total_tokens": None,
+            "started_at_utc": started_at.isoformat(),
+            "ended_at_utc": None,
+            "status": "ok",
+            "error": "",
+        }
+        batch_start = time.time()
 
         try:
-            # INTERACTING WITH LOCAL API
-            resp = requests.post(
-                f"{OLLAMA_BASE_URL}/api/generate",
-                json={
-                    "model": model,
-                    "prompt": prompt,
-                    "stream": False,
-                    "options": {"temperature": 0.3, "num_predict": 8192},
-                },
-                timeout=300, # Long timeout for intensive local inference
-            )
-            resp.raise_for_status()
+            # DEBUG: Print input being sent to LLM
+            print(f"\n\n{'='*20} LLM INPUT (Batch {batch_num}) {'='*20}")
+            print(prompt)
+            print(f"{'='*60}\n")
 
-            # EXTRACTION
-            result_text = resp.json()["response"]
+            result_text, api_usage = call_provider_response(provider, model, prompt)
+            batch_usage["prompt_tokens"] = api_usage.get("prompt_tokens")
+            batch_usage["completion_tokens"] = api_usage.get("completion_tokens")
+            batch_usage["total_tokens"] = api_usage.get("total_tokens")
+
+            # DEBUG: Print output received from LLM
+            print(f"{'='*20} LLM OUTPUT (Batch {batch_num}) {'='*20}")
+            print(result_text)
+            print(f"{'='*60}\n")
+
             parsed = parse_llm_json(result_text)
 
             if parsed and len(parsed) >= len(batch):
@@ -216,11 +423,25 @@ def classify_batch_ollama(df, model, batch_size=BATCH_SIZE):
                 # PADDING: ensure dataframe rows remain aligned with LLM results
                 all_results.extend([None] * len(batch))
                 failed_batches += 1
+                batch_usage["status"] = "parse_failed"
+                batch_usage["error"] = "Invalid JSON or insufficient classifications"
 
         except Exception as e:
             all_results.extend([None] * len(batch))
             failed_batches += 1
+            batch_usage["status"] = "request_failed"
+            batch_usage["error"] = str(e)
             print(f"\n    ✗ Batch {batch_num} error: {e}")
+
+        batch_usage["duration_sec"] = round(time.time() - batch_start, 3)
+        batch_usage["ended_at_utc"] = datetime.now(timezone.utc).isoformat()
+
+        # Save partial classified output after each batch for crash-safe progress.
+        partial_df = merge_results(df.copy(), all_results, prefix=provider)
+        partial_df.to_csv(out_path, index=False, encoding="utf-8")
+
+        # Persist usage row immediately after each batch.
+        append_usage_row(usage_csv_path, batch_usage)
 
         done = min(i + batch_size, total)
         print(f"\r    Classified {done}/{total} ({done/total*100:.0f}%)", end="", flush=True)
@@ -247,7 +468,7 @@ def merge_results(df, results, prefix="llm"):
                     df.loc[df.index[i], f"{prefix}_{field}"] = result[field]
             classified += 1
 
-    df["classification_source"] = "ollama" if classified > 0 else "none"
+    df["classification_source"] = prefix if classified > 0 else "none"
     return df
 
 
@@ -256,23 +477,29 @@ def merge_results(df, results, prefix="llm"):
 def main():
     """ Standard entry point for the LLM enrichment stage. """
     load_dotenv()
+    provider = get_selected_provider()
+
     print("=" * 60)
-    print("STEP 4: LLM CLASSIFICATION (Ollama)")
+    print(f"STEP 4: LLM CLASSIFICATION ({provider})")
     print("=" * 60)
 
-    # Check for active local server
-    model = check_ollama_available()
+    ready, model, reason = check_provider_ready(provider)
 
-    if not model:
-        print("\n  ⚠ LLM server not found or no models pulled. SKIPPING classification.")
+    if not ready:
+        print(f"\n  ⚠ Provider '{provider}' not ready: {reason}. SKIPPING classification.")
         print("    Final enriched CSVs will be produced without LLM labels.\n")
         # Ensure clean directory is still populated for downstream stage2 success
-        for name in ["reddit", "youtube", "twitter"]:
+        for name in ["youtube", "reddit", "twitter"]:
             in_path = os.path.join(IN_DIR, f"{name}_nlp.csv")
             if os.path.exists(in_path):
                 pd.read_csv(in_path, encoding="utf-8").to_csv(
                     os.path.join(OUT_DIR, f"{name}_enriched.csv"), index=False)
         return
+
+    print(f"  Provider ready: {provider} | Model: {model}")
+    usage_out_path = os.path.join(OUT_DIR, "llm_consumption.csv")
+    if os.path.exists(usage_out_path):
+        os.remove(usage_out_path)
 
     # Process all platforms available in the NLP staging area
     for name in ["reddit", "youtube", "twitter"]:
@@ -280,17 +507,19 @@ def main():
         if not os.path.exists(in_path):
             continue
 
-        print(f"\n  Processing {name} (LLM)...")
+        print(f"\n  Processing {name} ({provider})...")
         df = pd.read_csv(in_path, encoding="utf-8")
         
-        # ACTIVATE LOCAL LLM BATCH PROCESSING
-        results = classify_batch_ollama(df, model)
-        df = merge_results(df, results)
-
-        # Write to FINAL destination: stage1/output/clean/
         out_path = os.path.join(OUT_DIR, f"{name}_enriched.csv")
+        results = classify_batch(df, provider, model, name, out_path, usage_out_path)
+        df = merge_results(df, results, prefix=provider)
+
+        # Final write still happens for clarity (already checkpointed every batch).
         df.to_csv(out_path, index=False, encoding="utf-8")
         print(f"  Saved Final Data: {out_path}")
+
+    if os.path.exists(usage_out_path):
+        print(f"  Saved LLM usage log: {usage_out_path}")
 
     print(f"\n{'=' * 60}")
     print(f"STEP 4 DONE — final enriched data available in {OUT_DIR}")

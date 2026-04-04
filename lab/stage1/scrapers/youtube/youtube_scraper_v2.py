@@ -12,6 +12,7 @@ import os
 from datetime import datetime
 from dotenv import load_dotenv
 from googleapiclient.discovery import build
+from googleapiclient.errors import HttpError
 
 STAGE1_DIR = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
 OUTPUT_DIR = os.path.join(STAGE1_DIR, "output", "raw", "youtube")
@@ -122,10 +123,16 @@ def get_video_details(youtube, video_ids):
     details = {}
     for i in range(0, len(video_ids), 50):
         batch = video_ids[i:i+50]
-        resp = youtube.videos().list(
-            part="statistics,contentDetails,snippet",
-            id=",".join(batch)
-        ).execute()
+        try:
+            resp = youtube.videos().list(
+                part="statistics,contentDetails,snippet",
+                id=",".join(batch)
+            ).execute()
+        except HttpError as e:
+            if is_quota_exceeded_error(e):
+                print("    Quota exceeded while fetching video details. Stopping enrichment.")
+                return details, True
+            raise
         for item in resp.get("items", []):
             vid = item["id"]
             stats = item.get("statistics", {})
@@ -139,7 +146,7 @@ def get_video_details(youtube, video_ids):
                 "tags": snippet.get("tags", []),
                 "description_snippet": snippet.get("description", "")[:200],
             }
-    return details
+    return details, False
 
 
 def get_channel_info(youtube, channel_ids):
@@ -148,14 +155,30 @@ def get_channel_info(youtube, channel_ids):
     unique_ids = list(set(channel_ids))
     for i in range(0, len(unique_ids), 50):
         batch = unique_ids[i:i+50]
-        resp = youtube.channels().list(
-            part="statistics",
-            id=",".join(batch)
-        ).execute()
+        try:
+            resp = youtube.channels().list(
+                part="statistics",
+                id=",".join(batch)
+            ).execute()
+        except HttpError as e:
+            if is_quota_exceeded_error(e):
+                print("    Quota exceeded while fetching channel stats. Skipping remaining channel enrichment.")
+                return info, True
+            raise
         for item in resp.get("items", []):
             stats = item.get("statistics", {})
             info[item["id"]] = int(stats.get("subscriberCount", 0))
-    return info
+    return info, False
+
+
+def is_quota_exceeded_error(error):
+    """Return True when Google API error indicates daily quota exhaustion."""
+    if not isinstance(error, HttpError):
+        return False
+    if getattr(error.resp, "status", None) != 403:
+        return False
+    message = str(error).lower()
+    return "quotaexceeded" in message or "exceeded your quota" in message
 
 
 def search_youtube(youtube, query, max_results=50):
@@ -174,6 +197,13 @@ def search_youtube(youtube, query, max_results=50):
                 pageToken=next_page,
             )
             resp = request.execute()
+        except HttpError as e:
+            if is_quota_exceeded_error(e):
+                print(f"    Error: {e}")
+                print("    Quota exceeded. Stopping remaining queries for this run.")
+                return all_items, True
+            print(f"    Error: {e}")
+            break
         except Exception as e:
             print(f"    Error: {e}")
             break
@@ -185,7 +215,7 @@ def search_youtube(youtube, query, max_results=50):
         if not next_page:
             break
     print(f"    Found {len(all_items)} videos")
-    return all_items
+    return all_items, False
 
 
 def is_relevant(title):
@@ -288,16 +318,23 @@ def main():
     all_videos = []
     seen_ids = set()
     skipped_irrelevant = 0
+    quota_exceeded = False
 
     for i, query in enumerate(SEARCH_QUERIES):
         print(f"\n[{i+1}/{len(SEARCH_QUERIES)}] {query}")
-        items = search_youtube(youtube, query, MAX_RESULTS_PER_QUERY)
+        items, query_quota_exceeded = search_youtube(youtube, query, MAX_RESULTS_PER_QUERY)
+        if query_quota_exceeded:
+            quota_exceeded = True
+            break
 
         video_ids = [item["id"]["videoId"] for item in items if "videoId" in item.get("id", {})]
         if not video_ids:
             continue
 
-        details = get_video_details(youtube, video_ids)
+        details, details_quota_exceeded = get_video_details(youtube, video_ids)
+        if details_quota_exceeded:
+            quota_exceeded = True
+            break
 
         for item in items:
             vid = item["id"].get("videoId", "")
@@ -339,9 +376,12 @@ def main():
     # Get channel subscriber counts
     print("\n\nFetching channel subscriber data...")
     channel_ids = list(set(v["channel_id"] for v in all_videos if v["channel_id"]))
-    channel_subs = get_channel_info(youtube, channel_ids)
+    channel_subs, channel_quota_exceeded = get_channel_info(youtube, channel_ids)
     for v in all_videos:
         v["channel_subscribers"] = channel_subs.get(v["channel_id"], 0)
+
+    if channel_quota_exceeded:
+        quota_exceeded = True
 
     # Filter out pre-2023 noise (non-AI "Claude" videos)
     all_videos = [v for v in all_videos if v["date"] >= "2023-01-01"]
@@ -366,6 +406,8 @@ def main():
     print(f"\n{'=' * 60}")
     print(f"DONE! {len(all_videos)} unique relevant videos")
     print(f"Skipped {skipped_irrelevant} irrelevant results")
+    if quota_exceeded:
+        print("Run ended early due to YouTube quotaExceeded; partial results were saved.")
     print(f"CSV: {output_csv}")
     print(f"{'=' * 60}")
 
@@ -391,7 +433,10 @@ def main():
 
     print(f"\nTimeline coverage:")
     months = sorted(set(v["date"][:7] for v in all_videos))
-    print(f"  {months[0]} to {months[-1]} ({len(months)} months)")
+    if months:
+        print(f"  {months[0]} to {months[-1]} ({len(months)} months)")
+    else:
+        print("  No timeline data available.")
 
     # print(f"\nFeatures mentioned:")
     # for t, c in Counter(v["claude_feature"] for v in all_videos).most_common():
