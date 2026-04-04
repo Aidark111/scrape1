@@ -1,0 +1,15 @@
+requests
+beautifulsoup4
+pandas>=2.0.3
+matplotlib
+seaborn
+openpyxl
+numpy
+nltk
+scikit-learn
+groq
+google-api-python-client
+fake_headers>=1.0.2
+python-dotenv>=1.0.0
+selenium>=4.12.0
+webdriver_manager>=4.0.0

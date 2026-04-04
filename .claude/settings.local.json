@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(c:/Users/osman/Desktop/OSMANPROJECTS/scrape1/.venv/Scripts/pip install:*)",
+      "Bash(c:/Users/osman/Desktop/OSMANPROJECTS/scrape1/.venv/Scripts/python -c \"import nltk; nltk.download\\('vader_lexicon', quiet=True\\); from nltk.sentiment.vader import SentimentIntensityAnalyzer; print\\('VADER OK'\\)\")"
+    ]
+  }
+}

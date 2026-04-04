@@ -1,0 +1,43 @@
+graph TD
+    subgraph "Data Sources"
+        A1[Reddit API<br/>Public JSON] -->|Every 6h| INGEST
+        A2[YouTube Data API v3<br/>Free tier] -->|Daily| INGEST
+        A3[X/Twitter<br/>Selenium + cookies] -->|Daily| INGEST
+    end
+
+    subgraph "Ingestion Layer"
+        INGEST[Scraper Orchestrator<br/>Prefect / cron] --> REDDIT[reddit_scraper.py]
+        INGEST --> YOUTUBE[youtube_scraper.py]
+        INGEST --> TWITTER[twitter_scraper.py]
+        REDDIT --> RAW[(Raw Data Store<br/>S3 / local)]
+        YOUTUBE --> RAW
+        TWITTER --> RAW
+    end
+
+    subgraph "Processing Layer"
+        RAW --> DEDUP[Deduplication<br/>+ date filter]
+        DEDUP --> CLASSIFY[Content classifier<br/>+ Feature tagger]
+        CLASSIFY --> SENTIMENT[VADER Sentiment<br/>scoring]
+        SENTIMENT --> CLEAN[(Clean Dataset<br/>CSV / Parquet)]
+    end
+
+    subgraph "Analysis Layer"
+        CLEAN --> DESC[v1: Descriptive charts]
+        CLEAN --> SENT[v2: Sentiment analysis]
+        CLEAN --> VIRAL[v3: Virality drivers]
+        DESC --> REPORT[Weekly Report<br/>JSON + PNG]
+        SENT --> REPORT
+        VIRAL --> REPORT
+    end
+
+    subgraph "Alert Layer"
+        CLEAN --> MONITOR[Anomaly detector]
+        MONITOR -->|Volume spike > 3x| ALERT[Slack / Email alert]
+        MONITOR -->|Sentiment drop > 0.3| ALERT
+        MONITOR -->|New viral post > 1K upvotes| ALERT
+    end
+
+    subgraph "Output"
+        REPORT --> DASH[Dashboard<br/>Monday morning brief]
+        ALERT --> HUMAN[Growth team<br/>human review]
+    end

@@ -1,14 +1,12 @@
 """
-Claude Growth Analysis — generates all charts and insights.
+Claude Growth Analysis v1 — Descriptive charts and summary stats.
 Run AFTER scrapers have produced data.
-Usage: python analysis.py
+Usage: python descriptive_charts.py
 """
 import pandas as pd
 import matplotlib.pyplot as plt
-import matplotlib.dates as mdates
 import json
 import os
-from collections import Counter
 from datetime import datetime
 
 plt.style.use('dark_background')
@@ -23,8 +21,12 @@ ACCENT = '#C8FF00'
 ACCENT2 = '#00D4FF'
 ACCENT3 = '#FF6B6B'
 
-DATA_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data", "raw")
-OUTPUT_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "analysis", "charts")
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+LAB_DIR = os.path.dirname(os.path.dirname(SCRIPT_DIR))  # lab/
+STAGE1_DIR = os.path.join(LAB_DIR, "stage1")
+RAW_DIR = os.path.join(STAGE1_DIR, "output", "raw")
+CLEAN_DIR = os.path.join(STAGE1_DIR, "output", "clean")
+OUTPUT_DIR = os.path.join(SCRIPT_DIR, "charts")
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 # Claude product launch dates for overlay
@@ -46,20 +48,20 @@ def load_data():
     youtube_df = None
 
     # Try clean first, fall back to raw
-    clean_dir = os.path.join(os.path.dirname(DATA_DIR), "clean")
-
-    reddit_csv = os.path.join(clean_dir, "reddit_clean.csv")
+    reddit_csv = os.path.join(CLEAN_DIR, "reddit_clean.csv")
     if not os.path.exists(reddit_csv):
-        reddit_csv = os.path.join(DATA_DIR, "reddit_data.csv")
+        reddit_csv = os.path.join(RAW_DIR, "reddit", "reddit_data.csv")
     if os.path.exists(reddit_csv):
         reddit_df = pd.read_csv(reddit_csv, parse_dates=["date"])
+        reddit_df = reddit_df[reddit_df["date"] >= "2023-01-01"].copy()
         print(f"Loaded {len(reddit_df)} Reddit posts from {reddit_csv}")
 
-    youtube_csv = os.path.join(clean_dir, "youtube_clean.csv")
+    youtube_csv = os.path.join(CLEAN_DIR, "youtube_clean.csv")
     if not os.path.exists(youtube_csv):
-        youtube_csv = os.path.join(DATA_DIR, "youtube_data.csv")
+        youtube_csv = os.path.join(RAW_DIR, "youtube", "youtube_data.csv")
     if os.path.exists(youtube_csv):
         youtube_df = pd.read_csv(youtube_csv, parse_dates=["date"])
+        youtube_df = youtube_df[youtube_df["date"] >= "2023-01-01"].copy()
         print(f"Loaded {len(youtube_df)} YouTube videos from {youtube_csv}")
 
     return reddit_df, youtube_df
@@ -67,12 +69,6 @@ def load_data():
 
 def chart_1_timeline_with_launches(reddit_df, youtube_df):
     """Chart 1: Post volume over time overlaid with product launches."""
-    # Filter to 2023+ to remove noise from unrelated "Claude" posts
-    if reddit_df is not None:
-        reddit_df = reddit_df[reddit_df['date'] >= '2023-01-01'].copy()
-    if youtube_df is not None:
-        youtube_df = youtube_df[youtube_df['date'] >= '2023-01-01'].copy()
-
     fig, axes = plt.subplots(2, 1, figsize=(14, 8), sharex=True)
     fig.suptitle("Claude mention volume vs product launches", fontsize=16, color=ACCENT, fontweight='bold')
 
@@ -199,31 +195,6 @@ def chart_5_cross_platform_comparison(reddit_df, youtube_df):
     if reddit_df is None or youtube_df is None:
         return
 
-    # Reclassify YouTube "Other" with broader rules at analysis time
-    def reclassify_yt(title):
-        t = title.lower() if isinstance(title, str) else ""
-        if any(w in t for w in [" vs ", "versus", "compared", "comparison", "better", "battle", "showdown", "face off", "which"]):
-            return "Comparison"
-        elif any(w in t for w in ["tutorial", "how to", "guide", "learn", "beginner", "step by step", "tips", "tricks", "course", "master"]):
-            return "Tutorial"
-        elif any(w in t for w in ["review", "honest", "my thoughts", "opinion", "worth it", "tested", "testing"]):
-            return "Review"
-        elif any(w in t for w in ["built", "made", "used", "workflow", "use case", "demo", "project", "showcase", "watch me", "using"]):
-            return "Use Case"
-        elif any(w in t for w in ["news", "announced", "dropped", "release", "update", "new model", "launch", "breaking", "leaked", "just released"]):
-            return "News"
-        elif any(w in t for w in ["insane", "mind", "incredible", "game changer", "wow", "crazy", "amazing", "holy", "blown", "changed", "believe", "shocking"]):
-            return "Reaction"
-        elif any(w in t for w in ["explained", "what is", "introduction", "understand", "100 seconds", "in simple"]):
-            return "Explainer"
-        elif any(w in t for w in ["interview", "podcast", "conversation", "talk", "fireside", "keynote"]):
-            return "Interview"
-        return "General"
-
-    yt_reclassified = youtube_df.copy()
-    mask_other = yt_reclassified['content_type'] == 'Other'
-    yt_reclassified.loc[mask_other, 'content_type'] = yt_reclassified.loc[mask_other, 'title'].apply(reclassify_yt)
-
     # Unify categories across both platforms
     shared_types = ["Comparison", "Use Case", "Reaction", "News", "Tutorial", "Discussion", "Review", "Explainer"]
 
@@ -231,7 +202,7 @@ def chart_5_cross_platform_comparison(reddit_df, youtube_df):
     yt_pcts = {}
     for ct in shared_types:
         reddit_pcts[ct] = (reddit_df['content_type'] == ct).sum() / len(reddit_df) * 100
-        yt_pcts[ct] = (yt_reclassified['content_type'] == ct).sum() / len(yt_reclassified) * 100
+        yt_pcts[ct] = (youtube_df['content_type'] == ct).sum() / len(youtube_df) * 100
 
     # Sort by Reddit percentage
     sorted_types = sorted(shared_types, key=lambda x: reddit_pcts[x])
@@ -383,7 +354,7 @@ def generate_summary_stats(reddit_df, youtube_df):
             "top_content_type": youtube_df['content_type'].value_counts().index[0],
         }
 
-    output_file = os.path.join(OUTPUT_DIR, "..", "summary_stats.json")
+    output_file = os.path.join(SCRIPT_DIR, "summary_stats.json")
     with open(output_file, "w") as f:
         json.dump(stats, f, indent=2)
     print(f"\n  Summary stats saved to {output_file}")

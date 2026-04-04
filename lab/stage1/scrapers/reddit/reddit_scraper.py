@@ -1,7 +1,7 @@
 """
-Reddit Scraper v2 — Enhanced time coverage.
-Scrapes by quarterly time slices to get even distribution across Claude's history.
-Usage: python3 reddit_scraper_v2.py
+Reddit Scraper — Multi-phase Claude growth data collection.
+Scrapes r/ClaudeAI and cross-community subreddits for Claude/Anthropic discourse.
+Usage: python3 reddit_scraper.py
 """
 import requests
 import json
@@ -13,38 +13,14 @@ from datetime import datetime, timezone
 USER_AGENT = "ClaudeGrowthResearch/1.0 (hackathon project)"
 HEADERS = {"User-Agent": USER_AGENT}
 
-OUTPUT_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data", "raw")
+STAGE1_DIR = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
+OUTPUT_DIR = os.path.join(STAGE1_DIR, "output", "raw", "reddit")
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 # === SUBREDDITS TO SCRAPE ===
 SUBREDDITS_DIRECT = ["ClaudeAI"]
 SUBREDDITS_SEARCH = ["ChatGPT", "artificial", "LocalLLaMA", "singularity", "technology",
                       "MachineLearning", "ArtificialIntelligence", "OpenAI", "Bard"]
-
-# === TIME SLICES for even coverage ===
-# Each slice = (label, after_timestamp, before_timestamp)
-# This ensures we get posts from EVERY period, not just viral peaks
-TIME_SLICES = []
-import calendar
-# Generate quarterly slices from Q3 2023 (Claude 2 launch) to now
-quarters = [
-    ("2023-Q3", "2023-07-01", "2023-10-01"),
-    ("2023-Q4", "2023-10-01", "2024-01-01"),
-    ("2024-Q1", "2024-01-01", "2024-04-01"),
-    ("2024-Q2", "2024-04-01", "2024-07-01"),
-    ("2024-Q3", "2024-07-01", "2024-10-01"),
-    ("2024-Q4", "2024-10-01", "2025-01-01"),
-    ("2025-Q1", "2025-01-01", "2025-04-01"),
-    ("2025-Q2", "2025-04-01", "2025-07-01"),
-    ("2025-Q3", "2025-07-01", "2025-10-01"),
-    ("2025-Q4", "2025-10-01", "2026-01-01"),
-    ("2026-Q1", "2026-01-01", "2026-04-01"),
-    ("2026-Q2", "2026-04-01", "2026-07-01"),
-]
-
-def to_ts(date_str):
-    return int(datetime.strptime(date_str, "%Y-%m-%d").replace(tzinfo=timezone.utc).timestamp())
-
 
 def fetch_reddit_json(url, params=None, max_retries=3):
     for attempt in range(max_retries):
@@ -68,7 +44,7 @@ def fetch_reddit_json(url, params=None, max_retries=3):
 
 
 def extract_post(p, subreddit):
-    created = datetime.fromtimestamp(p.get("created_utc", 0))
+    created = datetime.fromtimestamp(p.get("created_utc", 0), tz=timezone.utc)
     return {
         "platform": "Reddit",
         "subreddit": f"r/{subreddit}",
@@ -87,7 +63,10 @@ def extract_post(p, subreddit):
     }
 
 
-def classify_content_type(title):
+# NOTE: Classification moved to stage1/analysis pipeline (LLM-based).
+# Kept here for reference only.
+# def classify_content_type(title):
+def _classify_content_type_DISABLED(title):
     t = title.lower()
 
     if any(w in t for w in [
@@ -199,7 +178,8 @@ def classify_content_type(title):
     return "Discussion"
 
 
-def classify_feature(title):
+# def classify_feature(title):
+def _classify_feature_DISABLED(title):
     t = title.lower()
     if "artifact" in t:
         return "Artifacts"
@@ -239,24 +219,6 @@ def scrape_subreddit_top(subreddit, sort="top", time_filter="all", limit=100):
     return [extract_post(c["data"], subreddit) for c in data["data"].get("children", [])]
 
 
-def search_subreddit_timeslice(subreddit, query, after_ts, before_ts, sort="top", limit=100):
-    """Search subreddit within a specific time window."""
-    url = f"https://www.reddit.com/r/{subreddit}/search.json"
-    # Reddit search supports timestamp filtering
-    full_query = f"{query} timestamp:{after_ts}..{before_ts}" if query else f"timestamp:{after_ts}..{before_ts}"
-    params = {
-        "q": query or "claude",
-        "restrict_sr": "on",
-        "sort": sort,
-        "limit": min(limit, 100),
-        "t": "all",
-    }
-    data = fetch_reddit_json(url, params)
-    if not data or "data" not in data:
-        return []
-    return [extract_post(c["data"], subreddit) for c in data["data"].get("children", [])]
-
-
 def search_subreddit(subreddit, query, sort="top", time_filter="all", limit=100):
     url = f"https://www.reddit.com/r/{subreddit}/search.json"
     params = {
@@ -287,8 +249,9 @@ def main():
         for p in posts:
             if p["post_id"] not in seen_ids:
                 seen_ids.add(p["post_id"])
-                p["content_type"] = classify_content_type(p["title"])
-                p["claude_feature"] = classify_feature(p["title"])
+                # Classification moved to stage1/analysis pipeline
+                # p["content_type"] = classify_content_type(p["title"])
+                # p["claude_feature"] = classify_feature(p["title"])
                 p["source_label"] = label
                 all_posts.append(p)
                 new += 1
@@ -367,6 +330,9 @@ def main():
     # ========================================
     # DONE — save
     # ========================================
+    # Filter out pre-2023 noise (non-AI "Claude" posts from other subreddits)
+    all_posts = [p for p in all_posts if p["date"] >= "2023-01-01"]
+
     all_posts.sort(key=lambda x: x["upvotes"], reverse=True)
 
     output_csv = os.path.join(OUTPUT_DIR, "reddit_data.csv")
@@ -389,13 +355,13 @@ def main():
 
     # Stats
     from collections import Counter
-    print(f"\nContent types:")
-    for t, c in Counter(p["content_type"] for p in all_posts).most_common():
-        print(f"  {t:20s} {c:4d}")
-
-    print(f"\nFeatures mentioned:")
-    for t, c in Counter(p["claude_feature"] for p in all_posts).most_common():
-        print(f"  {t:20s} {c:4d}")
+    # Classification stats (disabled — moved to analysis pipeline)
+    # print(f"\nContent types:")
+    # for t, c in Counter(p["content_type"] for p in all_posts).most_common():
+    #     print(f"  {t:20s} {c:4d}")
+    # print(f"\nFeatures mentioned:")
+    # for t, c in Counter(p["claude_feature"] for p in all_posts).most_common():
+    #     print(f"  {t:20s} {c:4d}")
 
     # Timeline coverage
     dates = sorted(set(p["date"][:7] for p in all_posts))

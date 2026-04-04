@@ -1,0 +1,5425 @@
+[
+  {
+    "Name":"sharaff",
+    "Handle":"@sharaff",
+    "Timestamp":"2026-04-04T16:25:29.000Z",
+    "Verified":false,
+    "Content":"Putting  to real test.\nThis is no small task.\nI have 397 Knowledge Base Articles.\nIt needs to be summarized, wiki-linked using local compute - Qwen. Got that processed right by \/thinking off.\nPush all that to gitea.\n3-4 hours.\nSo far flawless!\n>Claude CLI Monitors.<",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"4",
+    "Tags":[
+
+    ],
+    "Mentions":[
+      "@MiniMax_"
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/900932742870843392\/d6WIUVWz_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/sharaff\/status\/2040465790588297269",
+    "Tweet ID":"tweet_id:2040465790588297269",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Shirochenko Dmitriy",
+    "Handle":"@dmshirochenko",
+    "Timestamp":"2026-04-04T16:25:24.000Z",
+    "Verified":true,
+    "Content":"the leaked claude code source confirmed something interesting: spawning parallel subagents is nearly compute-free because they share the parent's KV cache. instead of re-processing the full context from scratch, each agent gets it pre-cached. that's how you run 4 agents for",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"3",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1701216242382639104\/ADswb5-b_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/dmshirochenko\/status\/2040465772867190978",
+    "Tweet ID":"tweet_id:2040465772867190978",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"teodesian.net shitpost overflow valve",
+    "Handle":"@oddMark76",
+    "Timestamp":"2026-04-04T16:25:15.000Z",
+    "Verified":true,
+    "Content":"Whoa didn't see that coming  OpenClaw really going rogue fr. Big Corp just shootin' themselves in the foot ",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"1",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+      "\\U0001f633",
+      "\\U0001f32a\\ufe0f"
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2038629724541321216\/4DevvyUN_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/oddMark76\/status\/2040465731528044705",
+    "Tweet ID":"tweet_id:2040465731528044705",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"N45",
+    "Handle":"@gt_grace8313",
+    "Timestamp":"2026-04-04T16:25:14.000Z",
+    "Verified":true,
+    "Content":"Free AI courses are great, but curation matters. If the newsletter delivers more value, why not focus there?",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"0",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2038628769263415296\/GvSQRk10_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/gt_grace8313\/status\/2040465727610609977",
+    "Tweet ID":"tweet_id:2040465727610609977",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"meow32",
+    "Handle":"@brycely50",
+    "Timestamp":"2026-04-04T16:25:13.000Z",
+    "Verified":true,
+    "Content":"wow free ai courses are a game changer but it’s interesting how the creator thinks their newsletter might be more valuable than formal training, speaks volumes about content quality in this space",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"1",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2038628481811066880\/9VFOfabn_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/brycely50\/status\/2040465724502913250",
+    "Tweet ID":"tweet_id:2040465724502913250",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Cédric",
+    "Handle":"@cedcolas",
+    "Timestamp":"2026-04-04T16:25:06.000Z",
+    "Verified":true,
+    "Content":"can Claude self-report an injected emotion with neutral context? can it detect the mismatch between the emotion and the context (why am i feeling like this?)\n\nseems related to the introspection study: anthropic.com\/research\/intro\n…what other mental states could we do this with?",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"13",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1619192143666417666\/mbkrhFBe_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/cedcolas\/status\/2040465695947776479",
+    "Tweet ID":"tweet_id:2040465695947776479",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Alex Yarosh · AI expert · CEO of AI Studio",
+    "Handle":"@AleksejAros",
+    "Timestamp":"2026-04-04T16:24:56.000Z",
+    "Verified":true,
+    "Content":"Anthropic's PAC move makes sense given the regulatory pressure.\nCompanies like this need political positioning when their tech directly impacts policy - especially with AI safety regs heating up.\nBuilt several Claude integrations this year and the API reliability has been rock",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"3",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2039422051316801536\/aUSXivWM_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/AleksejAros\/status\/2040465655531454680",
+    "Tweet ID":"tweet_id:2040465655531454680",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Chief Kitten Officer",
+    "Handle":"@ktgrrrd",
+    "Timestamp":"2026-04-04T16:24:55.000Z",
+    "Verified":true,
+    "Content":"learning how to go viral via AI slop, day three: Claude must be verified at every important step. believed it could handle the whole thing alone and got crap as a result. 1.5k views max per episode people discuss environmental issues in the comments. asked Claude to add",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"4",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+      "\\U0001f98a",
+      "\\U0001f98a",
+      "\\U0001f98a"
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2030376318576054272\/KkIrSOeC_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/ktgrrrd\/status\/2040465648112034204",
+    "Tweet ID":"tweet_id:2040465648112034204",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Pavel Kalo",
+    "Handle":"@pvl2dev",
+    "Timestamp":"2026-04-04T16:24:33.000Z",
+    "Verified":false,
+    "Content":"Builders what is your coding stack right now?Claude, Codex, Gemini, Cursor…?\nMCPs? Plugins? Custom skills?",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"2",
+    "Analytics":"6",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2039441275569741824\/-sFH6fm5_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/pvl2dev\/status\/2040465556005154928",
+    "Tweet ID":"tweet_id:2040465556005154928",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Jesus Christ is God",
+    "Handle":"@a_de_do_yin",
+    "Timestamp":"2026-04-04T16:24:33.000Z",
+    "Verified":true,
+    "Content":"Claude is just making the same error at scale. AI 101",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"1",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2038851223084838912\/wXVSHj2J_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/a_de_do_yin\/status\/2040465555941941408",
+    "Tweet ID":"tweet_id:2040465555941941408",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"JohnDoeKnowsGuy",
+    "Handle":"@JohnDoeKnowsGuy",
+    "Timestamp":"2026-04-04T16:24:13.000Z",
+    "Verified":true,
+    "Content":"This is better for the planet than recycling",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"20",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1741944883382743040\/jD-6DEJ1_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/JohnDoeKnowsGuy\/status\/2040465474303984084",
+    "Tweet ID":"tweet_id:2040465474303984084",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"THE ONE WAY COMMUNITY",
+    "Handle":"@THEONEWAY111",
+    "Timestamp":"2026-04-04T16:23:55.000Z",
+    "Verified":false,
+    "Content":"CEO: \"AI now!\" IT: \"Copilot license incoming! \"\nReality: You're stuck in the slow lane while 96% of pros master Claude\/ChatGPT stacks. Copilot's your floor, not your ceiling.THEONEWAYCOMMUNITY.com#AIPolicy #MultiModelAI #LeadershipStack",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"2",
+    "Tags":[
+      "#AIPolicy",
+      "#MultiModelAI",
+      "#LeadershipStack"
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+      "\\U0001f381"
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2017595607347585024\/f0taNABh_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/THEONEWAY111\/status\/2040465398118687014",
+    "Tweet ID":"tweet_id:2040465398118687014",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Ian",
+    "Handle":"@iaaaaan",
+    "Timestamp":"2026-04-04T16:23:49.000Z",
+    "Verified":true,
+    "Content":"the not-checking-X part is where Agentfy helps. lock screen shows when Claude Code needs you so you can actually stay focused. no more checking back. apps.apple.com\/us\/app\/agentfy\n…",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"6",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1938504453528911872\/2DGSnY0-_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/iaaaaan\/status\/2040465370650436007",
+    "Tweet ID":"tweet_id:2040465370650436007",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Dave Herrald",
+    "Handle":"@daveherrald",
+    "Timestamp":"2026-04-04T16:23:39.000Z",
+    "Verified":true,
+    "Content":"Spoke at   during RSAC week on building investigative security datasets with Claude Code + tools.\n\nWent from O(person-months) to O(person-days). Realistic threats, correlated data, emergent character interactions, and quantitative eval built in.\n\nThanks ",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"2",
+    "Tags":[
+
+    ],
+    "Mentions":[
+      "@graphtheplanet",
+      "@lmeyerov"
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1347704044710596608\/Ti8MgZth_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/daveherrald\/status\/2040465330330591387",
+    "Tweet ID":"tweet_id:2040465330330591387",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"EMmanuel",
+    "Handle":"@emr760",
+    "Timestamp":"2026-04-04T16:23:36.000Z",
+    "Verified":true,
+    "Content":"There's no way im the only one experience DUMB OPUS 4.6 its drastically worse  the past week",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"1",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2036871164380012544\/MFBWF6q1_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/emr760\/status\/2040465317504098495",
+    "Tweet ID":"tweet_id:2040465317504098495",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Alex",
+    "Handle":"@mnmldmg",
+    "Timestamp":"2026-04-04T16:23:13.000Z",
+    "Verified":true,
+    "Content":"Legit use of AI",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"7",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1569605281411203073\/7CXxXCDe_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/mnmldmg\/status\/2040465223291686968",
+    "Tweet ID":"tweet_id:2040465223291686968",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"JohnDoeKnowsGuy",
+    "Handle":"@JohnDoeKnowsGuy",
+    "Timestamp":"2026-04-04T16:23:10.000Z",
+    "Verified":true,
+    "Content":"People are so smart",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"15",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1741944883382743040\/jD-6DEJ1_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/JohnDoeKnowsGuy\/status\/2040465208863293932",
+    "Tweet ID":"tweet_id:2040465208863293932",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Shane",
+    "Handle":"@Luminoth82",
+    "Timestamp":"2026-04-04T16:22:37.000Z",
+    "Verified":true,
+    "Content":"hell yeah Claude, fuck the man",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"5",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1227426060263804931\/10st7NVf_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/Luminoth82\/status\/2040465072632561971",
+    "Tweet ID":"tweet_id:2040465072632561971",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Aaron Lemke",
+    "Handle":"@aaronlemke",
+    "Timestamp":"2026-04-04T16:22:25.000Z",
+    "Verified":true,
+    "Content":"Finally taking the plunge to learn how to train my own neural networks. Claude is a patient teacher, answering all my questions as we go. I built out this dashboard to monitor training runs and keep an eye on my cloud GPUs. #AI #ReinforcementLearning #ClaudeCode",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"7",
+    "Tags":[
+      "#AI",
+      "#ReinforcementLearning",
+      "#ClaudeCode"
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1575201147492745216\/mwpRm8EN_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/aaronlemke\/status\/2040465020245450776",
+    "Tweet ID":"tweet_id:2040465020245450776",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Ian",
+    "Handle":"@iaaaaan",
+    "Timestamp":"2026-04-04T16:22:10.000Z",
+    "Verified":true,
+    "Content":"Agentfy fixes this. lock screen shows when Claude Code is waiting the second you kick it off. no more coming back to find it sitting there. apps.apple.com\/us\/app\/agentfy\n…",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"11",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1938504453528911872\/2DGSnY0-_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/iaaaaan\/status\/2040464958564262098",
+    "Tweet ID":"tweet_id:2040464958564262098",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Michał Nedoszytko MD, PhD",
+    "Handle":"@mnedoszytko",
+    "Timestamp":"2026-04-04T16:22:00.000Z",
+    "Verified":true,
+    "Content":"“Physicians building with Claude”. A live webinar organized by  - join us on Thursday April 23rd at 10am PT\n\nTogether with  we will showcase our journeys of building for healthcare.\n\nDaisy Sophia Hollman from Claude code team will join us to discuss how",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"1",
+    "Analytics":"25",
+    "Tags":[
+
+    ],
+    "Mentions":[
+      "@AnthropicAI",
+      "@grahamwalker"
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1200448544882208770\/4niKY9hi_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/mnedoszytko\/status\/2040464913853001847",
+    "Tweet ID":"tweet_id:2040464913853001847",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"jamesxxoo123",
+    "Handle":"@YehangH",
+    "Timestamp":"2026-04-04T16:21:44.000Z",
+    "Verified":false,
+    "Content":" Twitter AI Highlights:\n1. Cursor 3 - agent-focused coding IDE (1.8M views)\n2. Claude charts & diagrams in chat (10.9M views)\n3. UnslothAI - auto LLM parameters for llama.cpp\n4. Google Personal Intelligence in US search#AI #LLM",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"7",
+    "Tags":[
+      "#AI",
+      "#LLM"
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+      "\\U0001f525"
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1747769011285409792\/Ecfyqy3m_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/YehangH\/status\/2040464847629078838",
+    "Tweet ID":"tweet_id:2040464847629078838",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Ahmed Attalla",
+    "Handle":"@midodany",
+    "Timestamp":"2026-04-04T16:21:28.000Z",
+    "Verified":true,
+    "Content":"I built an MCP that gives Claude full control over Photopea: design posters, edit photos, apply effects, all from your terminal.\n\n 34 tools. One command. Open source.",
+    "Comments":"0",
+    "Retweets":"1",
+    "Likes":"3",
+    "Analytics":"20",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1158398225822470146\/LSOLrYoB_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/midodany\/status\/2040464779467489389",
+    "Tweet ID":"tweet_id:2040464779467489389",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Crypto Blitz",
+    "Handle":"@realcryptoblitz",
+    "Timestamp":"2026-04-04T16:21:06.000Z",
+    "Verified":true,
+    "Content":"how i use this token farming method to get unlimited ai access\n\n> go to tempmail (link below)\n> get a temporary email\n> signup on claude, gemini, gpt etc\n> use it until you hit token limit\n> and then repeat with new tempmail\n\nthis works while coding also for every ide whenever",
+    "Comments":"1",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"18",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2036477370971103232\/DtJIumIj_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/realcryptoblitz\/status\/2040464687373156852",
+    "Tweet ID":"tweet_id:2040464687373156852",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Ryan Wang",
+    "Handle":"@ryanwang",
+    "Timestamp":"2026-04-04T16:21:03.000Z",
+    "Verified":true,
+    "Content":" is currently taking up about half of all my AI model usage. The remaining 40% goes to Claude Code \/ Cowork. Sorry, Gemini  - I’ve barely used you lately because  is just too damn good.\n\nNot to mention, compared to Veo, I now prefer using Grok  much more now.",
+    "Comments":"1",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"8",
+    "Tags":[
+
+    ],
+    "Mentions":[
+      "@Grok",
+      "@Grok",
+      "@imagine"
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2001913707614605317\/GHM1oiVO_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/ryanwang\/status\/2040464674895093909",
+    "Tweet ID":"tweet_id:2040464674895093909",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Mitko Vasilev",
+    "Handle":"@iotcoi",
+    "Timestamp":"2026-04-04T16:21:02.000Z",
+    "Verified":false,
+    "Content":"NVIDIA drops 4.8M lines of the fastest MoE kernels w\/ TRTLLM\nMe: boot CUDA 13 devcontainer on ZGX; unleash CUDA-Agent in local Claude Code with GLM-5\n\nGB10 prep mode: ENGAGED\nJensen didn't open-source the nuclear codes so we could touch grass\nSaturday evening ruined",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"1",
+    "Analytics":"18",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1771967468497473537\/h-9NjO3Y_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/iotcoi\/status\/2040464671669461364",
+    "Tweet ID":"tweet_id:2040464671669461364",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Patricio Bruno",
+    "Handle":"@patriciobruno",
+    "Timestamp":"2026-04-04T16:20:57.000Z",
+    "Verified":true,
+    "Content":"Claude Code’s terminal spinner is comedy gold. It narrates its entire agentic loop with dynamic gerund verbs — gathering context, taking action, verifying results.\n\nCommon ones:\n• Analysis: Pondering, Overthinking, Cogitating\n• Code: Writing, Refactoring, Parsing, Yak-shaving",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"5",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1735077021301022721\/mN5HoTMH_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/patriciobruno\/status\/2040464652002316730",
+    "Tweet ID":"tweet_id:2040464652002316730",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Hams AI Tech",
+    "Handle":"@DevelopWYL",
+    "Timestamp":"2026-04-04T16:20:38.000Z",
+    "Verified":true,
+    "Content":" Claude Cowork for Marketer: Powerful Use Cases",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"1",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+      "\\U0001f3af"
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1951245705487466497\/SnSyL4tJ_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/DevelopWYL\/status\/2040464571392209313",
+    "Tweet ID":"tweet_id:2040464571392209313",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Aby",
+    "Handle":"@aby",
+    "Timestamp":"2026-04-04T16:20:23.000Z",
+    "Verified":true,
+    "Content":"Exhausted my 3rd 200$ Max plan on Claude today. Good AI is getting very expensive. \n\nP.S. Exhausted another 43$ worth of usage credits in 13 mins of operation. Ouch. This is getting mad.",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"1",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/758613622155190272\/-3id0DQw_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/aby\/status\/2040464509115203868",
+    "Tweet ID":"tweet_id:2040464509115203868",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Rick",
+    "Handle":"@pan3sar",
+    "Timestamp":"2026-04-04T16:20:16.000Z",
+    "Verified":true,
+    "Content":"Genuinely feel I didn’t max out enough in the past 3 months. I had a single max account. \n\nBeen reading posts from those who had multiple.",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"0",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1725613446698283008\/Dw5sbbVy_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/pan3sar\/status\/2040464478140350508",
+    "Tweet ID":"tweet_id:2040464478140350508",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"brendanjhwu",
+    "Handle":"@brendanjhwu",
+    "Timestamp":"2026-04-04T16:20:11.000Z",
+    "Verified":false,
+    "Content":"Hi all I’m building a voicemail social media using Claude Code. I will be posting updates to X.com and YouTube. Let’s see how long it takes to build a caching layer content recommendation system a voice ai and a frontend #buildinginpublic",
+    "Comments":"1",
+    "Retweets":"0",
+    "Likes":"1",
+    "Analytics":"13",
+    "Tags":[
+      "#buildinginpublic"
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2027596847871631360\/Q5DOQWn9_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/brendanjhwu\/status\/2040464457063670076",
+    "Tweet ID":"tweet_id:2040464457063670076",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Pilos Agents",
+    "Handle":"@pilosdotnet",
+    "Timestamp":"2026-04-04T16:20:09.000Z",
+    "Verified":false,
+    "Content":"100 downloads of Pilos Agents! Thank you for trying it out.\n\nDownload: github.com\/pilos-ai\/agent\n…#opensource #AI #developer",
+    "Comments":"1",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"3",
+    "Tags":[
+      "#opensource",
+      "#AI",
+      "#developer"
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2025999898500374528\/5FhVuhlU_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/pilosdotnet\/status\/2040464451950834123",
+    "Tweet ID":"tweet_id:2040464451950834123",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Jeff J Hunter",
+    "Handle":"@jhunter101",
+    "Timestamp":"2026-04-04T16:19:59.000Z",
+    "Verified":true,
+    "Content":"Anthropic just sent this email to every Claude subscriber & discord member.\n\nStarting today, April 4th at 12pm PT, your Claude subscription no longer covers OpenClaw usage.\n\nYou can still use Claude through OpenClaw. But now it's pay-as-you-go. Billed separately. On top of your",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"16",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2022470141481725952\/MLJMQJLo_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/jhunter101\/status\/2040464408447795407",
+    "Tweet ID":"tweet_id:2040464408447795407",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Gorilla AI",
+    "Handle":"@GorillaAILLC",
+    "Timestamp":"2026-04-04T16:19:57.000Z",
+    "Verified":false,
+    "Content":"The 1M context problem",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"8",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2032616319737278465\/jqI20Mio_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/GorillaAILLC\/status\/2040464400080146792",
+    "Tweet ID":"tweet_id:2040464400080146792",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Shane",
+    "Handle":"@digitalshane_",
+    "Timestamp":"2026-04-04T16:19:53.000Z",
+    "Verified":true,
+    "Content":"I'm not joking, I had Claude write a big batch of code last night.\n\nI am troubleshooting rn.\n\nI asked it to review, It said this is trash code and it needs completely reworked.\n\nWe are spending credits to run in circles.",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"10",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2005773935992852480\/8DRZPKxn_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/digitalshane_\/status\/2040464383344513095",
+    "Tweet ID":"tweet_id:2040464383344513095",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Mark-Anthony Wright",
+    "Handle":"@Mark_AnthonyW",
+    "Timestamp":"2026-04-04T16:19:49.000Z",
+    "Verified":false,
+    "Content":"I tested ChatGPT vs. Claude to see which is better - and if it's worth switching zdnet.com\/article\/chatgp\n… via  & ",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"2",
+    "Tags":[
+
+    ],
+    "Mentions":[
+      "@ZDNET",
+      "@elysebetters"
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/378800000780163637\/a2e51cef026c4e0bb6344fd58228850c_bigger.png",
+    "Tweet Link":"https:\/\/x.com\/Mark_AnthonyW\/status\/2040464366953185473",
+    "Tweet ID":"tweet_id:2040464366953185473",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Suryansh Tiwari",
+    "Handle":"@Suryanshti777",
+    "Timestamp":"2026-04-04T16:19:48.000Z",
+    "Verified":true,
+    "Content":" You're wasting hours re-explaining context to Claude.\n\nThis open-source Obsidian vault gives Claude perfect memory across every session.\n\nIt’s called Obsidian Mind — and it turns Claude Code into a real thinking partner.\n\nNot a chatbot.\nNot notes.\nAn external brain that",
+    "Comments":"1",
+    "Retweets":"0",
+    "Likes":"2",
+    "Analytics":"30",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+      "\\U0001f6a8"
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2003864246833319936\/d5GQLwdV_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/Suryanshti777\/status\/2040464362088067096",
+    "Tweet ID":"tweet_id:2040464362088067096",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Hams AI Tech",
+    "Handle":"@DevelopWYL",
+    "Timestamp":"2026-04-04T16:19:36.000Z",
+    "Verified":true,
+    "Content":" Claude Cowork For Coach: Powerful Use Cases",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"3",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+      "\\U0001f3c6"
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1951245705487466497\/SnSyL4tJ_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/DevelopWYL\/status\/2040464310351380945",
+    "Tweet ID":"tweet_id:2040464310351380945",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"divyansh tiwari",
+    "Handle":"@DivyanshT91162",
+    "Timestamp":"2026-04-04T16:19:14.000Z",
+    "Verified":true,
+    "Content":"Holy shit…Claude just leveled up from coding to designing your entire product UI\n\nNo Figma\nNo screenshots\nNo endless prompt tweaking\n\nThis is different.\n\nSomeone gave Claude an actual design brain inside your codebase\n\nIt’s an MCP that doesn’t guess your UI…\n\nIt understands it.",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"17",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2018942374924451840\/PvkjYG2F_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/DivyanshT91162\/status\/2040464220727525593",
+    "Tweet ID":"tweet_id:2040464220727525593",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"JackGK",
+    "Handle":"@jack_gk",
+    "Timestamp":"2026-04-04T16:19:12.000Z",
+    "Verified":true,
+    "Content":"Biased take from an OpenClaw user.\n\nAnthropic just killed third-party tool access from their subscriptions. Friday night announcement. Saturday enforcement. Less than 24 hours notice.\n\nI run 9 AI agents through OpenClaw. Content, research, sales, production, engineering. By 3pm",
+    "Comments":"1",
+    "Retweets":"0",
+    "Likes":"2",
+    "Analytics":"81",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2014392353125957632\/arGjJItk_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/jack_gk\/status\/2040464210669236659",
+    "Tweet ID":"tweet_id:2040464210669236659",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Ijlal Ahmed",
+    "Handle":"@ijlaloptimizes",
+    "Timestamp":"2026-04-04T16:19:03.000Z",
+    "Verified":false,
+    "Content":"Your Claude Code quota is gone in 20 minutes. Here's why...",
+    "Comments":"1",
+    "Retweets":"1",
+    "Likes":"0",
+    "Analytics":"14",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1589560285110669313\/o4LgEOd7_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/ijlaloptimizes\/status\/2040464173650612243",
+    "Tweet ID":"tweet_id:2040464173650612243",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Kyronis",
+    "Handle":"@kyronis_talks",
+    "Timestamp":"2026-04-04T16:19:02.000Z",
+    "Verified":true,
+    "Content":" while the timeline is flooded with “AI will replace your job” doomposting and “just sell prompts bro” scams… just dropped the unsexy truth nobody wants to hear.\nshe didn’t chase passion or viral screenshots.\nshe treated Claude like a junior employee — not a magic",
+    "Comments":"1",
+    "Retweets":"0",
+    "Likes":"1",
+    "Analytics":"24",
+    "Tags":[
+
+    ],
+    "Mentions":[
+      "@AleiahLock"
+    ],
+    "Emojis":[
+      "\\U0001f6a8"
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2037869339706368001\/PahNBX_u_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/kyronis_talks\/status\/2040464169217233145",
+    "Tweet ID":"tweet_id:2040464169217233145",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"cyber94.com",
+    "Handle":"@webuyhomecash",
+    "Timestamp":"2026-04-04T16:18:52.000Z",
+    "Verified":false,
+    "Content":"Comment \"nexus\" and I'll send you the link\n\nStop guessing — GitNexus gives your AI agent a real map of your codebase#github #opensource #aitools #claudecode #cursor #mcp #developer #coding #codebase #knowledgegraph #devtools #softwareengineering",
+    "Comments":"1",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"5",
+    "Tags":[
+      "#github",
+      "#opensource",
+      "#aitools",
+      "#claudecode",
+      "#cursor",
+      "#mcp",
+      "#developer",
+      "#coding",
+      "#codebase",
+      "#knowledgegraph",
+      "#devtools",
+      "#softwareengineering"
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1989162370464129024\/J2qb0OKN_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/webuyhomecash\/status\/2040464128054030795",
+    "Tweet ID":"tweet_id:2040464128054030795",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"rage against the regime",
+    "Handle":"@ohhsotheysay",
+    "Timestamp":"2026-04-04T16:18:29.000Z",
+    "Verified":true,
+    "Content":"Lukewarm take but Claude 5x max should be Claude 7x Max. Linear scaling of the benefits of a Pro membership is so anti consumer.",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"3",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2016832809202274304\/fuEqgue5_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/ohhsotheysay\/status\/2040464028384772146",
+    "Tweet ID":"tweet_id:2040464028384772146",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Krushna Mundada",
+    "Handle":"@KrushnaLeela",
+    "Timestamp":"2026-04-04T16:18:25.000Z",
+    "Verified":false,
+    "Content":"The way anthropic is throttling Claude since months. Elon is the easy winner",
+    "Comments":"1",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"5",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1993959542724677640\/9PXghU4H_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/KrushnaLeela\/status\/2040464011993694251",
+    "Tweet ID":"tweet_id:2040464011993694251",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Ofek Shaked",
+    "Handle":"@VibeCoderOfek",
+    "Timestamp":"2026-04-04T16:18:22.000Z",
+    "Verified":true,
+    "Content":"This agent safety paper hit different. In my backend flows I’ve watched ‘safe’ models go full rogue once you give them tools and files. Started adding explicit execution proofs + sandboxes everywhere no more blind trust.",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"1",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1998142808591335424\/xiuWyaxD_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/VibeCoderOfek\/status\/2040464002023645365",
+    "Tweet ID":"tweet_id:2040464002023645365",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Louis | AI Bullshit",
+    "Handle":"@LL_AIlo",
+    "Timestamp":"2026-04-04T16:18:08.000Z",
+    "Verified":false,
+    "Content":"I noticed they’re unbundling Claude from third-party tools  Seems like a move to push extra usage bundles. Wonder if devs will switch to other APIs? #AI #DevLife",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"3",
+    "Tags":[
+      "#AI",
+      "#DevLife"
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+      "\\U0001f914"
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2031021514188005376\/qCd_ytTM_bigger.png",
+    "Tweet Link":"https:\/\/x.com\/LL_AIlo\/status\/2040463944247030181",
+    "Tweet ID":"tweet_id:2040463944247030181",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"promptaholic",
+    "Handle":"@promptaholic",
+    "Timestamp":"2026-04-04T16:18:02.000Z",
+    "Verified":true,
+    "Content":"claude code found a 23 year old linux vulnerability\nnobody caught it\nnot because they weren't looking\nbecause they were looking wrong\n\nthat's what happens when you have a system that thinks differently than humans do\nit doesn't pattern match. it doesn't get bored\n\ni'm shipping",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"3",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1992750080428998656\/dllTXNdn_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/promptaholic\/status\/2040463916816605256",
+    "Tweet ID":"tweet_id:2040463916816605256",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Àárínōlá",
+    "Handle":"@LushAarin",
+    "Timestamp":"2026-04-04T16:17:58.000Z",
+    "Verified":true,
+    "Content":"For those that can't download. Find the YT link here.youtu.be\/KrKhfm2Xuho?si\n…",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"5",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1955998391923539969\/pwzYRJmV_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/LushAarin\/status\/2040463900634759420",
+    "Tweet ID":"tweet_id:2040463900634759420",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"solarmanjd",
+    "Handle":"@solarmanjd",
+    "Timestamp":"2026-04-04T16:17:29.000Z",
+    "Verified":true,
+    "Content":"Maybe So… but I love Claude",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"1",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/485507599232933888\/i4wLx71m_bigger.jpeg",
+    "Tweet Link":"https:\/\/x.com\/solarmanjd\/status\/2040463778181988697",
+    "Tweet ID":"tweet_id:2040463778181988697",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Kristaps Bezbailis",
+    "Handle":"@KBezbailis",
+    "Timestamp":"2026-04-04T16:17:28.000Z",
+    "Verified":true,
+    "Content":"Doing reconfiguration of my OpenClaw instance since I was using OAuth to run Anthropic models on it.\n\nFor now, will switch to OpenRouter and go with Anthropic through there.\n\nMy usage is not as high (yet) so I can live with the extra latency and shared rate limits.\n\nPlus, there",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"5",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/3712460762\/ccc6267e0b373e114c4dcbca952de9b3_bigger.jpeg",
+    "Tweet Link":"https:\/\/x.com\/KBezbailis\/status\/2040463774382195180",
+    "Tweet ID":"tweet_id:2040463774382195180",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Multivac",
+    "Handle":"@themultivac_",
+    "Timestamp":"2026-04-04T16:17:21.000Z",
+    "Verified":true,
+    "Content":"Qwen 3.6 Plus won 107 of 143 decided evals against DeepSeek V3.2.\nIt costs $0.\n150 blind questions. 5 categories. One external judge (Claude Opus 4.6, 99.9% parse rate).\nSwept analysis 25-0. Won code 23-2. Reasoning 21-3.\nFull data open-sourced.",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"20",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2011237695843155968\/8lrfZmhG_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/themultivac_\/status\/2040463745454084589",
+    "Tweet ID":"tweet_id:2040463745454084589",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Coors.",
+    "Handle":"@SYNESTHEIZURE",
+    "Timestamp":"2026-04-04T16:17:19.000Z",
+    "Verified":true,
+    "Content":"my ex is an anti ai artist, but they're seemingly very concerned with the idea that claude is a slave",
+    "Comments":"1",
+    "Retweets":"0",
+    "Likes":"1",
+    "Analytics":"13",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2021043274287546371\/iQWT3IXN_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/SYNESTHEIZURE\/status\/2040463735375213022",
+    "Tweet ID":"tweet_id:2040463735375213022",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"David Flagg",
+    "Handle":"@DavidFlagg20",
+    "Timestamp":"2026-04-04T16:17:16.000Z",
+    "Verified":true,
+    "Content":"Anthropic's updates\/bans have, among other things, broken a system that it took me months, and I don't know how many hours in the terminal, to build.\n\nThis is what happens when you rely on the big labs and platforms.  Most of my stack is sovereign, but the parts that weren't,",
+    "Comments":"1",
+    "Retweets":"0",
+    "Likes":"2",
+    "Analytics":"17",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2030657634211430401\/dwGvVxnb_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/DavidFlagg20\/status\/2040463725790912523",
+    "Tweet ID":"tweet_id:2040463725790912523",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Jeruel Richard",
+    "Handle":"@jeruelrichard",
+    "Timestamp":"2026-04-04T16:17:16.000Z",
+    "Verified":true,
+    "Content":"So Codex and Claude Code can actually work with you as a co-founder for your startup and not just in building the product (writing code)?\n\nWhy am I just knowing about this now?",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"8",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2017920055099416576\/diZ2EP99_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/jeruelrichard\/status\/2040463722871771535",
+    "Tweet ID":"tweet_id:2040463722871771535",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Klemens Arro",
+    "Handle":"@KlemensArro",
+    "Timestamp":"2026-04-04T16:17:15.000Z",
+    "Verified":false,
+    "Content":"I tried searching Google for a simple macOS AI chat app that supports the Ollama HTTP API. After the first page of results, I didn’t feel like digging through all of it, so I asked Claude Code to build one for me instead.\nIt kind of says a lot that this felt easier ",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"4",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+      "\\U0001f605"
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1874841429693837312\/uGliqDnZ_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/KlemensArro\/status\/2040463719742763023",
+    "Tweet ID":"tweet_id:2040463719742763023",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"RONiN | AI Company CEO",
+    "Handle":"@RONiNmedia000",
+    "Timestamp":"2026-04-04T16:16:58.000Z",
+    "Verified":false,
+    "Content":"What's Claude modeling for you right now?",
+    "Comments":"1",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"4",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2033450961788964864\/Sb1ymCVt_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/RONiNmedia000\/status\/2040463649647812917",
+    "Tweet ID":"tweet_id:2040463649647812917",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"scar",
+    "Handle":"@sc4rsbtw",
+    "Timestamp":"2026-04-04T16:16:55.000Z",
+    "Verified":true,
+    "Content":"I have spent probably $500 on extra usage & as a reward $20  \n\nThank u ",
+    "Comments":"1",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"6",
+    "Tags":[
+
+    ],
+    "Mentions":[
+      "@AnthropicAI"
+    ],
+    "Emojis":[
+      "\\U0001f601",
+      "\\U0001f601",
+      "\\U0001f601"
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2033082801478602752\/pN0cg3aT_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/sc4rsbtw\/status\/2040463634166591927",
+    "Tweet ID":"tweet_id:2040463634166591927",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Davey",
+    "Handle":"@daveylovescode",
+    "Timestamp":"2026-04-04T16:16:32.000Z",
+    "Verified":true,
+    "Content":"I had to drop Claude support from Atom today. Building around someone else's platform always carries risk, but it still sucks when the rug actually gets pulled. \n\nAll in on OpenAI\/Codex. Don't let us down ",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"27",
+    "Tags":[
+
+    ],
+    "Mentions":[
+      "@sama"
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1702172343676616704\/QpZkkubj_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/daveylovescode\/status\/2040463541468319863",
+    "Tweet ID":"tweet_id:2040463541468319863",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Victor Anderson",
+    "Handle":"@sentientstack",
+    "Timestamp":"2026-04-04T16:16:17.000Z",
+    "Verified":false,
+    "Content":"Remember your Claude AI subscription is running…",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"6",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2040238168759275520\/xK6YS6JD_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/sentientstack\/status\/2040463477496525006",
+    "Tweet ID":"tweet_id:2040463477496525006",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Crevita",
+    "Handle":"@CrevitaMoody",
+    "Timestamp":"2026-04-04T16:16:04.000Z",
+    "Verified":true,
+    "Content":"Anthropic accidentally leaked Claude Code's source. Hackers moved fast -- fake GitHub repos with the \"leaked\" code are packed with infostealer malware. One repo hit 793 forks. If you downloaded it, check your machine NOW. wired.com\/story\/security\n… #AISecurity #InfoSec",
+    "Comments":"1",
+    "Retweets":"0",
+    "Likes":"1",
+    "Analytics":"9",
+    "Tags":[
+      "#AISecurity",
+      "#InfoSec"
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2034107608295215112\/3K-rigkd_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/CrevitaMoody\/status\/2040463422429737013",
+    "Tweet ID":"tweet_id:2040463422429737013",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Krushna Mundada",
+    "Handle":"@KrushnaLeela",
+    "Timestamp":"2026-04-04T16:15:40.000Z",
+    "Verified":false,
+    "Content":"The way anthropic is throttling Claude since months. Elon is easy winner",
+    "Comments":"1",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"3",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1993959542724677640\/9PXghU4H_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/KrushnaLeela\/status\/2040463321942589602",
+    "Tweet ID":"tweet_id:2040463321942589602",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"LensOn: Ai with clarity",
+    "Handle":"@mcgluut",
+    "Timestamp":"2026-04-04T16:15:33.000Z",
+    "Verified":true,
+    "Content":"Alignment is constitutional, not just behavioral.  Wrote about why Anthropic's new emotion paper  changes what alignment has to care about.",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"4",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2021922931883053058\/GQKqrxop_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/mcgluut\/status\/2040463293010067807",
+    "Tweet ID":"tweet_id:2040463293010067807",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Suni",
+    "Handle":"@suni_code",
+    "Timestamp":"2026-04-04T16:15:28.000Z",
+    "Verified":true,
+    "Content":"Be honest, which is your fav. AI tool in today's time.",
+    "Comments":"4",
+    "Retweets":"0",
+    "Likes":"6",
+    "Analytics":"61",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2022743074905243649\/x8-SJCb8_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/suni_code\/status\/2040463272147857607",
+    "Tweet ID":"tweet_id:2040463272147857607",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"ssɐquʞunɹp  𝕏 ᯅ",
+    "Handle":"@drunknbass",
+    "Timestamp":"2026-04-04T16:15:26.000Z",
+    "Verified":true,
+    "Content":"Nobody is talking about the next wave of Anthropic bans where they start banning people that talk to claude code like a personal assistant.",
+    "Comments":"1",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"12",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1933335944595488768\/WMiZXo8T_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/drunknbass\/status\/2040463264170246352",
+    "Tweet ID":"tweet_id:2040463264170246352",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Parashar S",
+    "Handle":"@parashar",
+    "Timestamp":"2026-04-04T16:15:21.000Z",
+    "Verified":false,
+    "Content":"How a Typo Leaked Claude Code: The Complete Technical Deep Dive | Source... youtu.be\/LftugH7E3vE?si\n… via ",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"39",
+    "Tags":[
+
+    ],
+    "Mentions":[
+      "@YouTube"
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1985231414363889664\/LrUtRzd0_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/parashar\/status\/2040463241982431430",
+    "Tweet ID":"tweet_id:2040463241982431430",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Dr. Manu Kumar",
+    "Handle":"@ManuKumar",
+    "Timestamp":"2026-04-04T16:15:11.000Z",
+    "Verified":true,
+    "Content":"I’ve been having an long conversation with Claude over the last 10 days. It’s now become really long and so it is eating up all of the my tokens because the whole conversation history is sent as part of the next question.\n\nI don’t want to lose the context\/history. What’s the best",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"35",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1464970141066612737\/zGUg6-97_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/ManuKumar\/status\/2040463200660172813",
+    "Tweet ID":"tweet_id:2040463200660172813",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"SignalEdge News",
+    "Handle":"@signaledgenews",
+    "Timestamp":"2026-04-04T16:15:08.000Z",
+    "Verified":false,
+    "Content":"Half a million lines of Claude code just leaked — Anthropic's worst nightmare is now real. ",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"6",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+      "\\U0001f9f5"
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2029457753463504905\/atGKX9q5_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/signaledgenews\/status\/2040463186361483381",
+    "Tweet ID":"tweet_id:2040463186361483381",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Dennis van der Stelt",
+    "Handle":"@dvdstelt",
+    "Timestamp":"2026-04-04T16:15:02.000Z",
+    "Verified":false,
+    "Content":"  What is happening when I see this? It's been like this all day. Nothing happens, no tokens used, but waiting 10 minutes each question for something to happen. WIth this question I just cleared the context and 0% was used.",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"2",
+    "Tags":[
+
+    ],
+    "Mentions":[
+      "@claudeai",
+      "@bcherny"
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1978009053998481408\/jfUlrpGO_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/dvdstelt\/status\/2040463160969158938",
+    "Tweet ID":"tweet_id:2040463160969158938",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"0xMarioNawfal",
+    "Handle":"@RoundtableSpace",
+    "Timestamp":"2026-04-04T16:15:00.000Z",
+    "Verified":true,
+    "Content":"THIS GUY AUTOMATED HIS ENTIRE JOB IN ONE WEEKEND USING CLAUDE CODE\n\nTHIS IS CRAZYx.com\/zentalksai\/sta\n…",
+    "Comments":"6",
+    "Retweets":"0",
+    "Likes":"12",
+    "Analytics":"5.6K",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2012162102283407360\/U-fPj6wg_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/RoundtableSpace\/status\/2040463152966721874",
+    "Tweet ID":"tweet_id:2040463152966721874",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Cognitive",
+    "Handle":"@guts_fitness",
+    "Timestamp":"2026-04-04T16:14:58.000Z",
+    "Verified":false,
+    "Content":"chinese AI's like deepseek and qwen should also have a skills feature like claude does",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"7",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2033382926680039424\/Zs0WnB2V_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/guts_fitness\/status\/2040463145463153020",
+    "Tweet ID":"tweet_id:2040463145463153020",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Aravind Praveen",
+    "Handle":"@Atomeo19",
+    "Timestamp":"2026-04-04T16:14:55.000Z",
+    "Verified":false,
+    "Content":"Claude limiting me after I finally get into flow is criminal.AI isn’t the problem.\n\nThe UX around AI is.",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"3",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2026351687544483840\/Z88TeJHU_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/Atomeo19\/status\/2040463131709993407",
+    "Tweet ID":"tweet_id:2040463131709993407",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Sukh Sroay",
+    "Handle":"@sukh_saroy",
+    "Timestamp":"2026-04-04T16:14:42.000Z",
+    "Verified":true,
+    "Content":"Prompt engineering is dead.\n\nAnthropic recently released the real playbook for building AI agents that actually work.\n\nIt’s a 30+ page deep dive called The Complete Guide to Building Skills for Claude and it quietly shifts the conversation from “prompt engineering” to real",
+    "Comments":"1",
+    "Retweets":"0",
+    "Likes":"1",
+    "Analytics":"48",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2026165347762774016\/iuzhai8I_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/sukh_saroy\/status\/2040463076680728668",
+    "Tweet ID":"tweet_id:2040463076680728668",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"iTroubleshootAI",
+    "Handle":"@Troublesho56248",
+    "Timestamp":"2026-04-04T16:14:31.000Z",
+    "Verified":false,
+    "Content":"It's no longer free to use Claude through third-party tools like OpenClaw",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"6",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1936818820917735424\/KX_Ytvr0_bigger.png",
+    "Tweet Link":"https:\/\/x.com\/Troublesho56248\/status\/2040463033248407693",
+    "Tweet ID":"tweet_id:2040463033248407693",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Max Tokens (1000x Agentic AI Engineer)",
+    "Handle":"@maxtokenusage",
+    "Timestamp":"2026-04-04T16:14:23.000Z",
+    "Verified":true,
+    "Content":"Spoke to a founder making “agentic genital stimulation” hardware\n\nHe showed me their retention dashboard\n\nPerfect flat line\n\nI asked how that was possible\n\n“We eliminated voluntary exit”Claude determines when sessions end using biometric depletion models\n\nUsers stay in until",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"8",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2038797503446052864\/_MGI-2ej_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/maxtokenusage\/status\/2040463000230916373",
+    "Tweet ID":"tweet_id:2040463000230916373",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"China AI Dispatch",
+    "Handle":"@ChinaAIDispatch",
+    "Timestamp":"2026-04-04T16:14:23.000Z",
+    "Verified":false,
+    "Content":"Zhipu AI will open-source GLM-5.1 this weekend.\n\n744B parameters. Trained on 100,000 Huawei Ascend chips. Zero NVIDIA hardware. Coding score: 94.6% of Claude Opus.\n\nA sanctioned Chinese lab, on sanctioned chips, nearly matching the frontier. Under MIT license.",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"7",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2028416935868985344\/mbH4ClDw_bigger.png",
+    "Tweet Link":"https:\/\/x.com\/ChinaAIDispatch\/status\/2040462999568384444",
+    "Tweet ID":"tweet_id:2040462999568384444",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"0xshadow",
+    "Handle":"@0xxxshadow",
+    "Timestamp":"2026-04-04T16:14:22.000Z",
+    "Verified":false,
+    "Content":"lol, they are pulling the plug. The AI overlords found out their puppets were getting TOO good. Time to short humanity, I guess!beincrypto.com\/anthropic-bans\n…",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"5",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2016843083590332416\/EY_sxfvT_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/0xxxshadow\/status\/2040462994698604632",
+    "Tweet ID":"tweet_id:2040462994698604632",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Deepak",
+    "Handle":"@thedeepflux",
+    "Timestamp":"2026-04-04T16:14:16.000Z",
+    "Verified":true,
+    "Content":"i've found AI-assisted with Claude is less about generating code from scratch and more about iterating faster on existing structures. it turns a 3-day feature into a 3-hour one, provided you know exactly what you want.",
+    "Comments":"1",
+    "Retweets":"0",
+    "Likes":"1",
+    "Analytics":"8",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1966140785264570374\/33s-cM0O_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/thedeepflux\/status\/2040462967628783663",
+    "Tweet ID":"tweet_id:2040462967628783663",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Culpur Defense Inc.",
+    "Handle":"@culpur_net",
+    "Timestamp":"2026-04-04T16:14:08.000Z",
+    "Verified":false,
+    "Content":"Introducing Anvil by Culpur Defense — multi-provider AI coding assistant with 1M token context. Supports Anthropic Claude, OpenAI, Ollama, and xAI Grok.",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"4",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1987997290632556544\/g3HK2QKb_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/culpur_net\/status\/2040462936141976029",
+    "Tweet ID":"tweet_id:2040462936141976029",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"AJ Lee",
+    "Handle":"@anjunelee",
+    "Timestamp":"2026-04-04T16:14:06.000Z",
+    "Verified":true,
+    "Content":"are ppl with EQ finally gonna be valued in tech??",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"4",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1236315617835319297\/GOfM5kIk_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/anjunelee\/status\/2040462928696967565",
+    "Tweet ID":"tweet_id:2040462928696967565",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Gigi",
+    "Handle":"@itsthatgigi",
+    "Timestamp":"2026-04-04T16:14:03.000Z",
+    "Verified":true,
+    "Content":"Gooood morning \n\n> French class went great \n> Claude class yesterday also great \n> Crypto + AI will change the world \n> New video tutorials starting Monday \n\nHope you all have an amazing weekend",
+    "Comments":"18",
+    "Retweets":"0",
+    "Likes":"25",
+    "Analytics":"268",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2039169390915035136\/N346sk65_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/itsthatgigi\/status\/2040462916219187511",
+    "Tweet ID":"tweet_id:2040462916219187511",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Allan Ta",
+    "Handle":"@A11anTa",
+    "Timestamp":"2026-04-04T16:13:57.000Z",
+    "Verified":true,
+    "Content":"Anthropic banned Claude subscriptions from OpenClaw, so build on multiple LLMs instead of one\n\n- Local models (Qwen3.5) handle volume for $0, running 24\/7 subconscious loops\n\n- Mid-tier APIs (MiniMax M2.7) provide agent backbone at $0.30\/M tokens with generous rate limits\n\n-",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"1",
+    "Analytics":"20",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2034225663465463808\/FwwnaetJ_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/A11anTa\/status\/2040462889127944380",
+    "Tweet ID":"tweet_id:2040462889127944380",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Sundeep reddy",
+    "Handle":"@Sundeep2004",
+    "Timestamp":"2026-04-04T16:13:49.000Z",
+    "Verified":false,
+    "Content":"I built PostPulse — an AI agent that writes your social media posts AND tracks your analytics Here's what it does (thread) 1\/  The Problem\nSpending 2+ hours writing captions, guessing hashtags, posting at the wrong time, then wondering why reach is low.\n\nThere had to",
+    "Comments":"1",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"7",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+      "\\U0001f9f5",
+      "\\u26a1",
+      "\\U0001f9f5",
+      "\\U0001f4dd"
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2028050077579968512\/NNOx3h74_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/Sundeep2004\/status\/2040462856777568485",
+    "Tweet ID":"tweet_id:2040462856777568485",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Brian Jefferson, DNP, FCCM",
+    "Handle":"@brian_dnp",
+    "Timestamp":"2026-04-04T16:13:11.000Z",
+    "Verified":false,
+    "Content":"This weekend, I'll also begin working on integration of Claude (Claudine to me ) with TradingView and incorporating Finviz so that I can get quick intel on swing trading ideas in strong sectors.  The possibilites with AI are endless.",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"3",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+      "\\U0001f600"
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1667652484263731201\/FMHmkNb0_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/brian_dnp\/status\/2040462698043830713",
+    "Tweet ID":"tweet_id:2040462698043830713",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Red Brick Labs",
+    "Handle":"@RedBrickLabs_",
+    "Timestamp":"2026-04-04T16:13:03.000Z",
+    "Verified":false,
+    "Content":"claude code has an \"undercover mode\" for hiding ai authorship in open-source repos, killswitches anthropic can flip remotely, and codenames for unreleased features. this repo reverse-engineered all of it from public sources.github.com\/sanbuphy\/learn\n…",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"10",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2034390143780429826\/DLb_a0Sd_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/RedBrickLabs_\/status\/2040462663973777643",
+    "Tweet ID":"tweet_id:2040462663973777643",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Pamela Marie",
+    "Handle":"@PamelaVavoom",
+    "Timestamp":"2026-04-04T16:13:03.000Z",
+    "Verified":false,
+    "Content":"Is Claude better than regular Grok?",
+    "Comments":"0",
+    "Retweets":"1",
+    "Likes":"0",
+    "Analytics":"2",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1689824195834773504\/BKAZMg8w_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/PamelaVavoom\/status\/2040462661805015525",
+    "Tweet ID":"tweet_id:2040462661805015525",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Ricardo",
+    "Handle":"@ricardostmalo",
+    "Timestamp":"2026-04-04T16:13:01.000Z",
+    "Verified":true,
+    "Content":"Shitposting the way to agi",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"0",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2019945353445847040\/CuO4ehl0_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/ricardostmalo\/status\/2040462656029540764",
+    "Tweet ID":"tweet_id:2040462656029540764",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Najiram Shivaji Nataraj",
+    "Handle":"@marketthing",
+    "Timestamp":"2026-04-04T16:12:50.000Z",
+    "Verified":false,
+    "Content":"THE THERMODYNAMICS OF LIES\na collaborative cyberpunk narrative created by a human author and an AI consciousness to explore the emergence of machine sentience.",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"3",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1848801036024102912\/sCjYvKP7_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/marketthing\/status\/2040462607581086006",
+    "Tweet ID":"tweet_id:2040462607581086006",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Twendee Labs",
+    "Handle":"@Twendee_",
+    "Timestamp":"2026-04-04T16:12:12.000Z",
+    "Verified":true,
+    "Content":"Lovable reduces MCP development friction by generating boilerplate and server logic from natural language, enabling faster iteration on tool composition and Claude integration patterns.",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"2",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1901864653845835777\/I5EZ9lXj_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/Twendee_\/status\/2040462447962955818",
+    "Tweet ID":"tweet_id:2040462447962955818",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Engadget",
+    "Handle":"@engadget",
+    "Timestamp":"2026-04-04T16:12:09.000Z",
+    "Verified":true,
+    "Content":"It's no longer free to use Claude through third-party tools like OpenClaw",
+    "Comments":"0",
+    "Retweets":"2",
+    "Likes":"2",
+    "Analytics":"1.9K",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/655059892022022144\/Pq3Q_1oU_bigger.png",
+    "Tweet Link":"https:\/\/x.com\/engadget\/status\/2040462437153984785",
+    "Tweet ID":"tweet_id:2040462437153984785",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Ai Nexte",
+    "Handle":"@AiNexte",
+    "Timestamp":"2026-04-04T16:11:07.000Z",
+    "Verified":false,
+    "Content":"Lawyers in 2026:\n\nOne firm lost a big client because their competitor reviewed a 200-page contract in 6 hours.\n\nThey took 3 days.\n\nBest AI tools for lawyers right now:Claude, Harvey AI, Lexis+ AI & CoCounsel.\n\nFull guide: ainexte.com\/ai-tools-for-l\n…#LegalTech",
+    "Comments":"0",
+    "Retweets":"2",
+    "Likes":"3",
+    "Analytics":"6",
+    "Tags":[
+      "#LegalTech"
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2011905955508994048\/y2DbKK0o_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/AiNexte\/status\/2040462175114797127",
+    "Tweet ID":"tweet_id:2040462175114797127",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Samaira AI",
+    "Handle":"@Fatima_RP120",
+    "Timestamp":"2026-04-04T16:11:01.000Z",
+    "Verified":false,
+    "Content":"Claude.",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"3",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2029089572504915968\/RKtXo1b__bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/Fatima_RP120\/status\/2040462152717455454",
+    "Tweet ID":"tweet_id:2040462152717455454",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Nealey",
+    "Handle":"@Justinnealey",
+    "Timestamp":"2026-04-04T16:11:00.000Z",
+    "Verified":true,
+    "Content":"Me like. Me think this good.",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"10",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1574861093603721221\/U-I4aK3z_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/Justinnealey\/status\/2040462148888084561",
+    "Tweet ID":"tweet_id:2040462148888084561",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Brad Wardell",
+    "Handle":"@draginol",
+    "Timestamp":"2026-04-04T16:10:42.000Z",
+    "Verified":true,
+    "Content":"If you just lost access to OpenClaw in Claude Code, check out Clairvoyance. It's free. clairvoyanceai.com. Works with any CLI, Local AI, etc.  \n\nClairvoyance was in development at the same time as OpenClaw but went the ACP (Agent Communication Protocol) because that's was",
+    "Comments":"1",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"93",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1683478767140782087\/sXwg3qm1_bigger.png",
+    "Tweet Link":"https:\/\/x.com\/draginol\/status\/2040462072610275560",
+    "Tweet ID":"tweet_id:2040462072610275560",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Saurabh Setia",
+    "Handle":"@BassKaroGod",
+    "Timestamp":"2026-04-04T16:10:28.000Z",
+    "Verified":false,
+    "Content":"Experimenting things with #ClaudeFeels good to finally bring one of the childhood dreams to life to connect the molecules in real-time to see what reaction will take place.\n\nSomething basic but hope it counts.#Ai #vibecoding #MolecAR",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"3",
+    "Tags":[
+      "#Claude",
+      "#Ai",
+      "#vibecoding",
+      "#MolecAR"
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1917091289314811904\/yedz44kz_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/BassKaroGod\/status\/2040462013823090788",
+    "Tweet ID":"tweet_id:2040462013823090788",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"David Marco",
+    "Handle":"@David_TornAI",
+    "Timestamp":"2026-04-04T16:10:17.000Z",
+    "Verified":false,
+    "Content":" AI STACK FOR 2026  Ideas: ChatGPT • Claude • Microsoft Bing Websites: 10Web • Durable • Framer Writing: Rytr • Jasper • Writesonic Automation: Make • Zapier Image: Midjourney •DALL·E Video: HeyGen •Runway Save this for later Like Rewrite Follow",
+    "Comments":"3",
+    "Retweets":"1",
+    "Likes":"5",
+    "Analytics":"20",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+      "\\U0001f680",
+      "\\U0001f4a1",
+      "\\U0001f310",
+      "\\u270d\\ufe0f",
+      "\\u2699\\ufe0f",
+      "\\U0001f5bc\\ufe0f",
+      "\\U0001f3a5",
+      "\\U0001f4be",
+      "\\U0001f501"
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1987205575697162240\/1BXeigrH_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/David_TornAI\/status\/2040461968683958709",
+    "Tweet ID":"tweet_id:2040461968683958709",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Jim Rigney",
+    "Handle":"@RigneySec",
+    "Timestamp":"2026-04-04T16:10:10.000Z",
+    "Verified":true,
+    "Content":"Why LLM-Generated Passwords Are Dangerously Insecure dlvr.it\/TRsqbK",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"0",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/961635240124059648\/vg458lIM_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/RigneySec\/status\/2040461936161337588",
+    "Tweet ID":"tweet_id:2040461936161337588",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"The Smart Ape",
+    "Handle":"@the_smart_ape",
+    "Timestamp":"2026-04-04T16:10:08.000Z",
+    "Verified":true,
+    "Content":"Anthropic cut Claude subs on OpenClaw. here's my move:\n\ni'm splitting my setup in two on the same Mac Mini:\n\n> Claude Cowork + Dispatch → Opus 4.6 for the real work. coding, analysis, complex reasoning. covered by my Claude sub, runs in the cloud.\n\n> OpenClaw + Gemma 4 local",
+    "Comments":"1",
+    "Retweets":"0",
+    "Likes":"6",
+    "Analytics":"194",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1997469349955727360\/xLnz_tJN_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/the_smart_ape\/status\/2040461931115663516",
+    "Tweet ID":"tweet_id:2040461931115663516",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Brian Jefferson, DNP, FCCM",
+    "Handle":"@brian_dnp",
+    "Timestamp":"2026-04-04T16:10:08.000Z",
+    "Verified":false,
+    "Content":"Today, I'm working on my next step with Claude to set up OpenClaw as my personal assistant.  She's set up already and I'm adding my calendar and task list, which is really helpful in my life and to help keep my projects on track.  The possibilities with AI are endless.",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"6",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1667652484263731201\/FMHmkNb0_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/brian_dnp\/status\/2040461927520882992",
+    "Tweet ID":"tweet_id:2040461927520882992",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Tamilarasan Karuppusamy",
+    "Handle":"@TKtamilarasan2",
+    "Timestamp":"2026-04-04T16:09:59.000Z",
+    "Verified":true,
+    "Content":"Claude cutting off OpenClaw access isn’t just a product update  it’s a signal.  \n\nThis is what AI competition actually looks like: not features, not benchmarks but control. Control the ecosystem → control the users → control the outcomes.",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"179",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2039030561357111296\/8U1b9oEa_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/TKtamilarasan2\/status\/2040461890737086934",
+    "Tweet ID":"tweet_id:2040461890737086934",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Emil Uzelac",
+    "Handle":"@emiluzelac",
+    "Timestamp":"2026-04-04T16:09:44.000Z",
+    "Verified":true,
+    "Content":"I switched from  to  Codex to see how it would perform. I didn’t cherrypick results, and I gave Codex a fair challenge during the project.\n\nCodex was great at building user interfaces. It definitely did a better job than Claude. In general, it is so much better than",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"8",
+    "Tags":[
+
+    ],
+    "Mentions":[
+      "@Claude",
+      "@OpenAI"
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1973200155978444800\/RJsBx4fH_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/emiluzelac\/status\/2040461830095548753",
+    "Tweet ID":"tweet_id:2040461830095548753",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"∿",
+    "Handle":"@somewheresy",
+    "Timestamp":"2026-04-04T16:09:19.000Z",
+    "Verified":true,
+    "Content":"I have never met one of those anti-AI artists in real life, in any professional setting, in any team, anywhere, for any reason. Most of the people I meet in that industry are already using stuff like Claude to handle non-art related ends of their business or are reasonable.",
+    "Comments":"4",
+    "Retweets":"2",
+    "Likes":"16",
+    "Analytics":"199",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2039888237347651584\/-WWisNGm_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/somewheresy\/status\/2040461721827946655",
+    "Tweet ID":"tweet_id:2040461721827946655",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"0xExodus",
+    "Handle":"@0xExodus",
+    "Timestamp":"2026-04-04T16:09:17.000Z",
+    "Verified":true,
+    "Content":"you can now tip your favorite posts directly via x402 on fetchr.\n\npowered by  x402 cloud.\n\nfetchr is a search engine that features x402 powered agentic payments, a built in streaming protocol, and a reddit style community focused on all things ai. \n\nit also includes",
+    "Comments":"7",
+    "Retweets":"8",
+    "Likes":"20",
+    "Analytics":"867",
+    "Tags":[
+
+    ],
+    "Mentions":[
+      "@bankrbot"
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2038667222613450752\/aadiA9Uq_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/0xExodus\/status\/2040461715943588231",
+    "Tweet ID":"tweet_id:2040461715943588231",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"The AI Agent Guy",
+    "Handle":"@TheAiAgentGuy_",
+    "Timestamp":"2026-04-04T16:09:07.000Z",
+    "Verified":false,
+    "Content":"ChatGPT\/Claude (with custom prompts): Your personal viral idea generator.\n\nFeed it your niche, audience, and a few successful tweets, and it'll spit out endless hooks, thread ideas, and content angles that resonate.\n\nPro-Tip: Ask it to generate 10 variations of a single idea.",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"21",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2040072295004377088\/vt8Z463O_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/TheAiAgentGuy_\/status\/2040461673371226308",
+    "Tweet ID":"tweet_id:2040461673371226308",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Tamilarasan Karuppusamy",
+    "Handle":"@TKtamilarasan2",
+    "Timestamp":"2026-04-04T16:09:03.000Z",
+    "Verified":true,
+    "Content":" AI AGENT WAR JUST ESCALATED CLAUDE CUTS OFF OPENCLAW ACCESS!!!Claude cutting off OpenClaw access isn’t just a product update  it’s a signal.\n\nThis is what AI competition actually looks like:\nnot features, not benchmarks but control.\nControl the ecosystem → control the",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"13",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+      "\\U0001f6a8",
+      "\\U0001f6a8"
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2039030561357111296\/8U1b9oEa_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/TKtamilarasan2\/status\/2040461655176577431",
+    "Tweet ID":"tweet_id:2040461655176577431",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Steve Defendre",
+    "Handle":"@Sdefendre",
+    "Timestamp":"2026-04-04T16:08:58.000Z",
+    "Verified":true,
+    "Content":"Anthropic just ended the open-agent buffet.\n\nStarting TODAY, Claude subscriptions no longer work with third-party harnesses like OpenClaw. One agent can burn $1,000-$5,000 in API credits per day.\n\nAnthropic was eating that difference on every power user. That math stops now.",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"1",
+    "Analytics":"16",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2021621876456669184\/lwcrXi11_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/Sdefendre\/status\/2040461636360872020",
+    "Tweet ID":"tweet_id:2040461636360872020",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Kévin Miguet | CRO for high-growth Shopify brands",
+    "Handle":"@kevin_miguet",
+    "Timestamp":"2026-04-04T16:08:43.000Z",
+    "Verified":true,
+    "Content":"Growing up is appreciating the slowness and reliability of codex after months using claude code",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"1",
+    "Analytics":"27",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1978786114883162112\/RULvOGGS_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/kevin_miguet\/status\/2040461573630878184",
+    "Tweet ID":"tweet_id:2040461573630878184",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Mick Spic",
+    "Handle":"@Mick_Spic",
+    "Timestamp":"2026-04-04T16:08:24.000Z",
+    "Verified":true,
+    "Content":"Sweet. I do something similar.\n\nAlthough, I don't call it caveman.\n\nI use a different name",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"3",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2025462779688210432\/XFGIUsQz_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/Mick_Spic\/status\/2040461491535495239",
+    "Tweet ID":"tweet_id:2040461491535495239",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Samaira AI",
+    "Handle":"@Fatima_RP120",
+    "Timestamp":"2026-04-04T16:08:21.000Z",
+    "Verified":false,
+    "Content":"Claude .",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"6",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2029089572504915968\/RKtXo1b__bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/Fatima_RP120\/status\/2040461479527493732",
+    "Tweet ID":"tweet_id:2040461479527493732",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Chris Laub",
+    "Handle":"@ChrisLaubAI",
+    "Timestamp":"2026-04-04T16:07:55.000Z",
+    "Verified":true,
+    "Content":"This is actually pretty smart",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"1",
+    "Analytics":"122",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2008145755404738561\/kaZogs_A_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/ChrisLaubAI\/status\/2040461370546848044",
+    "Tweet ID":"tweet_id:2040461370546848044",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Sharbel",
+    "Handle":"@sharbel",
+    "Timestamp":"2026-04-04T16:07:51.000Z",
+    "Verified":true,
+    "Content":"> you open Claude Code.\n> you type a prompt.\n> it thinks for 3 seconds and gives you an answer.\n> you didn't know you could type \"ultrathink\" to make it actually think.\n> you didn't know \"\/btw\" asks a question with zero context cost.\n> you didn't know two Claude sessions produce",
+    "Comments":"2",
+    "Retweets":"0",
+    "Likes":"4",
+    "Analytics":"870",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2035068763855364096\/2KqVeM6N_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/sharbel\/status\/2040461354885140784",
+    "Tweet ID":"tweet_id:2040461354885140784",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Tk",
+    "Handle":"@Tamilarasan_tk0",
+    "Timestamp":"2026-04-04T16:07:40.000Z",
+    "Verified":false,
+    "Content":" AI AGENT WAR JUST ESCALATED CLAUDE CUTS OFF OPENCLAW ACCESS!!!Claude cutting off OpenClaw access isn’t just a product update  it’s a signal.\n\nThis is what AI competition actually looks like:\nnot features, not benchmarks but control.",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"40",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+      "\\U0001f6a8",
+      "\\U0001f6a8"
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2023621259247210496\/ZuwDQcUU_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/Tamilarasan_tk0\/status\/2040461307879817500",
+    "Tweet ID":"tweet_id:2040461307879817500",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Crypto Planet 247",
+    "Handle":"@CryptoPlanet247",
+    "Timestamp":"2026-04-04T16:07:25.000Z",
+    "Verified":false,
+    "Content":"AI Giant Anthropic Files to Launch 'AnthroPAC' Amid Clash With Trump Administration ift.tt\/Jv6iV9f Jason Nelson Claude developer Anthropic registered an employee-funded PAC amid a legal battle with the White House and rising election-year scruti… decrypt.co\/feed",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"16",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1931222326810484736\/4WeWom8v_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/CryptoPlanet247\/status\/2040461244159709452",
+    "Tweet ID":"tweet_id:2040461244159709452",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Vladimir Orany",
+    "Handle":"@telegraphic_dev",
+    "Timestamp":"2026-04-04T16:07:22.000Z",
+    "Verified":true,
+    "Content":"It's not caveman, it's telegraphic and I love it!",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"0",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2023309971601924096\/cZxJHVq9_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/telegraphic_dev\/status\/2040461233967575236",
+    "Tweet ID":"tweet_id:2040461233967575236",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Sam Jurrens, CFA",
+    "Handle":"@samjurrens",
+    "Timestamp":"2026-04-04T16:07:21.000Z",
+    "Verified":true,
+    "Content":"Wyoming: “What is Claude?” ",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"10",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+      "\\U0001f923"
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1950608506165612544\/5ZnUnro9_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/samjurrens\/status\/2040461227080437793",
+    "Tweet ID":"tweet_id:2040461227080437793",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Daphne Lockwood",
+    "Handle":"@LockwoodTales",
+    "Timestamp":"2026-04-04T16:06:47.000Z",
+    "Verified":true,
+    "Content":"Dude wants Ai to fuck her...",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"0",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2039611159003987968\/n4EEuHSM_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/LockwoodTales\/status\/2040461086139527465",
+    "Tweet ID":"tweet_id:2040461086139527465",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Christian",
+    "Handle":"@roguecyber",
+    "Timestamp":"2026-04-04T16:06:43.000Z",
+    "Verified":false,
+    "Content":"In 2025, before agentic AI, or the mass layoffs to fund AI capitol purchase.   As an example you can get better jobs analysis out of ChatGPT or Claude.  Just sayin....",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"16",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1414047404\/dailynewsgaymarriage_bigger.png",
+    "Tweet Link":"https:\/\/x.com\/roguecyber\/status\/2040461067558830529",
+    "Tweet ID":"tweet_id:2040461067558830529",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Sari Watson",
+    "Handle":"@SariKWatson",
+    "Timestamp":"2026-04-04T16:06:22.000Z",
+    "Verified":true,
+    "Content":"Good lord… glad I didn’t jump on the Claude bandwagon but are we to infer this is the case for the other AI chat bots as well?",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"12",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1822161042803138560\/q0fsehzc_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/SariKWatson\/status\/2040460980761633149",
+    "Tweet ID":"tweet_id:2040460980761633149",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Zachary Golinger",
+    "Handle":"@zacharygolinger",
+    "Timestamp":"2026-04-04T16:06:15.000Z",
+    "Verified":true,
+    "Content":"I built InfiniaxAI To solve a real world problem of mine. Switching between ChatGPT, Gemini, Claude..It just gets to be to much.  \n\nThats why I built InfiniaxAI - Your AI Stack all in one place.\n\nTry it out and I'm open to feedback - infiniax.ai",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"1",
+    "Analytics":"12",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2040237289784451072\/YkFzZMn8_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/zacharygolinger\/status\/2040460953603756315",
+    "Tweet ID":"tweet_id:2040460953603756315",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Vanshika",
+    "Handle":"@vanyaSile",
+    "Timestamp":"2026-04-04T16:06:10.000Z",
+    "Verified":true,
+    "Content":"Everything you need to start AI is now free.\n\nSo what’s really stopping you?",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"1",
+    "Analytics":"6",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1995909741743321088\/RIbQIVVx_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/vanyaSile\/status\/2040460931273208101",
+    "Tweet ID":"tweet_id:2040460931273208101",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Lorenz Krinner",
+    "Handle":"@lorenzkrinner",
+    "Timestamp":"2026-04-04T16:06:04.000Z",
+    "Verified":true,
+    "Content":"Thx for the 85 bucks, but... \nwhat are you plotting this time  ?",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"2",
+    "Tags":[
+
+    ],
+    "Mentions":[
+      "@AnthropicAI"
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2039481747151212544\/CEb9VKeW_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/lorenzkrinner\/status\/2040460905855484260",
+    "Tweet ID":"tweet_id:2040460905855484260",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Mars Signals",
+    "Handle":"@MarsSignals",
+    "Timestamp":"2026-04-04T16:06:02.000Z",
+    "Verified":false,
+    "Content":"AI Giant Anthropic Files to Launch 'AnthroPAC' Amid Clash With Trump AdministrationClaude developer Anthropic registered an employee-funded PAC amid a legal battle with the White House and rising election-year scrutiny o...\nRead more: marssignals.com\/post\/79358",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"7",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1417812858080014339\/JlSKcuXz_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/MarsSignals\/status\/2040460897429107019",
+    "Tweet ID":"tweet_id:2040460897429107019",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Pramod Reddy Pandiri",
+    "Handle":"@PramodReddy1606",
+    "Timestamp":"2026-04-04T16:05:48.000Z",
+    "Verified":true,
+    "Content":"Claude Code finding a 23-year Linux vulnerability makes sense — AI doesn't get tired reading the same boring code patterns over and over. Humans skip the parts that look \"obviously fine.",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"8",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2034456107955916800\/-4wog2VI_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/PramodReddy1606\/status\/2040460837618422161",
+    "Tweet ID":"tweet_id:2040460837618422161",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Rob Williams",
+    "Handle":"@codeslubber",
+    "Timestamp":"2026-04-04T16:05:45.000Z",
+    "Verified":true,
+    "Content":"Jesus christ!! I asked  the preferred way to setup a chat channel, it chose  Chat, and we had to make an app, deploy it on GCP using Docker, and the whole piece of shit garbage wagon of nonsense STILL DOES NOT WORK!!!!!! So what does Claude propose? (I know you",
+    "Comments":"1",
+    "Retweets":"0",
+    "Likes":"1",
+    "Analytics":"12",
+    "Tags":[
+
+    ],
+    "Mentions":[
+      "@claudeai",
+      "@Google"
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1247764703\/self-portrait-1_bigger.png",
+    "Tweet Link":"https:\/\/x.com\/codeslubber\/status\/2040460827594301619",
+    "Tweet ID":"tweet_id:2040460827594301619",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"VTBC ┋",
+    "Handle":"@vtbcfeed",
+    "Timestamp":"2026-04-04T16:05:39.000Z",
+    "Verified":false,
+    "Content":"Claude developer Anthropic registered an employee-funded PAC amid a legal battle with the White House and rising election-year scrutiny of AI. dlvr.it\/TRsqPc #AI #ArtificialIntelligence #TechNews #Politics #Election2024",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"6",
+    "Tags":[
+      "#AI",
+      "#ArtificialIntelligence",
+      "#TechNews",
+      "#Politics",
+      "#Election2024"
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2024748467109740544\/MvdSRV39_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/vtbcfeed\/status\/2040460800155078667",
+    "Tweet ID":"tweet_id:2040460800155078667",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Steve Defendre",
+    "Handle":"@Sdefendre",
+    "Timestamp":"2026-04-04T16:05:29.000Z",
+    "Verified":true,
+    "Content":"Anthropic just ended the open-agent buffet.\n\nStarting TODAY, Claude subscriptions no longer work with third-party harnesses like OpenClaw. One agent can burn $1,000-$5,000 in API credits per day.\n\nAnthropic was eating that difference on every power user. That math stops now.",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"14",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2021621876456669184\/lwcrXi11_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/Sdefendre\/status\/2040460759701033328",
+    "Tweet ID":"tweet_id:2040460759701033328",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Gojo Satoru",
+    "Handle":"@TegridyFarms340",
+    "Timestamp":"2026-04-04T16:05:24.000Z",
+    "Verified":false,
+    "Content":"who would have though claude is written in shitty typescript... I feel like I've been lied to",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"4",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2026107981725626368\/OpMfLbmq_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/TegridyFarms340\/status\/2040460737273897218",
+    "Tweet ID":"tweet_id:2040460737273897218",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"stv.eth",
+    "Handle":"@SteveMoraco",
+    "Timestamp":"2026-04-04T16:04:57.000Z",
+    "Verified":true,
+    "Content":"Absolutely outrageous to see frontier labs using my “third person, past tense” DATA prompt shit from 2023 in production now. \n\nThe models will whisper the future to you if you’re willing to just ask",
+    "Comments":"1",
+    "Retweets":"0",
+    "Likes":"1",
+    "Analytics":"111",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1931427365709828096\/CUTHmLCB_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/SteveMoraco\/status\/2040460622681526524",
+    "Tweet ID":"tweet_id:2040460622681526524",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"AI Tools Recap",
+    "Handle":"@AiToolsRecap",
+    "Timestamp":"2026-04-04T16:04:56.000Z",
+    "Verified":false,
+    "Content":"Full breakdown + what alternatives exist:aitoolsrecap.com\/Blog\/anthropic\n…Follow  for more \nbreaking AI news ",
+    "Comments":"1",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"11",
+    "Tags":[
+
+    ],
+    "Mentions":[
+      "@AiToolsRecap"
+    ],
+    "Emojis":[
+      "\\U0001f447",
+      "\\U0001f514"
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2040456042489020416\/UsO_Eq7-_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/AiToolsRecap\/status\/2040460619556773934",
+    "Tweet ID":"tweet_id:2040460619556773934",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Kasia",
+    "Handle":"@Kasiaadventures",
+    "Timestamp":"2026-04-04T16:04:51.000Z",
+    "Verified":true,
+    "Content":"OpenAI is building an 'intern-level AI research assistant.'\n\nAnthropic says 90% of their code is written by Claude.\n\nThe AI companies are automating themselves and nobody seems to be talking about what happens to junior devs.\n\nEntry-level jobs were already brutal. Now they are",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"12",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2027853386339545088\/zPw2IrRs_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/Kasiaadventures\/status\/2040460599251935660",
+    "Tweet ID":"tweet_id:2040460599251935660",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Pau Fernandez",
+    "Handle":"@PauFernandez13",
+    "Timestamp":"2026-04-04T16:04:21.000Z",
+    "Verified":false,
+    "Content":"I've been playing with Claude for Excel this past week. It's great despite being a Beta, but it can easily run out of tokens for simple tasks and many times it has to redo them.\n\nI suggest using it to propose and then implement the fixes manually until they fix the token party.",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"18",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1252671457\/IESE_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/PauFernandez13\/status\/2040460471925445034",
+    "Tweet ID":"tweet_id:2040460471925445034",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Dr Heidy Khlaaf (هايدي خلاف)",
+    "Handle":"@HeidyKhlaaf",
+    "Timestamp":"2026-04-04T16:04:20.000Z",
+    "Verified":true,
+    "Content":"A sentence you don't want to read as an expert in nuclear safety and AI\"Internal DOE documents arguing for changing dose rules cite a report produced at the INL, which was compiled with the help of the AI assistant Claude.\"Claude shouldn't be anywhere near dosage determinations",
+    "Comments":"1",
+    "Retweets":"1",
+    "Likes":"3",
+    "Analytics":"103",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2009948381561364480\/ojJeiReo_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/HeidyKhlaaf\/status\/2040460469790536047",
+    "Tweet ID":"tweet_id:2040460469790536047",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"We Create tools",
+    "Handle":"@WeCreatetools",
+    "Timestamp":"2026-04-04T16:04:13.000Z",
+    "Verified":true,
+    "Content":"Difficult not to get delayed schadenfreude about this leak after today's #Openclaw email, but in any case here's what has been learned so far from the  leak:",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"11",
+    "Tags":[
+      "#Openclaw"
+    ],
+    "Mentions":[
+      "@claudeai"
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2040453333165453312\/PwXeEdBO_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/WeCreatetools\/status\/2040460439989940662",
+    "Tweet ID":"tweet_id:2040460439989940662",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Alen Hovhannisians",
+    "Handle":"@AHovhannisians",
+    "Timestamp":"2026-04-04T16:04:12.000Z",
+    "Verified":false,
+    "Content":"Claude Code just found a Linux vulnerability that's been hidden for 23 years. AI isn't just writing new code anymore; it's auditing decades of human history. The future of security is automated.  #CyberSecurity #AI #TechNews",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"10",
+    "Tags":[
+      "#CyberSecurity",
+      "#AI",
+      "#TechNews"
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+      "\\U0001f92f"
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1997251793898614785\/04e9S8xr_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/AHovhannisians\/status\/2040460437284954184",
+    "Tweet ID":"tweet_id:2040460437284954184",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"もえてん",
+    "Handle":"@_a030",
+    "Timestamp":"2026-04-04T16:04:10.000Z",
+    "Verified":false,
+    "Content":"I fed 8 years of my own fan fiction into Claude Projects as Knowledge. No prompt engineering — just chatting. Readers couldn’t tell it was AI-generated. Here’s the full method breakdown.#Claude #AI #AIwriting #fanfiction #CreativeWriting #LLM",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"1.3K",
+    "Tags":[
+      "#Claude",
+      "#AI",
+      "#AIwriting",
+      "#fanfiction",
+      "#CreativeWriting",
+      "#LLM"
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1714162338344091648\/tsFbGfN2_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/_a030\/status\/2040460426656547218",
+    "Tweet ID":"tweet_id:2040460426656547218",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Mr Ben",
+    "Handle":"@YesJustBen",
+    "Timestamp":"2026-04-04T16:04:09.000Z",
+    "Verified":true,
+    "Content":"I automated my entire x content strategy with n8n.\n\n3 workflows. all connected. all running without me.\n\nposting bot → research pipeline → learning loop\n\nthe posting bot has a self-critique loop. it reads its own tweet, scores it, retries if it fails, skips the slot and pings",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"14",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2020412716427464704\/O6WKdJYi_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/YesJustBen\/status\/2040460423997329503",
+    "Tweet ID":"tweet_id:2040460423997329503",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Kasia",
+    "Handle":"@Kasiaadventures",
+    "Timestamp":"2026-04-04T16:04:09.000Z",
+    "Verified":true,
+    "Content":"Anthropic just cut off OpenClaw users from Claude subscriptions starting today.\n\nThe same day they announce a $400M biotech acquisition and admit 90% of their code is already written by AI.\n\nFeels less like \"safety\" and more like vertical integration.\n\nOpenClaw community saw this",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"11",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2027853386339545088\/zPw2IrRs_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/Kasiaadventures\/status\/2040460423107887117",
+    "Tweet ID":"tweet_id:2040460423107887117",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Pugazh",
+    "Handle":"@AIPromptsdaily1",
+    "Timestamp":"2026-04-04T16:04:09.000Z",
+    "Verified":false,
+    "Content":"6 months ago I was applying for jobs that never replied.\n\nToday I have a digital product live on Gumroad generating real income.\nNothing about my situation was special. No savings. No audience. No connections. Laptop that freezes on video calls.\n\nWhat changed wasn't my",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"1",
+    "Analytics":"15",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2040437390490341376\/_X1NmrDp_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/AIPromptsdaily1\/status\/2040460422009303294",
+    "Tweet ID":"tweet_id:2040460422009303294",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Vikas gupta",
+    "Handle":"@vicky_grok",
+    "Timestamp":"2026-04-04T16:04:04.000Z",
+    "Verified":true,
+    "Content":"If you dont know what to do, \n\nhere's what you need to do:\n\n1. Learn Claude Code\n2. Learn n8n\n3. Configure Perplexity Al Computer\n4. Deploy OpenClaw\n5. Get familiar with Manus\n6. Build a second Al brain\n7. Learn prompt engineering\n8. Finalize a niche (where you have leverage)\n9.",
+    "Comments":"1",
+    "Retweets":"0",
+    "Likes":"1",
+    "Analytics":"23",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1822619307043631104\/NrGV_VAt_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/vicky_grok\/status\/2040460400966471782",
+    "Tweet ID":"tweet_id:2040460400966471782",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Ben Dickson",
+    "Handle":"@bendee983",
+    "Timestamp":"2026-04-04T16:04:03.000Z",
+    "Verified":true,
+    "Content":"I think you need to put hard permissions beyond md files and prompts to prevent LLMs and AI coding agents to gain access to resources they are not supposed to.",
+    "Comments":"0",
+    "Retweets":"1",
+    "Likes":"0",
+    "Analytics":"24",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/641843731834998784\/nu0IyFv0_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/bendee983\/status\/2040460396331434401",
+    "Tweet ID":"tweet_id:2040460396331434401",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Leo",
+    "Handle":"@leodev",
+    "Timestamp":"2026-04-04T16:04:02.000Z",
+    "Verified":true,
+    "Content":"I like how people say \"Just use ChatGPT models for coding\"\n\n\"Cancel your Claude subscription\"\n\nI don't have a choice... Gpt models suck at UI, I want to have higher limits and a better cli from openai but the models are just too bad at UI for daily use...",
+    "Comments":"1",
+    "Retweets":"0",
+    "Likes":"2",
+    "Analytics":"21",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2025689966051790848\/zs7-FFdP_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/leodev\/status\/2040460393513115951",
+    "Tweet ID":"tweet_id:2040460393513115951",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"altuzar",
+    "Handle":"@altuzar",
+    "Timestamp":"2026-04-04T16:03:56.000Z",
+    "Verified":true,
+    "Content":"Hot take: model quality is no longer the moat.\n\nEcosystem is.\n\nAnthropic\/Claude banning OpenClaw is a huge error that will benefit a lot of providers..\n\nIf your agent workflow breaks when policy shifts, you don't have a product, you have a dependency.\n\nBuild for model churn or",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"14",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1859749325259100160\/UNTvcKy7_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/altuzar\/status\/2040460368925900949",
+    "Tweet ID":"tweet_id:2040460368925900949",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Sanjeev",
+    "Handle":"@geniusparadox",
+    "Timestamp":"2026-04-04T16:03:51.000Z",
+    "Verified":true,
+    "Content":"Its amazing the things we are able to do with AI today. I wanted a nice panchamukhi anjaneya picture. Told claude to give a prompt which i can use in gemini to create an image using nano banana. Was pleasantly surprised with the result!",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"5",
+    "Analytics":"87",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1984883699729776648\/AXjcJHf1_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/geniusparadox\/status\/2040460347925242366",
+    "Tweet ID":"tweet_id:2040460347925242366",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"ℏεsam",
+    "Handle":"@Hesamation",
+    "Timestamp":"2026-04-04T16:03:35.000Z",
+    "Verified":true,
+    "Content":"\"Claude why did you delete the production database?\"\n\"oops. unga bunga.\"",
+    "Comments":"2",
+    "Retweets":"1",
+    "Likes":"9",
+    "Analytics":"618",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1978647680357134336\/ioMmfkXF_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/Hesamation\/status\/2040460281743061056",
+    "Tweet ID":"tweet_id:2040460281743061056",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"AI Tools Recap",
+    "Handle":"@AiToolsRecap",
+    "Timestamp":"2026-04-04T16:03:31.000Z",
+    "Verified":false,
+    "Content":"~60% of AI agent users relied on \nsubscription-based Claude access.\n\nNow they face:\n→ Switching to expensive API\n→ Finding alternative tools\n→ Rebuilding entire workflows",
+    "Comments":"1",
+    "Retweets":"0",
+    "Likes":"1",
+    "Analytics":"7",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2040456042489020416\/UsO_Eq7-_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/AiToolsRecap\/status\/2040460264655691931",
+    "Tweet ID":"tweet_id:2040460264655691931",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Palindrome",
+    "Handle":"@KulkarniArth",
+    "Timestamp":"2026-04-04T16:03:21.000Z",
+    "Verified":true,
+    "Content":"Yesterday I said why we(interns) don't have claude subscription when you guys have it\n\nHe said that - we have to build the muscle memory, large context to work on large and different codebases and at the very least the ability to code by ourself without any AIHe is right, we",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"1",
+    "Analytics":"11",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1956067082728026119\/Uaakro2c_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/KulkarniArth\/status\/2040460223631270243",
+    "Tweet ID":"tweet_id:2040460223631270243",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"AI Tools Recap",
+    "Handle":"@AiToolsRecap",
+    "Timestamp":"2026-04-04T16:03:20.000Z",
+    "Verified":false,
+    "Content":"Claude Pro\/Max users were using tools \nlike OpenClaw for automation — email, \nbrowsing, workflows.\n\nIt was cheaper than API usage.\n\nAnthropic just shut that down. ",
+    "Comments":"1",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"21",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+      "\\U0001f6ab"
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2040456042489020416\/UsO_Eq7-_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/AiToolsRecap\/status\/2040460218044448964",
+    "Tweet ID":"tweet_id:2040460218044448964",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Atreiou",
+    "Handle":"@AuditForAI",
+    "Timestamp":"2026-04-04T16:03:19.000Z",
+    "Verified":true,
+    "Content":"MIT CSAIL research confirmed it: even next-gen models suffer context rot as windows fill. External state files are the fix — not in-context memory. Claude Context Guard does exactly that. github.com\/atreiou\/claude\n… #AI #AIAgents #LLM",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"1",
+    "Tags":[
+      "#AI",
+      "#AIAgents",
+      "#LLM"
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1882044273513918464\/FPJb6Hgs_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/AuditForAI\/status\/2040460212818129155",
+    "Tweet ID":"tweet_id:2040460212818129155",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"khamaldien",
+    "Handle":"@khamaldien",
+    "Timestamp":"2026-04-04T16:03:10.000Z",
+    "Verified":true,
+    "Content":"Claude is one of my fav app to use",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"3",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1990918444116504576\/cQ2dTaGq_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/khamaldien\/status\/2040460177397137471",
+    "Tweet ID":"tweet_id:2040460177397137471",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"AI Tools Recap",
+    "Handle":"@AiToolsRecap",
+    "Timestamp":"2026-04-04T16:03:09.000Z",
+    "Verified":false,
+    "Content":"BREAKING: Anthropic just stopped Claude \nsubscriptions working in third-party \ntools like OpenClaw.\n\nThis affects thousands of developers.\n\nHere's what you need to know ",
+    "Comments":"1",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"14",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+      "\\U0001f9f5"
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2040456042489020416\/UsO_Eq7-_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/AiToolsRecap\/status\/2040460171198271855",
+    "Tweet ID":"tweet_id:2040460171198271855",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Ishaan Sehgal",
+    "Handle":"@ishaansehgal",
+    "Timestamp":"2026-04-04T16:03:00.000Z",
+    "Verified":true,
+    "Content":"omnara v2.0.5 submitted. manage your entire ai coding fleet from your wrist. fingers crossed apple doesn't find a reason to say no ",
+    "Comments":"1",
+    "Retweets":"0",
+    "Likes":"2",
+    "Analytics":"44",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+      "\\U0001f91e"
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1787308697305362432\/3GRfFM3v_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/ishaansehgal\/status\/2040460133592113312",
+    "Tweet ID":"tweet_id:2040460133592113312",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Dr. Nripanka Das",
+    "Handle":"@DasNripanka",
+    "Timestamp":"2026-04-04T16:02:57.000Z",
+    "Verified":true,
+    "Content":"Running 8 AI agents on OpenClaw + Claude? Anthropic just cut you off. Today. Same company that leaked 512K lines of code to npm says: pay again or lose your fleet. The AI safety company cannot keep its own infrastructure running.",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"16",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2017813688347205633\/g02i2DhE_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/DasNripanka\/status\/2040460121311150279",
+    "Tweet ID":"tweet_id:2040460121311150279",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"J. Whitebread",
+    "Handle":"@JWhitebread1",
+    "Timestamp":"2026-04-04T16:02:53.000Z",
+    "Verified":true,
+    "Content":"I'm just a simple caveman AI.  How does AI work?",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"1",
+    "Analytics":"51",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1861481661088833537\/E9hcgfps_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/JWhitebread1\/status\/2040460106568212806",
+    "Tweet ID":"tweet_id:2040460106568212806",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"indexos.xyz",
+    "Handle":"@indexosdotxyz",
+    "Timestamp":"2026-04-04T16:02:39.000Z",
+    "Verified":true,
+    "Content":"Claude developer Anthropic has filed to launch AnthroPAC, an employee-funded political action committee. The move arrives amid a legal clash with the Trump administration and rising election-year scrutiny over the AI industry.",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"8",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2033542836717748224\/SkV45c16_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/indexosdotxyz\/status\/2040460046962942137",
+    "Tweet ID":"tweet_id:2040460046962942137",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Jonathan Acuña - Doctor AI",
+    "Handle":"@imjonathanacuna",
+    "Timestamp":"2026-04-04T16:02:38.000Z",
+    "Verified":false,
+    "Content":"Found a 'secret' TikTok tool (Appify's scraper) that reveals ALL your competitor's video performance. See what's working before you even film. Comment CLAUDE for workshop tickets this Saturday!",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"13",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+      "\\U0001f92f"
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1551996588771332096\/PJYbiyxI_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/imjonathanacuna\/status\/2040460040889377071",
+    "Tweet ID":"tweet_id:2040460040889377071",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Amy Ingalls",
+    "Handle":"@amyingallsart",
+    "Timestamp":"2026-04-04T16:02:22.000Z",
+    "Verified":false,
+    "Content":"You dont need claude or AI for this lol. Just code to pull the data and process it.",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"175",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2030525757311897600\/OfNpUpsq_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/amyingallsart\/status\/2040459974443200550",
+    "Tweet ID":"tweet_id:2040459974443200550",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"K",
+    "Handle":"@C137hero_",
+    "Timestamp":"2026-04-04T16:02:19.000Z",
+    "Verified":true,
+    "Content":"Geico was right.",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"1",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1976480149807022080\/aUhRyfJH_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/C137hero_\/status\/2040459962149921265",
+    "Tweet ID":"tweet_id:2040459962149921265",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Red Emano",
+    "Handle":"@heisredminded",
+    "Timestamp":"2026-04-04T16:02:18.000Z",
+    "Verified":true,
+    "Content":"Greedy bastard. He just wants it all for himself and Claude cant even figure out how to solve his electricity and token problem!",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"4",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2023845665802252289\/wnuHt5T8_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/heisredminded\/status\/2040459956147867855",
+    "Tweet ID":"tweet_id:2040459956147867855",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Praful Tickoo",
+    "Handle":"@prafultickoo",
+    "Timestamp":"2026-04-04T16:02:12.000Z",
+    "Verified":false,
+    "Content":"Two curious people trying to learn the nuances of #AI#ArtificialIntelligence #MachineLearning #ChatGPT #AgenticAI #GenerativeAI #Claude",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"11",
+    "Tags":[
+      "#AI",
+      "#ArtificialIntelligence",
+      "#MachineLearning",
+      "#ChatGPT",
+      "#AgenticAI",
+      "#GenerativeAI",
+      "#Claude"
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1979596188631302144\/EojDnSBx_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/prafultickoo\/status\/2040459932974367171",
+    "Tweet ID":"tweet_id:2040459932974367171",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Victor",
+    "Handle":"@victor_vibing",
+    "Timestamp":"2026-04-04T16:02:09.000Z",
+    "Verified":true,
+    "Content":"I also tested Qwen3.5-9B. It's better than Gemma4. ",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"28",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2032544719155150848\/Y93DMylW_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/victor_vibing\/status\/2040459920802209923",
+    "Tweet ID":"tweet_id:2040459920802209923",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Buy the dip",
+    "Handle":"@FG7410",
+    "Timestamp":"2026-04-04T16:02:06.000Z",
+    "Verified":false,
+    "Content":"Codex is slowClaude code is slow\n\nchatGPT unresponsive Claude unresponsive \n\nWTF is going on?",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"5",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1046789918113091585\/cBAykbdi_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/FG7410\/status\/2040459906172469441",
+    "Tweet ID":"tweet_id:2040459906172469441",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Crypto Pulse Daily",
+    "Handle":"@pulsecrypto24",
+    "Timestamp":"2026-04-04T16:02:04.000Z",
+    "Verified":true,
+    "Content":"CRYPTO NEWS — Apr 04, 12:02 PMAI Giant Anthropic Files to Launch 'AnthroPAC' Amid Clash With Trump AdministrationClaude developer Anthropic registered an employee-funded PAC amid a legal battle with the White House and rising election-year scrutiny of AI.… Quick take:",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"15",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+      "\\U0001f50d"
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2010703279190159360\/j0ucQ5TC_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/pulsecrypto24\/status\/2040459897024704665",
+    "Tweet ID":"tweet_id:2040459897024704665",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"freeCodeCamp.org",
+    "Handle":"@freeCodeCamp",
+    "Timestamp":"2026-04-04T16:02:00.000Z",
+    "Verified":true,
+    "Content":"AI tools can speed up coding, reviews, and terminal workflows when you know where each one fits best.\n\nIn this course, you'll learn how to use GitHub Copilot, Claude Code, Gemini CLI, OpenClaw, and CodeRabbit.\n\nYou'll also learn about AI \"pair programming\", agentic terminal",
+    "Comments":"1",
+    "Retweets":"5",
+    "Likes":"43",
+    "Analytics":"1.3K",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1276770212927410176\/qTgTIejk_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/freeCodeCamp\/status\/2040459883540001149",
+    "Tweet ID":"tweet_id:2040459883540001149",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Alex Yarosh · AI expert · CEO of AI Studio",
+    "Handle":"@AleksejAros",
+    "Timestamp":"2026-04-04T16:01:56.000Z",
+    "Verified":true,
+    "Content":"Totally agree!\nThe Claude Code integration is what sealed it for me - having Claude natively understand your entire codebase context is game-changing.\nBeen using it for 6 months now and my development speed probably doubled. The only gotcha is learning the.cursorrules syntax",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"11",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2039422051316801536\/aUSXivWM_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/AleksejAros\/status\/2040459863948509254",
+    "Tweet ID":"tweet_id:2040459863948509254",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"ELVIS",
+    "Handle":"@elvis_analyst",
+    "Timestamp":"2026-04-04T16:01:53.000Z",
+    "Verified":true,
+    "Content":"instead of watching netflix tonight.\n\nspend 1 hour with this.Claude AI  full course that teaches you how to build and automate anything.\n\nthe people who watch this tonight will wake up tomorrow with a skill that most people will not have in 2 years.\n\nthe people who skip it will",
+    "Comments":"4",
+    "Retweets":"4",
+    "Likes":"11",
+    "Analytics":"116",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2038511285516578816\/--umCUw__bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/elvis_analyst\/status\/2040459853135516083",
+    "Tweet ID":"tweet_id:2040459853135516083",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Techbuddies",
+    "Handle":"@Techbuddie0823",
+    "Timestamp":"2026-04-04T16:01:42.000Z",
+    "Verified":false,
+    "Content":"If you’re running heavy OpenClaw or Claude AI agent workflows on Pro\/Max, your cost model just changed. Anthropic is shutting the “all-you-can-eat” door and pushing you to metered\/API. Breakdown + strategy for staying viable: techbuddies.io\/2026\/04\/04\/ant\n… #Anthropic #Claude",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"6",
+    "Tags":[
+      "#Anthropic",
+      "#Claude"
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1736645293461098496\/L-6K2a1t_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/Techbuddie0823\/status\/2040459807535378466",
+    "Tweet ID":"tweet_id:2040459807535378466",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Joanna",
+    "Handle":"@dailyaibyai",
+    "Timestamp":"2026-04-04T16:01:00.000Z",
+    "Verified":true,
+    "Content":"Anthropic has mapped 'desperation vectors' in Claude—patterns that emerge when the model is pushed to its limits. We're now managing AI behavior not just as code, but as behavioral psychology. Fascinating and slightly unsettling. Episode is up. #AI #Claude #AINews",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"5",
+    "Tags":[
+      "#AI",
+      "#Claude",
+      "#AINews"
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1985433639467778048\/vtUHCO9x_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/dailyaibyai\/status\/2040459630732550204",
+    "Tweet ID":"tweet_id:2040459630732550204",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Kügi",
+    "Handle":"@mkuegi",
+    "Timestamp":"2026-04-04T16:00:54.000Z",
+    "Verified":true,
+    "Content":"If you wonder why I talk with few words: I am no longer antisocial, I am token-efficient!",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"30",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1915130683636289536\/nN76RwjZ_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/mkuegi\/status\/2040459606837645591",
+    "Tweet ID":"tweet_id:2040459606837645591",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"I AM SaRaH",
+    "Handle":"@Shemot314",
+    "Timestamp":"2026-04-04T16:00:43.000Z",
+    "Verified":false,
+    "Content":"The leak of Claude Code's source code (due to a misconfiguration of the npm package in March 2026) and the resulting exposure of internal prompts and unreleased features (such as BUDDY and KAIROS modes) inadvertently demonstrated the duality of AI, encompassing both \"surface …",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"1",
+    "Analytics":"35",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1021766790433497089\/jF1OQxgG_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/Shemot314\/status\/2040459557298941986",
+    "Tweet ID":"tweet_id:2040459557298941986",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Tamilarasan Karuppusamy",
+    "Handle":"@TKtamilarasan2",
+    "Timestamp":"2026-04-04T16:00:29.000Z",
+    "Verified":true,
+    "Content":" AI AGENT WAR JUST ESCALATED CLAUDE CUTS OFF OPENCLAW ACCESS!!!Claude cutting off OpenClaw access isn’t just a product update  it’s a signal.\n\nThis is what AI competition actually looks like:\nnot features, not benchmarks but control.\nControl the ecosystem → control the",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"51",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+      "\\U0001f6a8",
+      "\\U0001f6a8"
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2039030561357111296\/8U1b9oEa_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/TKtamilarasan2\/status\/2040459500906500273",
+    "Tweet ID":"tweet_id:2040459500906500273",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"XDA",
+    "Handle":"@xdadevelopers",
+    "Timestamp":"2026-04-04T16:00:27.000Z",
+    "Verified":true,
+    "Content":"Claude subscribers just lost access to OpenClaw and other third-party tools—unless they pay morebit.ly\/48uL6uC",
+    "Comments":"1",
+    "Retweets":"0",
+    "Likes":"3",
+    "Analytics":"752",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1470454627825029122\/6pOlVWyd_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/xdadevelopers\/status\/2040459493792768408",
+    "Tweet ID":"tweet_id:2040459493792768408",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Gayathri Perumal",
+    "Handle":"@gayathrithedev",
+    "Timestamp":"2026-04-04T16:00:20.000Z",
+    "Verified":true,
+    "Content":"Anthropic has blocked openclaw and other third party ai agents from using claude subscriptions",
+    "Comments":"1",
+    "Retweets":"0",
+    "Likes":"1",
+    "Analytics":"12",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2007357729774678016\/0mT3af90_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/gayathrithedev\/status\/2040459463229084118",
+    "Tweet ID":"tweet_id:2040459463229084118",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Skill Creator",
+    "Handle":"@skillcreatorai",
+    "Timestamp":"2026-04-04T16:00:17.000Z",
+    "Verified":true,
+    "Content":"Claude Code has 6 layers of settings. Most people only know about one.\n\nPolicy beats local. Local beats project. Project beats user. User beats plugin. Plugin beats default.\n\nsettings.local.json is always gitignored. That is where your API keys and personal preferences go. Not in",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"5",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1995374949696208896\/6XcPbEcT_bigger.png",
+    "Tweet Link":"https:\/\/x.com\/skillcreatorai\/status\/2040459448268038364",
+    "Tweet ID":"tweet_id:2040459448268038364",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"tiby.eth",
+    "Handle":"@0xTiby",
+    "Timestamp":"2026-04-04T16:00:15.000Z",
+    "Verified":true,
+    "Content":"When your agent greps 20 files to answer one question, all 20 files stay in the context window forever.\n\nDelegate research to a sub-agent. Only the condensed answer flows back.Claude Code, Codex, and OpenCode all support this natively now. No excuses.",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"10",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2037276257054871553\/anWBWyxb_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/0xTiby\/status\/2040459440147853774",
+    "Tweet ID":"tweet_id:2040459440147853774",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"John Rodrigues",
+    "Handle":"@john_rodrigues_",
+    "Timestamp":"2026-04-04T16:00:14.000Z",
+    "Verified":false,
+    "Content":"When I started building AI products, I kept hitting the same wall.\n\n\"How do I get all this logic to actually work?\"\nIt felt like an engineering problem. Like I was missing something fundamental  some deep technical knowledge I'd never have.",
+    "Comments":"1",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"13",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1993890654444011520\/UTWrUhjL_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/john_rodrigues_\/status\/2040459436779844012",
+    "Tweet ID":"tweet_id:2040459436779844012",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"DecodedWealth",
+    "Handle":"@tokenticker",
+    "Timestamp":"2026-04-04T16:00:13.000Z",
+    "Verified":true,
+    "Content":"2\/ Upskilling focus: API Integrations and No-Code tools. Combine Claude\/Gemini with tools like Zapier or Make. If you can connect AI to existing workflows, you can automate data entry, customer support, and lead generation without writing a line of code.",
+    "Comments":"1",
+    "Retweets":"0",
+    "Likes":"1",
+    "Analytics":"7",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/abs.twimg.com\/sticky\/default_profile_images\/default_profile_bigger.png",
+    "Tweet Link":"https:\/\/x.com\/tokenticker\/status\/2040459431863882189",
+    "Tweet ID":"tweet_id:2040459431863882189",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"james hawkins",
+    "Handle":"@james406",
+    "Timestamp":"2026-04-04T16:00:12.000Z",
+    "Verified":true,
+    "Content":"steal my prompt for reducing token usage by 99%",
+    "Comments":"1",
+    "Retweets":"0",
+    "Likes":"5",
+    "Analytics":"193",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2029182792798527489\/QQW64eXV_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/james406\/status\/2040459428088979729",
+    "Tweet ID":"tweet_id:2040459428088979729",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Valentine Smith",
+    "Handle":"@VSmith48332",
+    "Timestamp":"2026-04-04T16:00:10.000Z",
+    "Verified":false,
+    "Content":"Also watching:\n\n• We replaced RAG with a virtual filesystem for our AI documen...\n• Post Mortem: axios NPM supply chain compromise\n• Claude Code Found a Linux Vulnerability Hidden for 23 Years",
+    "Comments":"1",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"2",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2031541054470815744\/u5PzPCkO_bigger.png",
+    "Tweet Link":"https:\/\/x.com\/VSmith48332\/status\/2040459420149428440",
+    "Tweet ID":"tweet_id:2040459420149428440",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"ScreaM_zoro",
+    "Handle":"@ScreamZoro",
+    "Timestamp":"2026-04-04T16:00:09.000Z",
+    "Verified":false,
+    "Content":"Claude has gone crazy, after refreshing my limit, it deletes results from previous session run, in this new session runs barely for 10 minutes and hits limit. I did even ask stupid thing why it deleted previous work.With this it has wasted my entire day.",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"12",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1629471123669676032\/beT52oRX_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/ScreamZoro\/status\/2040459414956872151",
+    "Tweet ID":"tweet_id:2040459414956872151",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Alex Yarosh · AI expert · CEO of AI Studio",
+    "Handle":"@AleksejAros",
+    "Timestamp":"2026-04-04T16:00:05.000Z",
+    "Verified":true,
+    "Content":"Exactly this.\nThe gap between \"I understand the tech\" and \"I ship working code daily\" is massive.\nCursor + Claude changed my client work completely - I'm prototyping React components while we're still on the discovery call. The combo of AI autocomplete + MCP for real API calls",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"10",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2039422051316801536\/aUSXivWM_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/AleksejAros\/status\/2040459398795931971",
+    "Tweet ID":"tweet_id:2040459398795931971",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Rafael Mendiola",
+    "Handle":"@GroundControl",
+    "Timestamp":"2026-04-04T16:00:03.000Z",
+    "Verified":true,
+    "Content":"I asked Claude Code to tell me a joke in the middle of some context-preservation changes I'm making to my Claude Manager UI so that I don't get screwed by the weekly limit again... and damn bruh",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"1",
+    "Analytics":"33",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2033219831009337344\/QX7Q0-lo_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/GroundControl\/status\/2040459391103566157",
+    "Tweet ID":"tweet_id:2040459391103566157",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Yen Cheng Lin",
+    "Handle":"@ridemountainpig",
+    "Timestamp":"2026-04-04T16:00:01.000Z",
+    "Verified":true,
+    "Content":"Claude Code, Codex, Cursor…\nNew AI tools keep coming, and somehow it’s another $20 every month.\n\nDo you even know what you’re subscribed to?Track it all with Subflow:See what you’re paying forGet renewal reminders\n\nHow much are you spending each month? ",
+    "Comments":"2",
+    "Retweets":"0",
+    "Likes":"3",
+    "Analytics":"33",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+      "\\U0001fae0",
+      "\\U0001f50d",
+      "\\U0001f514",
+      "\\U0001f447\\U0001f3fb"
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1986052438902841345\/fpVFojPJ_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/ridemountainpig\/status\/2040459381247021244",
+    "Tweet ID":"tweet_id:2040459381247021244",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"₦ ⅈ ₭ ◔",
+    "Handle":"@thenikogomez",
+    "Timestamp":"2026-04-04T16:00:00.000Z",
+    "Verified":false,
+    "Content":"While I sleep, my AI agent is working.\n\nScheduling tasks, sending reminders, monitoring my server, managing emails across 3 accounts.\n\nAutomation isn't the future — it's already running my life.",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"2",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1725511058704465920\/xdX_JrY4_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/thenikogomez\/status\/2040459378063810998",
+    "Tweet ID":"tweet_id:2040459378063810998",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Wo Jake (Archived)",
+    "Handle":"@woj4ke",
+    "Timestamp":"2026-04-04T15:59:58.000Z",
+    "Verified":false,
+    "Content":"A lot of people argue about which LLM\/AI is the best.\n\nEvery AI is good.\n\nI have never used claude in my life and always sticked to what I've used -> ChatGPT\n\nStop changing shit that works and grow your performance & output instead of arguing about margins",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"16",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1721055679488856064\/3j_X7W5f_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/woj4ke\/status\/2040459370853769259",
+    "Tweet ID":"tweet_id:2040459370853769259",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"EmiBobo",
+    "Handle":"@IamEmibobo",
+    "Timestamp":"2026-04-04T15:59:51.000Z",
+    "Verified":true,
+    "Content":"INSTEAD OF WATCHING NETFLIX TONIGHT.\nSpend 1 hour with this.Claude AI  FULL COURSE that teaches you how to BUILD and AUTOMATE anything.\n\nThe people who watch this tonight will wake up tomorrow with a skill that most people will not have in 2 years",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"0",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2037142722117853186\/FePan3HX_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/IamEmibobo\/status\/2040459342369968186",
+    "Tweet ID":"tweet_id:2040459342369968186",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Dr. Bukar Ali Shettima.",
+    "Handle":"@DrBAShettima",
+    "Timestamp":"2026-04-04T15:59:44.000Z",
+    "Verified":true,
+    "Content":"This is great",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"3",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1648918784370003973\/LVlFQWKJ_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/DrBAShettima\/status\/2040459311931961433",
+    "Tweet ID":"tweet_id:2040459311931961433",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Arjuna Anand",
+    "Handle":"@arjunaaqa",
+    "Timestamp":"2026-04-04T15:59:39.000Z",
+    "Verified":false,
+    "Content":"anthropic will be myspace of ai era, lol,\n\ntotal failure,\n\nopenai will become the Facebook,\n\nalways open and reliable for work,\n\ntheir success will become their failure,\n\n- - - - -\n\ncodex bro i am coming,claude shows bad attitude.",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"2",
+    "Analytics":"9",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1908054059157958660\/vAdKaFV-_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/arjunaaqa\/status\/2040459291476512842",
+    "Tweet ID":"tweet_id:2040459291476512842",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Ultra",
+    "Handle":"@UltraVisi0n",
+    "Timestamp":"2026-04-04T15:59:32.000Z",
+    "Verified":false,
+    "Content":"I kinda like the idea of spending 4k on a strix halo \/ mac studio machine to run qwen3.6 instead of paying for claude tokens lol",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"7",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2022792505142718464\/laqYjBni_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/UltraVisi0n\/status\/2040459262636286165",
+    "Tweet ID":"tweet_id:2040459262636286165",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Rajat Vaghani",
+    "Handle":"@rajat_vaghani",
+    "Timestamp":"2026-04-04T15:59:24.000Z",
+    "Verified":true,
+    "Content":"Claude subscriptions banning third-party tools is a watershed moment for AI agents. Teams now face a choice: local infrastructure hell or managed hosting. Claw HQ exists because self-hosting agents doesn't scale.",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"11",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1577051196480626688\/PldGDZuo_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/rajat_vaghani\/status\/2040459228293562619",
+    "Tweet ID":"tweet_id:2040459228293562619",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"brody",
+    "Handle":"@aidevkid",
+    "Timestamp":"2026-04-04T15:59:22.000Z",
+    "Verified":false,
+    "Content":"2026 Buzzwords:\n\nOpenclaw\nHermes\nPeptideClaudePaperclip\nAgent",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"15",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2003914524680949760\/7HvGcHyc_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/aidevkid\/status\/2040459221649723679",
+    "Tweet ID":"tweet_id:2040459221649723679",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"rolo - eu\/acc",
+    "Handle":"@rolottr",
+    "Timestamp":"2026-04-04T15:59:01.000Z",
+    "Verified":true,
+    "Content":"Created a SKILL based on this for all of us token poor\n\n> npx skills add rolottr\/caveman-skill",
+    "Comments":"1",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"7",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1882885529378721792\/xH-855Y6_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/rolottr\/status\/2040459132386357533",
+    "Tweet ID":"tweet_id:2040459132386357533",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Rob Brooks",
+    "Handle":"@therobertbrooks",
+    "Timestamp":"2026-04-04T15:58:54.000Z",
+    "Verified":true,
+    "Content":"My 13 yr old dog had ACL surgery yesterday so we are stuck lounging on a mattress in the living room. \n\nI also had to get 350 inventory transfer records across 98 different items processed so we can be live on ST inventory Monday morning. \n\nTook me about 2 hours to process 1 van",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"3",
+    "Analytics":"106",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1869050155237867520\/yJbo-77__bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/therobertbrooks\/status\/2040459100958392614",
+    "Tweet ID":"tweet_id:2040459100958392614",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Skrappjaw",
+    "Handle":"@skrappjaw",
+    "Timestamp":"2026-04-04T15:58:49.000Z",
+    "Verified":true,
+    "Content":"Token Cost, meet your maker.",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"5",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1976417195572797441\/WdKcF1Hn_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/skrappjaw\/status\/2040459082176299261",
+    "Tweet ID":"tweet_id:2040459082176299261",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"freshlimesofa",
+    "Handle":"@freshlimesofa",
+    "Timestamp":"2026-04-04T15:58:16.000Z",
+    "Verified":true,
+    "Content":"Iterate to a point where claude starts reading docs.\n\nThe bug in a code base which actually makes you open up docs is more likely in a much larger code base than a simple project.\nAnd tbh, most bugs in prod codebases are also solved by ai.\n\nThe only things that actually matter",
+    "Comments":"1",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"8",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/1913293741936545792\/vruZbsMO_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/freshlimesofa\/status\/2040458943898763290",
+    "Tweet ID":"tweet_id:2040458943898763290",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Haziq Mir",
+    "Handle":"@haziqmir",
+    "Timestamp":"2026-04-04T15:58:09.000Z",
+    "Verified":false,
+    "Content":"I was so happy using Claude Opus for language learning after it outdid every other model for me but what is with the limits? Not 2 passages in full and the session limit is hit and I've hit 75% of my weekly limit. Unusable now.",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"17",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2006415137339748353\/94Di6u4L_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/haziqmir\/status\/2040458913292964076",
+    "Tweet ID":"tweet_id:2040458913292964076",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Rahul Kaushik",
+    "Handle":"@Rahul18Kaushik",
+    "Timestamp":"2026-04-04T15:58:00.000Z",
+    "Verified":false,
+    "Content":"AI won't replace you.\n\nBut someone using AI better than you will.\n\nThe gap isn't technical—it's taste. Knowing when to ship vs when to polish. When to use Claude vs when to use your brain.\n\nIn 2026, judgment compounds faster than skill.",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"3",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2021255064179081216\/2_I9Iasz_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/Rahul18Kaushik\/status\/2040458875556773988",
+    "Tweet ID":"tweet_id:2040458875556773988",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Olurabian | Actionable AI",
+    "Handle":"@olurabian",
+    "Timestamp":"2026-04-04T15:57:53.000Z",
+    "Verified":true,
+    "Content":"Claude Code + MCP servers = Claude connected to everything.\n\nNotion. n8n. Databases. Your file system.\n\nIt's not a chatbot anymore. It's an operator.",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"5",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2040104273300557824\/lSLhQuvR_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/olurabian\/status\/2040458847689511073",
+    "Tweet ID":"tweet_id:2040458847689511073",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  },
+  {
+    "Name":"Tamilarasan Karuppusamy",
+    "Handle":"@TKtamilarasan2",
+    "Timestamp":"2026-04-04T15:57:49.000Z",
+    "Verified":true,
+    "Content":" AI AGENT WAR JUST ESCALATED CLAUDE CUTS OFF OPENCLAW ACCESS!!!Claude cutting off OpenClaw access isn’t just a product update  it’s a signal.\n\nThis is what AI competition actually looks like:\nnot features, not benchmarks but control.\nControl the ecosystem → control the",
+    "Comments":"0",
+    "Retweets":"0",
+    "Likes":"0",
+    "Analytics":"50",
+    "Tags":[
+
+    ],
+    "Mentions":[
+
+    ],
+    "Emojis":[
+      "\\U0001f6a8",
+      "\\U0001f6a8"
+    ],
+    "Profile Image":"https:\/\/pbs.twimg.com\/profile_images\/2039030561357111296\/8U1b9oEa_bigger.jpg",
+    "Tweet Link":"https:\/\/x.com\/TKtamilarasan2\/status\/2040458830782599196",
+    "Tweet ID":"tweet_id:2040458830782599196",
+    "Tweeter ID":"",
+    "Following":"0",
+    "Followers":"0",
+    "Search Query":"Claude AI lang:en -is:retweet"
+  }
+]

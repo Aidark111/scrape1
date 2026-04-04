@@ -1,0 +1,5 @@
+Claude Selenium Scrape Report
+Generated: 2026-04-04T21:32:50.243705
+Rows saved: 555
+CSV: claude_growth_20260404_213250.csv
+JSON: claude_growth_20260404_213250.json
