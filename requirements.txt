@@ -1,0 +1,5 @@
+requests
+pandas
+matplotlib
+openpyxl
+google-api-python-client

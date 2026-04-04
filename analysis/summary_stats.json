@@ -1,0 +1,23 @@
+{
+  "reddit": {
+    "total_posts": 3357,
+    "subreddits": 9,
+    "date_range": "2008-11-03 to 2026-04-04",
+    "total_upvotes": 2259649,
+    "avg_upvotes": 673.1,
+    "median_upvotes": 231.0,
+    "total_comments": 369434,
+    "top_content_type": "Discussion",
+    "highest_engagement_type": "Meme",
+    "top_feature": "General"
+  },
+  "youtube": {
+    "total_videos": 1011,
+    "unique_channels": 577,
+    "date_range": "2011-04-21 to 2026-04-02",
+    "total_views": 242624846,
+    "avg_views": 239985.0,
+    "top_channel": "Fireship",
+    "top_content_type": "Other"
+  }
+}
