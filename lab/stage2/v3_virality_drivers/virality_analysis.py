@@ -41,7 +41,7 @@ def load_data():
     reddit_df = None
     youtube_df = None
 
-    reddit_csv = os.path.join(CLEAN_DIR, "reddit_clean.csv")
+    reddit_csv = os.path.join(CLEAN_DIR, "reddit_enriched.csv")
     if not os.path.exists(reddit_csv):
         reddit_csv = os.path.join(RAW_DIR, "reddit", "reddit_data.csv")
     if os.path.exists(reddit_csv):
@@ -49,7 +49,7 @@ def load_data():
         reddit_df = reddit_df[reddit_df["date"] >= "2023-01-01"].copy()
         print(f"Loaded {len(reddit_df)} Reddit posts")
 
-    youtube_csv = os.path.join(CLEAN_DIR, "youtube_clean.csv")
+    youtube_csv = os.path.join(CLEAN_DIR, "youtube_enriched.csv")
     if not os.path.exists(youtube_csv):
         youtube_csv = os.path.join(RAW_DIR, "youtube", "youtube_data.csv")
     if os.path.exists(youtube_csv):
@@ -287,9 +287,9 @@ def generate_virality_stats(reddit_df, youtube_df):
             "normal_question_pct": round(normal["has_question"].mean() * 100, 1),
             "viral_avg_upvote_ratio": round(viral["upvote_ratio"].mean(), 3),
             "normal_avg_upvote_ratio": round(normal["upvote_ratio"].mean(), 3),
-            "most_viral_content_type": viral["content_type"].value_counts().index[0],
+            "most_viral_content_type": viral["anthropic_content_category"].value_counts().index[0],
             "most_controversial_type": (
-                reddit_df.groupby("content_type")["comment_ratio"]
+                reddit_df.groupby("anthropic_content_category")["comment_ratio"]
                 .mean().idxmax()
             ),
         }
@@ -325,13 +325,15 @@ def main():
         print("\nNo data found! Run scrapers first.")
         return
 
-    # Engineer features
-    print("\nEngineering features...")
+    # Use existing features from pipeline if available, otherwise compute
     if reddit_df is not None:
-        reddit_df = engineer_features(reddit_df)
+        if "is_viral" in reddit_df.columns and "comment_ratio" in reddit_df.columns:
+            print("\n  Reddit: using existing features from pipeline")
+        else:
+            print("\n  Reddit: computing features...")
+            reddit_df = engineer_features(reddit_df)
         viral_count = reddit_df["is_viral"].sum()
-        print(f"  Reddit: {viral_count} viral posts "
-              f"(top 10%, >= {reddit_df['upvotes'].quantile(0.9):.0f} upvotes)")
+        print(f"  Reddit: {viral_count} viral posts")
 
     # Generate charts
     print("\nGenerating charts...")

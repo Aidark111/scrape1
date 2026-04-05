@@ -1,481 +1,263 @@
 """
-Twitter/X Scraper — API (free tier) + Nitter (public, no auth) merged.
-
-Strategy:
-  1. Twitter API v2 free tier (Bearer token) — recent search, last 7 days,
-     ~1500 tweets/month. If BEARER_TOKEN not provided, skips with warning.
-  2. Nitter public instances — no auth required, fits "public data only"
-     constraint from the brief. Scrapes search pages via requests + HTML parsing.
-  3. Merge + deduplicate results.
-
-Usage:
-  python twitter_scraper.py                          # Nitter only (or .env TWITTER_BEARER_TOKEN)
-  python twitter_scraper.py --bearer YOUR_TOKEN      # API + Nitter
-  python twitter_scraper.py --api-only               # API only (reads .env)
+Option 4: Google Custom Search with OAuth (client_secret.json)
+Search site:twitter.com "query" to find tweet URLs
 """
+
 import os
-import sys
-import json
-import csv
-import time
 import re
-import argparse
-from datetime import datetime, timezone
-from urllib.parse import quote_plus
+import json
+import time
+from datetime import datetime
+from typing import Optional
+from dataclasses import dataclass, asdict
+from pathlib import Path
 
-from dotenv import load_dotenv
-import requests
-from bs4 import BeautifulSoup
+# Google OAuth libraries
+from google.oauth2.credentials import Credentials
+from google_auth_oauthlib.flow import InstalledAppFlow
+from google.auth.transport.requests import Request
+from googleapiclient.discovery import build
 
-# ── Paths ────────────────────────────────────────────────────────────────────
-STAGE1_DIR = os.path.dirname(os.path.dirname(os.path.dirname(
-    os.path.abspath(__file__)
-)))
-OUTPUT_DIR = os.path.join(STAGE1_DIR, "output", "raw", "twitter")
-os.makedirs(OUTPUT_DIR, exist_ok=True)
+# ============================================================
+# SETUP INSTRUCTIONS
+# ============================================================
+# 1. Go to: https://console.cloud.google.com/
+# 2. Create project → Enable "Custom Search API"
+# 3. Go to "Credentials" → Create OAuth 2.0 Client ID
+#    - Application type: Desktop app
+#    - Download the JSON → rename to "client_secret.json"
+# 4. Go to: https://cse.google.com/cse/
+#    - Create search engine → note the Search Engine ID (cx)
+#    - In settings, enable "Search the entire web"
+# ============================================================
 
-# ── Search queries ───────────────────────────────────────────────────────────
-QUERIES = [
-    "Claude AI",
-    "Anthropic Claude",
-    "#ClaudeAI",
-    "Claude Sonnet",
-    "Claude Opus",
-    "Claude vs ChatGPT",
-    "Claude vs GPT",
-    "Claude Code",
-    "Claude Artifacts",
-]
+# Configuration
+CLIENT_SECRET_FILE = "client_secret.json"
+TOKEN_FILE = "token.json"  # Stores your auth token after first login
+SCOPES = ["https://www.googleapis.com/auth/cse"]  # Custom Search scope
 
-# ── Nitter instances (try in order, use first that works) ────────────────────
-NITTER_INSTANCES = [
-    "https://nitter.privacydev.net",
-    "https://nitter.poast.org",
-    "https://nitter.woodland.cafe",
-    "https://nitter.1d4.us",
-]
-
-USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+# Your Custom Search Engine ID (get from cse.google.com)
+SEARCH_ENGINE_ID = "42139bfb92cab4914"  # e.g., "a1b2c3d4e5f6g7h8i"
 
 
-# ═════════════════════════════════════════════════════════════════════════════
-# PART 1: Twitter API v2 (free tier)
-# ═════════════════════════════════════════════════════════════════════════════
+@dataclass
+class TweetResult:
+    url: str
+    title: str
+    snippet: str
+    username: Optional[str] = None
+    tweet_id: Optional[str] = None
+    discovered_at: str = ""
+    
+    def __post_init__(self):
+        if not self.discovered_at:
+            self.discovered_at = datetime.now().isoformat()
 
-def api_search(bearer_token, query, max_results=100):
+
+def get_google_credentials():
     """
-    Search recent tweets via Twitter API v2 free tier.
-    Free tier: GET /2/tweets/search/recent — last 7 days, 10 req/month for app.
+    Handle OAuth flow and return valid credentials.
+    First run opens browser for authorization.
+    Subsequent runs use saved token.
     """
-    url = "https://api.twitter.com/2/tweets/search/recent"
-    headers = {"Authorization": f"Bearer {bearer_token}"}
-    params = {
-        "query": f"{query} -is:retweet lang:en",
-        "max_results": min(max_results, 100),
-        "tweet.fields": "created_at,public_metrics,author_id,lang",
-        "expansions": "author_id",
-        "user.fields": "name,username,public_metrics,verified",
-    }
-
-    all_tweets = []
-    next_token = None
-
-    while len(all_tweets) < max_results:
-        if next_token:
-            params["next_token"] = next_token
-
-        try:
-            resp = requests.get(url, headers=headers, params=params, timeout=15)
-
-            if resp.status_code == 401:
-                print("    ERROR: Invalid bearer token")
-                return []
-            if resp.status_code == 429:
-                print("    Rate limited (free tier: 10 requests/month)")
-                return all_tweets
-            if resp.status_code != 200:
-                print(f"    API error {resp.status_code}: {resp.text[:200]}")
-                return all_tweets
-
-            data = resp.json()
-        except Exception as e:
-            print(f"    Request error: {e}")
-            return all_tweets
-
-        tweets = data.get("data", [])
-        if not tweets:
-            break
-
-        # Build author lookup
-        users = {}
-        for user in data.get("includes", {}).get("users", []):
-            users[user["id"]] = user
-
-        for tweet in tweets:
-            author = users.get(tweet.get("author_id"), {})
-            metrics = tweet.get("public_metrics", {})
-            all_tweets.append({
-                "platform": "Twitter",
-                "source": "api_v2",
-                "tweet_id": tweet["id"],
-                "author": author.get("name", ""),
-                "handle": f"@{author.get('username', '')}",
-                "followers": author.get("public_metrics", {}).get("followers_count", 0),
-                "verified": author.get("verified", False),
-                "content": tweet.get("text", ""),
-                "date": tweet.get("created_at", "")[:10],
-                "date_full": tweet.get("created_at", ""),
-                "likes": metrics.get("like_count", 0),
-                "retweets": metrics.get("retweet_count", 0),
-                "replies": metrics.get("reply_count", 0),
-                "impressions": metrics.get("impression_count", 0),
-                "url": f"https://x.com/i/status/{tweet['id']}",
-                "search_query": query,
-            })
-
-        next_token = data.get("meta", {}).get("next_token")
-        if not next_token:
-            break
-        time.sleep(1)
-
-    return all_tweets
+    creds = None
+    
+    # Check for existing token
+    if os.path.exists(TOKEN_FILE):
+        creds = Credentials.from_authorized_user_file(TOKEN_FILE, SCOPES)
+    
+    # If no valid credentials, do OAuth flow
+    if not creds or not creds.valid:
+        if creds and creds.expired and creds.refresh_token:
+            # Refresh expired token
+            creds.refresh(Request())
+        else:
+            # Run full OAuth flow (opens browser)
+            if not os.path.exists(CLIENT_SECRET_FILE):
+                raise FileNotFoundError(
+                    f"Missing {CLIENT_SECRET_FILE}!\n"
+                    "Download from Google Cloud Console → Credentials → OAuth 2.0 Client IDs"
+                )
+            
+            flow = InstalledAppFlow.from_client_secrets_file(
+                CLIENT_SECRET_FILE, 
+                SCOPES
+            )
+            creds = flow.run_local_server(port=0)
+        
+        # Save token for future runs
+        with open(TOKEN_FILE, 'w') as token:
+            token.write(creds.to_json())
+        print(f"✅ Credentials saved to {TOKEN_FILE}")
+    
+    return creds
 
 
-def scrape_api(bearer_token, queries, max_per_query=100):
-    """Run all queries through Twitter API v2."""
-    print("\n=== Twitter API v2 (free tier) ===")
-    all_tweets = []
-    seen_ids = set()
-
-    for i, query in enumerate(queries):
-        print(f"  [{i+1}/{len(queries)}] API search: '{query}'")
-        tweets = api_search(bearer_token, query, max_per_query)
-        new = 0
-        for t in tweets:
-            if t["tweet_id"] not in seen_ids:
-                seen_ids.add(t["tweet_id"])
-                all_tweets.append(t)
-                new += 1
-        print(f"    {new} new tweets (total: {len(all_tweets)})")
-        time.sleep(1)  # Respect rate limits
-
-    print(f"  API total: {len(all_tweets)} unique tweets")
-    return all_tweets
+def build_search_service():
+    """Build the Custom Search API service."""
+    creds = get_google_credentials()
+    service = build('customsearch', 'v1', credentials=creds)
+    return service
 
 
-# ═════════════════════════════════════════════════════════════════════════════
-# PART 2: Nitter (public, no auth)
-# ═════════════════════════════════════════════════════════════════════════════
-
-def find_working_nitter():
-    """Find first working Nitter instance."""
-    for instance in NITTER_INSTANCES:
-        try:
-            resp = requests.get(instance, headers={"User-Agent": USER_AGENT}, timeout=10)
-            if resp.status_code == 200:
-                print(f"  Using Nitter instance: {instance}")
-                return instance
-        except Exception:
-            continue
+def parse_tweet_url(url: str) -> Optional[dict]:
+    """Extract username and tweet ID from Twitter/X URL."""
+    patterns = [
+        r'(?:twitter\.com|x\.com)/(\w+)/status/(\d+)',
+        r'mobile\.twitter\.com/(\w+)/status/(\d+)',
+    ]
+    
+    for pattern in patterns:
+        match = re.search(pattern, url)
+        if match:
+            return {
+                'username': match.group(1),
+                'tweet_id': match.group(2)
+            }
     return None
 
 
-def parse_nitter_tweet(tweet_el, nitter_base):
-    """Parse a single tweet element from Nitter HTML."""
-    try:
-        # Author info
-        fullname_el = tweet_el.select_one(".fullname")
-        username_el = tweet_el.select_one(".username")
-        author = fullname_el.get_text(strip=True) if fullname_el else ""
-        handle = username_el.get_text(strip=True) if username_el else ""
-
-        # Content
-        content_el = tweet_el.select_one(".tweet-content")
-        content = content_el.get_text(strip=True) if content_el else ""
-
-        # Date
-        date_el = tweet_el.select_one(".tweet-date a")
-        date_str = ""
-        if date_el and date_el.get("title"):
-            date_str = date_el["title"]
-
-        # Tweet link → extract tweet ID
-        link_el = tweet_el.select_one(".tweet-link")
-        tweet_link = ""
-        tweet_id = ""
-        if link_el and link_el.get("href"):
-            tweet_link = link_el["href"]
-            parts = tweet_link.rstrip("/").split("/")
-            tweet_id = parts[-1] if parts else ""
-
-        # Stats
-        stats = tweet_el.select(".tweet-stat .tweet-stat-value") or []
-        replies = stats[0].get_text(strip=True) if len(stats) > 0 else "0"
-        retweets = stats[1].get_text(strip=True) if len(stats) > 1 else "0"
-        likes = stats[2].get_text(strip=True) if len(stats) > 2 else "0"
-
-        def parse_count(s):
-            s = s.replace(",", "").strip()
-            if not s:
-                return 0
-            if s.endswith("K"):
-                return int(float(s[:-1]) * 1000)
-            if s.endswith("M"):
-                return int(float(s[:-1]) * 1000000)
-            try:
-                return int(s)
-            except ValueError:
-                return 0
-
-        # Parse date
-        date_clean = ""
-        if date_str:
-            for fmt in ["%b %d, %Y · %I:%M %p %Z", "%b %d, %Y · %H:%M %Z",
-                        "%d/%m/%Y, %H:%M:%S", "%Y-%m-%dT%H:%M:%S"]:
-                try:
-                    dt = datetime.strptime(date_str.strip(), fmt)
-                    date_clean = dt.strftime("%Y-%m-%d")
-                    break
-                except ValueError:
-                    continue
-            if not date_clean:
-                # Try to extract just the date part
-                match = re.search(r"(\w+ \d+, \d{4})", date_str)
-                if match:
-                    try:
-                        dt = datetime.strptime(match.group(1), "%b %d, %Y")
-                        date_clean = dt.strftime("%Y-%m-%d")
-                    except ValueError:
-                        pass
-
-        return {
-            "platform": "Twitter",
-            "source": "nitter",
-            "tweet_id": tweet_id,
-            "author": author,
-            "handle": handle,
-            "followers": 0,  # Not available from Nitter search
-            "verified": False,
-            "content": content,
-            "date": date_clean,
-            "date_full": date_str,
-            "likes": parse_count(likes),
-            "retweets": parse_count(retweets),
-            "replies": parse_count(replies),
-            "impressions": 0,
-            "url": f"https://x.com{tweet_link}" if tweet_link else "",
-            "search_query": "",
-        }
-    except Exception as e:
-        return None
-
-
-def nitter_search(nitter_base, query, max_pages=3):
-    """Search Nitter for tweets matching query."""
-    tweets = []
-    encoded_query = quote_plus(query)
-    cursor = ""
-
-    for page in range(max_pages):
-        url = f"{nitter_base}/search?f=tweets&q={encoded_query}"
-        if cursor:
-            url += f"&cursor={cursor}"
-
+def google_search_tweets(
+    query: str,
+    max_results: int = 100,
+    search_engine_id: str = SEARCH_ENGINE_ID
+) -> list[TweetResult]:
+    """
+    Search Google for tweets matching a query using OAuth.
+    
+    Args:
+        query: Search terms
+        max_results: Maximum tweets to find (100/day free tier)
+        search_engine_id: Your CSE ID from cse.google.com
+    
+    Returns:
+        List of TweetResult objects
+    """
+    
+    service = build_search_service()
+    results = []
+    
+    # Google CSE: 10 results per page, max 100 total
+    num_pages = min(max_results // 10, 10)
+    
+    # Build query to search Twitter/X
+    full_query = f'site:twitter.com OR site:x.com "{query}"'
+    
+    for page in range(num_pages):
+        start_index = page * 10 + 1
+        
         try:
-            resp = requests.get(url, headers={"User-Agent": USER_AGENT}, timeout=15)
-            if resp.status_code != 200:
-                print(f"    Nitter returned {resp.status_code}")
+            # Execute search
+            response = service.cse().list(
+                q=full_query,
+                cx=search_engine_id,
+                start=start_index,
+                num=10
+            ).execute()
+            
+            if 'items' not in response:
+                print(f"No more results at page {page + 1}")
                 break
+            
+            for item in response['items']:
+                url = item.get('link', '')
+                tweet_info = parse_tweet_url(url)
+                
+                if tweet_info:
+                    result = TweetResult(
+                        url=url,
+                        title=item.get('title', ''),
+                        snippet=item.get('snippet', ''),
+                        username=tweet_info.get('username'),
+                        tweet_id=tweet_info.get('tweet_id')
+                    )
+                    results.append(result)
+            
+            print(f"Page {page + 1}: Found {len(response['items'])} results")
+            time.sleep(0.5)  # Rate limiting
+            
         except Exception as e:
-            print(f"    Nitter error: {e}")
+            print(f"Error on page {page + 1}: {e}")
             break
-
-        soup = BeautifulSoup(resp.text, "html.parser")
-        timeline = soup.select(".timeline-item")
-
-        if not timeline:
-            break
-
-        for item in timeline:
-            tweet = parse_nitter_tweet(item, nitter_base)
-            if tweet and tweet["tweet_id"]:
-                tweet["search_query"] = query
-                tweets.append(tweet)
-
-        # Find next page cursor
-        show_more = soup.select_one(".show-more a")
-        if show_more and show_more.get("href"):
-            href = show_more["href"]
-            cursor_match = re.search(r"cursor=([^&]+)", href)
-            if cursor_match:
-                cursor = cursor_match.group(1)
-            else:
-                break
-        else:
-            break
-
-        time.sleep(2)  # Be polite to Nitter instances
-
-    return tweets
+    
+    return results
 
 
-def scrape_nitter(queries, max_pages_per_query=3):
-    """Run all queries through Nitter."""
-    print("\n=== Nitter (public, no auth) ===")
-
-    nitter_base = find_working_nitter()
-    if not nitter_base:
-        print("  WARNING: No working Nitter instance found.")
-        print("  Known instances may be down. Try again later or use --bearer for API.")
-        print("  Tried:", ", ".join(NITTER_INSTANCES))
-        return []
-
-    all_tweets = []
-    seen_ids = set()
-
-    for i, query in enumerate(queries):
-        print(f"  [{i+1}/{len(queries)}] Nitter search: '{query}'")
-        tweets = nitter_search(nitter_base, query, max_pages_per_query)
-        new = 0
-        for t in tweets:
-            if t["tweet_id"] not in seen_ids:
-                seen_ids.add(t["tweet_id"])
-                all_tweets.append(t)
-                new += 1
-        print(f"    {new} new tweets (total: {len(all_tweets)})")
+def search_multiple_queries(
+    queries: list[str], 
+    results_per_query: int = 20
+) -> list[TweetResult]:
+    """Search for tweets across multiple queries, deduplicated."""
+    
+    all_results = []
+    seen_tweet_ids = set()
+    
+    for query in queries:
+        print(f"\n🔍 Searching: {query}")
+        results = google_search_tweets(query, max_results=results_per_query)
+        
+        for result in results:
+            if result.tweet_id and result.tweet_id not in seen_tweet_ids:
+                seen_tweet_ids.add(result.tweet_id)
+                all_results.append(result)
+        
+        print(f"   Unique total: {len(all_results)}")
         time.sleep(1)
-
-    print(f"  Nitter total: {len(all_tweets)} unique tweets")
-    return all_tweets
-
-
-# ═════════════════════════════════════════════════════════════════════════════
-# PART 3: Merge + save
-# ═════════════════════════════════════════════════════════════════════════════
-
-def merge_and_save(api_tweets, nitter_tweets):
-    """Merge, deduplicate, filter, and save."""
-    seen_ids = set()
-    merged = []
-
-    # API tweets take priority (more metadata)
-    for t in api_tweets:
-        if t["tweet_id"] and t["tweet_id"] not in seen_ids:
-            seen_ids.add(t["tweet_id"])
-            merged.append(t)
-
-    for t in nitter_tweets:
-        if t["tweet_id"] and t["tweet_id"] not in seen_ids:
-            seen_ids.add(t["tweet_id"])
-            merged.append(t)
-
-    # Filter pre-2023
-    merged = [t for t in merged if t["date"] >= "2023-01-01"]
-
-    # Sort by likes
-    merged.sort(key=lambda x: x["likes"], reverse=True)
-
-    # Save
-    output_csv = os.path.join(OUTPUT_DIR, "twitter_data.csv")
-    output_json = os.path.join(OUTPUT_DIR, "twitter_data.json")
-
-    if merged:
-        fieldnames = list(merged[0].keys())
-        with open(output_csv, "w", newline="", encoding="utf-8") as f:
-            writer = csv.DictWriter(f, fieldnames=fieldnames)
-            writer.writeheader()
-            writer.writerows(merged)
-
-    with open(output_json, "w", encoding="utf-8") as f:
-        json.dump(merged, f, indent=2, ensure_ascii=False)
-
-    return merged, output_csv
+    
+    return all_results
 
 
-# ── CLI ──────────────────────────────────────────────────────────────────────
-def parse_args():
-    parser = argparse.ArgumentParser(
-        description="Twitter/X scraper — API (free tier) + Nitter (public) merged."
-    )
-    parser.add_argument(
-        "--bearer", type=str, default=None,
-        help="Twitter API v2 Bearer token. If not provided, API is skipped.",
-    )
-    parser.add_argument(
-        "--api-only", action="store_true",
-        help="Skip Nitter, use API only.",
-    )
-    parser.add_argument(
-        "--nitter-only", action="store_true",
-        help="Skip API, use Nitter only.",
-    )
-    parser.add_argument(
-        "--max-per-query", type=int, default=100,
-        help="Max tweets per query for API (default: 100).",
-    )
-    parser.add_argument(
-        "--nitter-pages", type=int, default=3,
-        help="Max pages per query for Nitter (default: 3).",
-    )
-    return parser.parse_args()
+def save_results(results: list[TweetResult], filename: str = "tweets.json"):
+    """Save results to JSON file."""
+    with open(filename, 'w') as f:
+        json.dump([asdict(r) for r in results], f, indent=2)
+    print(f"📁 Saved {len(results)} tweets to {filename}")
 
 
-def main():
-    load_dotenv()
-    args = parse_args()
-
-    # Resolve bearer: CLI flag > .env
-    bearer = args.bearer or os.getenv("TWITTER_BEARER_TOKEN")
-
-    print("=" * 60)
-    print("CLAUDE GROWTH — TWITTER/X SCRAPER")
-    print("API (free tier) + Nitter (public, no auth)")
-    print("=" * 60)
-
-    api_tweets = []
-    nitter_tweets = []
-
-    # ── API ──
-    if not args.nitter_only:
-        if bearer:
-            api_tweets = scrape_api(bearer, QUERIES, args.max_per_query)
-        else:
-            print("\n  WARNING: No bearer token found. Skipping Twitter API.")
-            print("  Option 1: Set TWITTER_BEARER_TOKEN in .env")
-            print("  Option 2: python twitter_scraper.py --bearer YOUR_TOKEN")
-            print("  Get one free: https://developer.x.com/en/portal/dashboard")
-            if args.api_only:
-                print("\n  ERROR: --api-only but no bearer token available.")
-                return
-
-    # ── Nitter ──
-    if not args.api_only:
-        nitter_tweets = scrape_nitter(QUERIES, args.nitter_pages)
-
-    # ── Merge + save ──
-    if not api_tweets and not nitter_tweets:
-        print("\n  No tweets collected from either source.")
-        print("  Provide --bearer for API or check Nitter instance availability.")
-        return
-
-    merged, output_csv = merge_and_save(api_tweets, nitter_tweets)
-
-    print(f"\n{'=' * 60}")
-    print(f"DONE! {len(merged)} unique tweets")
-    print(f"  From API:    {len(api_tweets)}")
-    print(f"  From Nitter: {len(nitter_tweets)}")
-    print(f"CSV: {output_csv}")
-    print(f"{'=' * 60}")
-
-    # Quick stats
-    if merged:
-        dates = sorted(set(t["date"] for t in merged if t["date"]))
-        if dates:
-            print(f"\nDate range: {dates[0]} to {dates[-1]}")
-        print(f"\nTop 10 by likes:")
-        for t in merged[:10]:
-            print(f"  {t['likes']:>6} likes | @{t['handle']:15s} | {t['content'][:60]}")
-
+# ============================================================
+# MAIN
+# ============================================================
 
 if __name__ == "__main__":
-    main()
+    
+    print("=" * 60)
+    print("Google Custom Search → Twitter (OAuth)")
+    print("=" * 60)
+    
+    # Check for client secret
+    if not os.path.exists(CLIENT_SECRET_FILE):
+        print(f"""
+❌ Missing {CLIENT_SECRET_FILE}!
+
+Setup steps:
+1. Go to https://console.cloud.google.com/
+2. Create/select project
+3. Enable "Custom Search API"
+4. Go to Credentials → Create OAuth 2.0 Client ID
+5. Application type: Desktop app
+6. Download JSON → rename to {CLIENT_SECRET_FILE}
+7. Place in this directory
+8. Run again!
+        """)
+        exit(1)
+    
+    # Search queries
+    queries = [
+        "Claude AI",
+        "Claude AI amazing",
+        "Claude AI helpful",
+        "Anthropic Claude",
+    ]
+    
+    # Run search (first run opens browser for OAuth)
+    results = search_multiple_queries(queries, results_per_query=20)
+    
+    print(f"\n✅ Found {len(results)} unique tweets")
+    
+    # Save
+    save_results(results)
+    
+    # Preview
+    print("\n📋 Sample:")
+    for r in results[:5]:
+        print(f"  @{r.username}: {r.snippet[:80]}...")

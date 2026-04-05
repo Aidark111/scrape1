@@ -1,0 +1,20 @@
+{
+  "reddit_virality": {
+    "viral_threshold_upvotes": 1433,
+    "viral_count": 336,
+    "viral_avg_title_length": 71.0,
+    "normal_avg_title_length": 72.7,
+    "viral_question_pct": 8.0,
+    "normal_question_pct": 12.9,
+    "viral_avg_upvote_ratio": 0.934,
+    "normal_avg_upvote_ratio": 0.862,
+    "most_viral_content_type": "news",
+    "most_controversial_type": "question"
+  },
+  "youtube_creator_tiers": {
+    "mega_videos": 171,
+    "mega_total_views": 103673002,
+    "micro_videos": 101,
+    "micro_total_views": 38773282
+  }
+}

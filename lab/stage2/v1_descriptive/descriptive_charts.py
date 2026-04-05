@@ -47,8 +47,8 @@ def load_data():
     reddit_df = None
     youtube_df = None
 
-    # Try clean first, fall back to raw
-    reddit_csv = os.path.join(CLEAN_DIR, "reddit_clean.csv")
+    # Try enriched (pipeline output) first, fall back to raw
+    reddit_csv = os.path.join(CLEAN_DIR, "reddit_enriched.csv")
     if not os.path.exists(reddit_csv):
         reddit_csv = os.path.join(RAW_DIR, "reddit", "reddit_data.csv")
     if os.path.exists(reddit_csv):
@@ -56,7 +56,7 @@ def load_data():
         reddit_df = reddit_df[reddit_df["date"] >= "2023-01-01"].copy()
         print(f"Loaded {len(reddit_df)} Reddit posts from {reddit_csv}")
 
-    youtube_csv = os.path.join(CLEAN_DIR, "youtube_clean.csv")
+    youtube_csv = os.path.join(CLEAN_DIR, "youtube_enriched.csv")
     if not os.path.exists(youtube_csv):
         youtube_csv = os.path.join(RAW_DIR, "youtube", "youtube_data.csv")
     if os.path.exists(youtube_csv):
@@ -107,7 +107,7 @@ def chart_2_content_type_engagement(reddit_df):
     fig.suptitle("Content type analysis — what drives engagement?", fontsize=16, color=ACCENT, fontweight='bold')
 
     # Volume by type
-    type_counts = reddit_df['content_type'].value_counts()
+    type_counts = reddit_df['anthropic_content_category'].value_counts()
     bars1 = axes[0].barh(type_counts.index, type_counts.values, color=ACCENT, alpha=0.7)
     axes[0].set_title("Volume (post count)", fontsize=12)
     axes[0].set_xlabel("Number of posts")
@@ -116,7 +116,7 @@ def chart_2_content_type_engagement(reddit_df):
                      va='center', fontsize=9, color='white')
 
     # Avg engagement by type
-    avg_engagement = reddit_df.groupby('content_type')['upvotes'].mean().sort_values(ascending=True)
+    avg_engagement = reddit_df.groupby('anthropic_content_category')['upvotes'].mean().sort_values(ascending=True)
     colors = [ACCENT3 if v == avg_engagement.max() else ACCENT2 for v in avg_engagement.values]
     bars2 = axes[1].barh(avg_engagement.index, avg_engagement.values, color=colors, alpha=0.7)
     axes[1].set_title("Avg upvotes per post", fontsize=12)
@@ -139,14 +139,14 @@ def chart_3_feature_heatmap(reddit_df):
     fig, axes = plt.subplots(1, 2, figsize=(14, 6))
     fig.suptitle("Claude feature analysis — what are people talking about?", fontsize=16, color=ACCENT, fontweight='bold')
 
-    feat_counts = reddit_df['claude_feature'].value_counts()
+    feat_counts = reddit_df['features_mentioned'].value_counts()
     bars1 = axes[0].barh(feat_counts.index, feat_counts.values, color=ACCENT, alpha=0.7)
     axes[0].set_title("Mention volume", fontsize=12)
     for bar, val in zip(bars1, feat_counts.values):
         axes[0].text(val + 0.5, bar.get_y() + bar.get_height()/2, str(val),
                      va='center', fontsize=9, color='white')
 
-    feat_eng = reddit_df.groupby('claude_feature')['upvotes'].mean().sort_values(ascending=True)
+    feat_eng = reddit_df.groupby('features_mentioned')['upvotes'].mean().sort_values(ascending=True)
     colors = [ACCENT3 if v == feat_eng.max() else '#00D4FF' for v in feat_eng.values]
     bars2 = axes[1].barh(feat_eng.index, feat_eng.values, color=colors, alpha=0.7)
     axes[1].set_title("Avg upvotes when mentioned", fontsize=12)
@@ -201,8 +201,8 @@ def chart_5_cross_platform_comparison(reddit_df, youtube_df):
     reddit_pcts = {}
     yt_pcts = {}
     for ct in shared_types:
-        reddit_pcts[ct] = (reddit_df['content_type'] == ct).sum() / len(reddit_df) * 100
-        yt_pcts[ct] = (youtube_df['content_type'] == ct).sum() / len(youtube_df) * 100
+        reddit_pcts[ct] = (reddit_df['anthropic_content_category'] == ct).sum() / len(reddit_df) * 100
+        yt_pcts[ct] = (youtube_df['anthropic_content_category'] == ct).sum() / len(youtube_df) * 100
 
     # Sort by Reddit percentage
     sorted_types = sorted(shared_types, key=lambda x: reddit_pcts[x])
@@ -254,8 +254,8 @@ def chart_6_engagement_vs_comments(reddit_df):
         'Feature Request': '#E17055', 'Other': '#636e72'
     }
 
-    for ctype in reddit_df['content_type'].unique():
-        subset = reddit_df[reddit_df['content_type'] == ctype]
+    for ctype in reddit_df['anthropic_content_category'].unique():
+        subset = reddit_df[reddit_df['anthropic_content_category'] == ctype]
         color = type_colors.get(ctype, '#636e72')
         ax.scatter(subset['upvotes'], subset['comments'], alpha=0.5, s=30,
                    color=color, label=ctype, edgecolors='none')
@@ -338,9 +338,9 @@ def generate_summary_stats(reddit_df, youtube_df):
             "avg_upvotes": round(reddit_df['upvotes'].mean(), 1),
             "median_upvotes": round(reddit_df['upvotes'].median(), 1),
             "total_comments": int(reddit_df['comments'].sum()),
-            "top_content_type": reddit_df['content_type'].value_counts().index[0],
-            "highest_engagement_type": reddit_df.groupby('content_type')['upvotes'].mean().idxmax(),
-            "top_feature": reddit_df['claude_feature'].value_counts().index[0],
+            "top_content_type": reddit_df['anthropic_content_category'].value_counts().index[0],
+            "highest_engagement_type": reddit_df.groupby('anthropic_content_category')['upvotes'].mean().idxmax(),
+            "top_feature": reddit_df['features_mentioned'].value_counts().index[0],
         }
 
     if youtube_df is not None and len(youtube_df) > 0:
@@ -351,7 +351,7 @@ def generate_summary_stats(reddit_df, youtube_df):
             "total_views": int(youtube_df['views'].sum()),
             "avg_views": round(youtube_df['views'].mean(), 1),
             "top_channel": youtube_df.groupby('channel')['views'].sum().idxmax(),
-            "top_content_type": youtube_df['content_type'].value_counts().index[0],
+            "top_content_type": youtube_df['anthropic_content_category'].value_counts().index[0],
         }
 
     output_file = os.path.join(SCRIPT_DIR, "summary_stats.json")

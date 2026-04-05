@@ -56,7 +56,7 @@ def load_data():
     reddit_df = None
     youtube_df = None
 
-    reddit_csv = os.path.join(CLEAN_DIR, "reddit_clean.csv")
+    reddit_csv = os.path.join(CLEAN_DIR, "reddit_enriched.csv")
     if not os.path.exists(reddit_csv):
         reddit_csv = os.path.join(RAW_DIR, "reddit", "reddit_data.csv")
     if os.path.exists(reddit_csv):
@@ -64,7 +64,7 @@ def load_data():
         reddit_df = reddit_df[reddit_df["date"] >= "2023-01-01"].copy()
         print(f"Loaded {len(reddit_df)} Reddit posts")
 
-    youtube_csv = os.path.join(CLEAN_DIR, "youtube_clean.csv")
+    youtube_csv = os.path.join(CLEAN_DIR, "youtube_enriched.csv")
     if not os.path.exists(youtube_csv):
         youtube_csv = os.path.join(RAW_DIR, "youtube", "youtube_data.csv")
     if os.path.exists(youtube_csv):
@@ -162,14 +162,14 @@ def chart_9_sentiment_by_content_type(reddit_df):
                  fontsize=16, color=ACCENT, fontweight="bold")
 
     # Order by median sentiment
-    order = (reddit_df.groupby("content_type")["sentiment_compound"]
+    order = (reddit_df.groupby("anthropic_content_category")["sentiment_compound"]
              .median().sort_values().index.tolist())
 
-    palette = {ct: ACCENT if reddit_df[reddit_df["content_type"] == ct]["sentiment_compound"].median() >= 0
+    palette = {ct: ACCENT if reddit_df[reddit_df["anthropic_content_category"] == ct]["sentiment_compound"].median() >= 0
                else ACCENT3 for ct in order}
 
     sns.boxplot(
-        data=reddit_df, y="content_type", x="sentiment_compound",
+        data=reddit_df, y="anthropic_content_category", x="sentiment_compound",
         order=order, palette=palette, fliersize=2, linewidth=0.8,
         ax=ax, orient="h",
     )
@@ -346,9 +346,9 @@ def generate_sentiment_stats(reddit_df, youtube_df):
             "positive_pct": round(label_dist.get("Positive", 0) / len(reddit_df) * 100, 1),
             "neutral_pct": round(label_dist.get("Neutral", 0) / len(reddit_df) * 100, 1),
             "negative_pct": round(label_dist.get("Negative", 0) / len(reddit_df) * 100, 1),
-            "most_positive_type": (reddit_df.groupby("content_type")["sentiment_compound"]
+            "most_positive_type": (reddit_df.groupby("anthropic_content_category")["sentiment_compound"]
                                    .mean().idxmax()),
-            "most_negative_type": (reddit_df.groupby("content_type")["sentiment_compound"]
+            "most_negative_type": (reddit_df.groupby("anthropic_content_category")["sentiment_compound"]
                                    .mean().idxmin()),
         }
 
@@ -380,17 +380,18 @@ def main():
         print("\nNo data found! Run scrapers first.")
         return
 
-    # Score sentiment
-    print("\nScoring sentiment with VADER...")
-    if reddit_df is not None:
-        reddit_df = add_sentiment(reddit_df, "title")
-        print(f"  Reddit: mean={reddit_df['sentiment_compound'].mean():.3f}, "
-              f"pos={len(reddit_df[reddit_df['sentiment_label']=='Positive'])}, "
-              f"neg={len(reddit_df[reddit_df['sentiment_label']=='Negative'])}, "
-              f"neu={len(reddit_df[reddit_df['sentiment_label']=='Neutral'])}")
-    if youtube_df is not None:
-        youtube_df = add_sentiment(youtube_df, "title")
-        print(f"  YouTube: mean={youtube_df['sentiment_compound'].mean():.3f}")
+    # Use existing sentiment from pipeline if available, otherwise compute
+    for label, df in [("Reddit", reddit_df), ("YouTube", youtube_df)]:
+        if df is None:
+            continue
+        if "sentiment_compound" in df.columns:
+            print(f"\n  {label}: using existing VADER scores (mean={df['sentiment_compound'].mean():.3f})")
+        else:
+            print(f"\n  {label}: computing VADER sentiment...")
+            if label == "Reddit":
+                reddit_df = add_sentiment(reddit_df, "title")
+            else:
+                youtube_df = add_sentiment(youtube_df, "title")
 
     # Generate charts
     print("\nGenerating charts...")

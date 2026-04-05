@@ -1,43 +1,53 @@
 graph TD
-    subgraph "Data Sources"
-        A1[Reddit API<br/>Public JSON] -->|Every 6h| INGEST
-        A2[YouTube Data API v3<br/>Free tier] -->|Daily| INGEST
-        A3[X/Twitter<br/>Selenium + cookies] -->|Daily| INGEST
+    subgraph "DATA SOURCES (Public only)"
+        R_API[Reddit Public JSON<br/>No auth needed] -->|Every 6h| SCRAPE
+        YT_API[YouTube Data API v3<br/>Free tier, 10K units/day] -->|Daily| SCRAPE
+        TW_API[Twitter/X<br/>Google CSE + Nitter] -->|Daily| SCRAPE
     end
 
-    subgraph "Ingestion Layer"
-        INGEST[Scraper Orchestrator<br/>Prefect / cron] --> REDDIT[reddit_scraper.py]
-        INGEST --> YOUTUBE[youtube_scraper.py]
-        INGEST --> TWITTER[twitter_scraper.py]
-        REDDIT --> RAW[(Raw Data Store<br/>S3 / local)]
-        YOUTUBE --> RAW
-        TWITTER --> RAW
+    subgraph "STAGE 1: Scraping (Automated)"
+        SCRAPE[Orchestrator<br/>cron + Python] --> S_REDDIT[reddit_scraper.py<br/>Multi-phase: top/new/search]
+        SCRAPE --> S_YOUTUBE[youtube_scraper_v2.py<br/>60+ queries, relevance filter]
+        SCRAPE --> S_TWITTER[twitter_scraper.py<br/>Google CSE fallback]
+        S_REDDIT --> RAW[(output/raw/<br/>Raw CSV per platform)]
+        S_YOUTUBE --> RAW
+        S_TWITTER --> RAW
     end
 
-    subgraph "Processing Layer"
-        RAW --> DEDUP[Deduplication<br/>+ date filter]
-        DEDUP --> CLASSIFY[Content classifier<br/>+ Feature tagger]
-        CLASSIFY --> SENTIMENT[VADER Sentiment<br/>scoring]
-        SENTIMENT --> CLEAN[(Clean Dataset<br/>CSV / Parquet)]
+    subgraph "STAGE 1: Processing Pipeline (Automated)"
+        RAW --> STEP1[Step 1: Clean<br/>Dedup, text normalize<br/>date parse, missing values]
+        STEP1 --> STEP2[Step 2: Features<br/>engagement_score, virality<br/>comment_ratio, time features]
+        STEP2 --> STEP3[Step 3: NLP<br/>VADER sentiment, TF-IDF<br/>competitor detection]
+        STEP3 --> STEP4[Step 4: LLM Classify<br/>Ollama/Anthropic/Groq<br/>content_type, intent, signal]
+        STEP4 --> CLEAN[(output/clean/<br/>Enriched CSV)]
     end
 
-    subgraph "Analysis Layer"
-        CLEAN --> DESC[v1: Descriptive charts]
-        CLEAN --> SENT[v2: Sentiment analysis]
-        CLEAN --> VIRAL[v3: Virality drivers]
-        DESC --> REPORT[Weekly Report<br/>JSON + PNG]
-        SENT --> REPORT
-        VIRAL --> REPORT
+    subgraph "STAGE 2: Analysis (Automated)"
+        CLEAN --> V1[v1: Descriptive<br/>7 charts: timeline, features<br/>creators, cross-platform]
+        CLEAN --> V2[v2: Sentiment<br/>5 charts: trends, keywords<br/>temporal, engagement]
+        CLEAN --> V3[v3: Virality<br/>4 charts: correlation<br/>profile, tiers, quadrants]
+        V1 --> REPORT[Weekly Report<br/>16 charts + stats JSON]
+        V2 --> REPORT
+        V3 --> REPORT
     end
 
-    subgraph "Alert Layer"
-        CLEAN --> MONITOR[Anomaly detector]
-        MONITOR -->|Volume spike > 3x| ALERT[Slack / Email alert]
-        MONITOR -->|Sentiment drop > 0.3| ALERT
-        MONITOR -->|New viral post > 1K upvotes| ALERT
+    subgraph "MONITORING (Automated)"
+        CLEAN --> MON[Anomaly Detector<br/>Z-score on 4-week window]
+        MON -->|Volume > 3x avg| ALERT[Slack Alert]
+        MON -->|Sentiment drop > 0.3| ALERT
+        MON -->|Viral post > 1K upvotes| ALERT
+        MON -->|New 100K+ creator| ALERT
     end
 
-    subgraph "Output"
-        REPORT --> DASH[Dashboard<br/>Monday morning brief]
-        ALERT --> HUMAN[Growth team<br/>human review]
+    subgraph "OUTPUT"
+        REPORT --> DASH[Monday Morning Brief<br/>Charts + key findings]
+        ALERT --> HUMAN[Growth Team<br/>Human review + action]
     end
+
+    style STEP1 fill:#e1f5ee,stroke:#0f6e56
+    style STEP2 fill:#faeeda,stroke:#854f0b
+    style STEP3 fill:#faece7,stroke:#993c1d
+    style STEP4 fill:#eeedfe,stroke:#534ab7
+    style CLEAN fill:#eeedfe,stroke:#534ab7
+    style MON fill:#e6f1fb,stroke:#185fa5
+    style ALERT fill:#fbeaf0,stroke:#993556
