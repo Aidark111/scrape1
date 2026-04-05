@@ -1,8 +1,21 @@
 """
 Claude Growth Analysis v3 — Virality drivers & engagement mechanics.
-Answers: what predicts a viral post? Who amplifies? What's the engagement funnel?
+
+Part of Stage 2 (Decode the Playbook). Generates 4 charts that answer:
+  - What post features correlate with high engagement? (correlation heatmap)
+  - How do viral posts (top 10%) differ from normal ones? (distribution comparison)
+  - Which YouTube creator tiers drive the most reach? (Nano → Mega breakdown)
+  - What are the engagement quadrants? (broad appeal vs controversial vs niche)
+
+Uses enriched data from the processing pipeline — engagement_score, is_viral,
+comment_ratio, and other features are already computed in step2. If missing
+(raw data fallback), features are computed on the fly.
+
+Reads from: stage1/output/clean/*_enriched.csv
+Writes to:  stage2/v3_virality_drivers/charts/*.png
 
 Usage: python virality_analysis.py
+Prereq: Run stage1 processing pipeline first (run_pipeline.py)
 """
 import os
 import json
@@ -11,7 +24,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# ── Paths ────────────────────────────────────────────────────────────────────
+# ── Path resolution ──────────────────────────────────────────────────────────
+# Scripts live in lab/stage2/v3_virality_drivers/ but read data from lab/stage1/output/
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 LAB_DIR = os.path.dirname(os.path.dirname(SCRIPT_DIR))  # lab/
 STAGE1_DIR = os.path.join(LAB_DIR, "stage1")

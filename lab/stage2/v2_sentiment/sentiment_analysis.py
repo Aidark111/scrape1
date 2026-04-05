@@ -1,9 +1,22 @@
 """
 Claude Growth Analysis v2 — Sentiment, keywords, and temporal patterns.
-Uses VADER for sentiment scoring, TF-IDF for keyword-engagement correlation,
-and time-based analysis for posting pattern insights.
+
+Part of Stage 2 (Decode the Playbook). Generates 5 charts that answer:
+  - How does community sentiment change over time? (and does it correlate with launches?)
+  - Which content categories have the most positive/negative sentiment?
+  - What keywords predict viral vs low-engagement posts? (TF-IDF correlation)
+  - When do high-engagement posts appear? (day-of-week x hour heatmap)
+  - Does positive sentiment actually predict more upvotes?
+
+Uses enriched data from the processing pipeline — sentiment_compound and
+sentiment_label columns are already computed in step3. If missing (raw data
+fallback), VADER is computed on the fly.
+
+Reads from: stage1/output/clean/*_enriched.csv
+Writes to:  stage2/v2_sentiment/charts/*.png
 
 Usage: python sentiment_analysis.py
+Prereq: Run stage1 processing pipeline first (run_pipeline.py)
 """
 import os
 import json
@@ -12,10 +25,12 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+# VADER and TF-IDF are only used as fallback when enriched data is not available.
+# The processing pipeline (step3_nlp.py) already computes these columns.
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 from sklearn.feature_extraction.text import TfidfVectorizer
 
-# ── Paths ────────────────────────────────────────────────────────────────────
+# ── Path resolution ──────────────────────────────────────────────────────────
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 LAB_DIR = os.path.dirname(os.path.dirname(SCRIPT_DIR))  # lab/
 STAGE1_DIR = os.path.join(LAB_DIR, "stage1")

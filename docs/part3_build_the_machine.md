@@ -4,6 +4,106 @@
 
 An automated competitive intelligence system that monitors Claude's viral growth across Reddit, YouTube, and Twitter/X. Designed to run on a recurring schedule so a growth team can check results every Monday morning.
 
+## Setup & Run
+
+### Prerequisites
+
+```bash
+# 1. Install Python dependencies
+cd scrape1
+pip install -r lab/requirements.txt
+
+# 2. Set up API keys (copy and fill in your keys)
+cp lab/stage1/processing/.env.example lab/stage1/processing/.env
+# Edit .env: set GROQ_API_KEY or LLM_PROVIDER=ollama
+
+# 3. For YouTube scraper, also set up:
+cp lab/stage1/scrapers/youtube/.env.example lab/stage1/scrapers/youtube/.env
+# Edit .env: set YOUTUBE_API_KEY
+
+# 4. If using Ollama (free, local LLM):
+# Install from https://ollama.com then:
+ollama pull qwen3:8b
+```
+
+### Run the full machine (scrape + process + analyze + monitor)
+
+```bash
+cd lab/stage2/part3_automation
+python machine.py
+```
+
+### Run individual components
+
+```bash
+# Scrape only (Reddit needs no keys)
+cd lab/stage1/scrapers/reddit
+python reddit_scraper.py
+
+# Process only (4-step pipeline)
+cd lab/stage1/processing
+python run_pipeline.py              # all steps
+python run_pipeline.py --from 4     # re-run LLM classification only
+
+# Generate charts only
+cd lab/stage2/v1_descriptive
+python descriptive_charts.py
+
+cd lab/stage2/v2_sentiment
+python sentiment_analysis.py
+
+cd lab/stage2/v3_virality_drivers
+python virality_analysis.py
+
+# Monitor only (check for anomalies in existing data)
+cd lab/stage2/part3_automation
+python machine.py --only-monitor
+```
+
+### Run on a recurring schedule
+
+```bash
+# Every 6 hours
+python machine.py --schedule 6h
+
+# Skip scraping, just reprocess + analyze
+python machine.py --schedule 6h --skip-scrape
+```
+
+### Project structure
+
+```
+lab/
+├── stage1/                          # Data collection + processing
+│   ├── scrapers/
+│   │   ├── reddit/                  # Reddit public JSON scraper
+│   │   ├── youtube/                 # YouTube Data API v3 scraper
+│   │   └── twitter_api_nitter_merged/  # Google CSE tweet finder
+│   ├── processing/
+│   │   ├── run_pipeline.py          # Orchestrator (runs step1→step4)
+│   │   ├── step1_clean.py           # Dedup, normalize, date filter
+│   │   ├── step2_features.py        # Engagement scores, virality flags
+│   │   ├── step3_nlp.py             # VADER sentiment, TF-IDF keywords
+│   │   └── step4_llm_classify.py    # LLM content classification
+│   └── output/
+│       ├── raw/                     # Scraper output (CSV per platform)
+│       ├── step1_cleaned/           # After cleaning
+│       ├── step2_features/          # After feature engineering
+│       ├── step3_nlp/               # After NLP processing
+│       └── clean/                   # Final enriched CSVs (stage2 input)
+│
+├── stage2/                          # Analysis + visualization
+│   ├── v1_descriptive/              # 7 charts: timeline, content, creators
+│   ├── v2_sentiment/                # 5 charts: sentiment, keywords, temporal
+│   ├── v3_virality_drivers/         # 4 charts: correlation, profiles, tiers
+│   └── part3_automation/            # The Machine (orchestrator + monitoring)
+│       ├── machine.py               # Full cycle runner
+│       ├── anomaly_detector.py      # 5 z-score signal detectors
+│       └── alerter.py               # Console + Slack alert delivery
+│
+└── requirements.txt
+```
+
 ## Architecture
 
 ```

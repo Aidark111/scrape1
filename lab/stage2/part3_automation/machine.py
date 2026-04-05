@@ -243,6 +243,12 @@ def main():
         description="The Machine — automated competitive intelligence pipeline"
     )
     parser.add_argument(
+        "--ai", type=str, required=True,
+        choices=["ollama", "openai", "gemini", "anthropic"],
+        help="LLM provider for step4 classification (required). "
+             "ollama=free local, openai/gemini/anthropic=cloud API key needed.",
+    )
+    parser.add_argument(
         "--schedule", type=str, default=None,
         help="Run on schedule (e.g. '6h', '30m', '1d'). Without this, runs once.",
     )
@@ -255,6 +261,10 @@ def main():
         help="Only run anomaly detection + alerts on existing data.",
     )
     args = parser.parse_args()
+
+    # Set LLM_PROVIDER env var so step4_llm_classify.py picks it up via subprocess
+    os.environ["LLM_PROVIDER"] = args.ai
+    log(f"LLM provider: {args.ai}")
 
     if args.schedule:
         interval = parse_schedule(args.schedule)

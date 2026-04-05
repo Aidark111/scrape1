@@ -21,6 +21,7 @@ Env selection examples:
 """
 import os
 import json
+import re
 import time
 from datetime import datetime, timezone
 import requests
@@ -185,7 +186,12 @@ def append_usage_row(usage_csv_path, row):
 
 
 def call_provider_response(provider, model, prompt):
-    """Call selected LLM provider and return (response_text, usage_dict)."""
+    """
+    Unified interface to call any supported LLM provider.
+    Returns (response_text, usage_dict) where usage_dict has prompt/completion/total tokens.
+    Each provider has a different API format — this function normalizes them all.
+    """
+    # ── Ollama (local, free) ──
     if provider == "ollama":
         resp = requests.post(
             f"{OLLAMA_BASE_URL}/api/generate",
@@ -208,6 +214,7 @@ def call_provider_response(provider, model, prompt):
         }
         return data.get("response", ""), usage
 
+    # ── OpenAI (cloud, paid) ──
     if provider == "openai":
         api_key = os.getenv("OPENAI_API_KEY", "").strip()
         resp = requests.post(
@@ -236,6 +243,7 @@ def call_provider_response(provider, model, prompt):
         }
         return data["choices"][0]["message"]["content"], usage
 
+    # ── Google Gemini (cloud, free tier available) ──
     if provider == "gemini":
         api_key = os.getenv("GEMINI_API_KEY", "").strip()
         url = (
@@ -261,6 +269,7 @@ def call_provider_response(provider, model, prompt):
         }
         return data["candidates"][0]["content"]["parts"][0]["text"], usage
 
+    # ── Anthropic Claude (cloud, paid) ──
     if provider == "anthropic":
         api_key = os.getenv("ANTHROPIC_API_KEY", "").strip()
         resp = requests.post(
@@ -326,7 +335,6 @@ def parse_llm_json(response_text):
     text = response_text.strip()
 
     # REMOVE LOGIC TRACES: Many models (e.g., DeepSeek, Qwen) output 'thought' text in these tags.
-    import re
     text = re.sub(r"<think>.*?</think>", "", text, flags=re.DOTALL).strip()
 
     # STRIP MARKDOWN FENCES: Removes ```json ... ``` wrappers.
@@ -361,9 +369,16 @@ def parse_llm_json(response_text):
 
 def classify_batch(df, provider, model, platform, out_path, usage_csv_path, batch_size=BATCH_SIZE):
     """
-    Loop through dataframe chunks and send to selected provider API.
-    - Mirrors batching structure used in production LLM benchmarks.
-    - Uses None-padding if parsing fails to keep row alignment stable.
+    Core classification loop — processes dataframe in batches through LLM.
+
+    Crash-safe design:
+    - After EVERY batch, saves partial results to out_path (CSV) and usage log.
+    - If the script crashes mid-run, the CSV contains all completed batches.
+    - Re-running will overwrite from scratch (no append-corruption).
+
+    Row alignment:
+    - If a batch fails (bad JSON, timeout), we pad with None instead of skipping.
+    - This ensures results[i] always corresponds to df.iloc[i].
     """
     posts = df.to_dict("records")
     all_results = []
@@ -451,13 +466,19 @@ def classify_batch(df, provider, model, platform, out_path, usage_csv_path, batc
 
 
 def merge_results(df, results, prefix="llm"):
-    """ Joins LLM classification JSON fields back into the main CSV dataframe. """
+    """
+    Maps LLM JSON responses back to dataframe rows.
+    - Writes UNPREFIXED column names (content_category, sentiment, etc.)
+      so all downstream code works regardless of which provider was used.
+    - Stores the provider name in 'classification_source' for traceability.
+    - Handles None results (failed batches) by leaving those cells as NA.
+    """
     fields = ["content_category", "sentiment", "virality_potential",
               "growth_type", "target_audience", "key_insight"]
 
-    # Pre-populate empty columns
+    # Pre-populate empty columns (no prefix — standardized names)
     for field in fields:
-        df[f"{prefix}_{field}"] = pd.NA
+        df[field] = pd.NA
 
     # Map results by row index
     classified = 0
@@ -465,7 +486,7 @@ def merge_results(df, results, prefix="llm"):
         if i < len(df) and isinstance(result, dict):
             for field in fields:
                 if field in result:
-                    df.loc[df.index[i], f"{prefix}_{field}"] = result[field]
+                    df.loc[df.index[i], field] = result[field]
             classified += 1
 
     df["classification_source"] = prefix if classified > 0 else "none"
@@ -486,9 +507,10 @@ def main():
     ready, model, reason = check_provider_ready(provider)
 
     if not ready:
-        print(f"\n  ⚠ Provider '{provider}' not ready: {reason}. SKIPPING classification.")
+        print(f"\n  Provider '{provider}' not ready: {reason}. SKIPPING classification.")
         print("    Final enriched CSVs will be produced without LLM labels.\n")
-        # Ensure clean directory is still populated for downstream stage2 success
+        # GRACEFUL FALLBACK: Copy step3 NLP output directly to output/clean/
+        # so stage2 analysis scripts can still run (they guard missing LLM columns).
         for name in ["youtube", "reddit", "twitter"]:
             in_path = os.path.join(IN_DIR, f"{name}_nlp.csv")
             if os.path.exists(in_path):

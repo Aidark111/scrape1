@@ -1,0 +1,38 @@
+{
+  "started_at": "2026-04-05T08:12:49.214239",
+  "phases": {
+    "monitoring": {
+      "alerts_count": 2,
+      "alerts": [
+        {
+          "signal": "competitor_surge",
+          "platform": "reddit",
+          "priority": "LOW",
+          "message": "reddit competitor surge: 16 mentions this week vs 6 last week (2.7x, threshold=2.0x)",
+          "current_week": 16,
+          "previous_week": 6,
+          "ratio": 2.7,
+          "threshold": 2.0,
+          "week_ending": "2026-04-05T00:00:00",
+          "detected_at": "2026-04-05T08:12:55.690703",
+          "dataset_rows": 3353
+        },
+        {
+          "signal": "new_creator",
+          "platform": "youtube",
+          "priority": "MEDIUM",
+          "message": "New creator entry: Felicia Simon (156,000 subscribers) posted first Claude video on 2026-03-30",
+          "channel": "Felicia Simon",
+          "subscribers": 156000,
+          "threshold": 100000,
+          "first_date": "2026-03-30T00:00:00",
+          "lookback_days": 7,
+          "detected_at": "2026-04-05T08:12:55.690703",
+          "dataset_rows": 993
+        }
+      ]
+    }
+  },
+  "completed_at": "2026-04-05T08:12:58.598167",
+  "total_duration_sec": 9.4
+}

@@ -1,7 +1,20 @@
 """
 Claude Growth Analysis v1 — Descriptive charts and summary stats.
-Run AFTER scrapers have produced data.
+
+Part of Stage 2 (Decode the Playbook). Generates 7 charts that answer:
+  - How does Claude mention volume correlate with product launches?
+  - Which content categories drive the most engagement?
+  - Which Claude features are discussed most (and get most upvotes)?
+  - Who are the top YouTube creators amplifying Claude?
+  - How does content mix differ across Reddit vs YouTube?
+  - What's the relationship between upvotes and comments?
+  - How much do product launches spike discussion volume?
+
+Reads from: stage1/output/clean/*_enriched.csv (pipeline output)
+Writes to:  stage2/v1_descriptive/charts/*.png
+
 Usage: python descriptive_charts.py
+Prereq: Run stage1 processing pipeline first (run_pipeline.py)
 """
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -9,6 +22,7 @@ import json
 import os
 from datetime import datetime
 
+# ── Chart styling (dark theme for presentation-ready PNGs) ───────────────────
 plt.style.use('dark_background')
 plt.rcParams['figure.facecolor'] = '#1a1a2e'
 plt.rcParams['axes.facecolor'] = '#16213e'
@@ -17,10 +31,12 @@ plt.rcParams['text.color'] = '#e0e0e0'
 plt.rcParams['axes.labelcolor'] = '#e0e0e0'
 plt.rcParams['xtick.color'] = '#cccccc'
 plt.rcParams['ytick.color'] = '#cccccc'
-ACCENT = '#C8FF00'
-ACCENT2 = '#00D4FF'
-ACCENT3 = '#FF6B6B'
+ACCENT = '#C8FF00'   # Primary highlight (lime green)
+ACCENT2 = '#00D4FF'  # Secondary highlight (cyan)
+ACCENT3 = '#FF6B6B'  # Alert/negative highlight (coral)
 
+# ── Path resolution ──────────────────────────────────────────────────────────
+# Scripts live in lab/stage2/v1_descriptive/ but read data from lab/stage1/output/
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 LAB_DIR = os.path.dirname(os.path.dirname(SCRIPT_DIR))  # lab/
 STAGE1_DIR = os.path.join(LAB_DIR, "stage1")
