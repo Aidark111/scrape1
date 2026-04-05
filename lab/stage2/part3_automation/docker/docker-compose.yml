@@ -1,0 +1,44 @@
+# Claude Growth Machine — Docker Compose
+#
+# Usage:
+#   docker compose up -d                    # start with defaults (ollama, 6h schedule)
+#   docker compose up -d --build            # rebuild after code changes
+#   docker compose logs -f growth-machine   # watch logs
+#   docker compose down                     # stop
+#
+# To change LLM provider or schedule, edit the `command:` below
+# or override via: docker compose run growth-machine --ai anthropic --schedule 1h
+
+services:
+  growth-machine:
+    build:
+      # Build context is project root (4 levels up from docker/)
+      context: ../../../..
+      dockerfile: lab/stage2/part3_automation/docker/Dockerfile
+    container_name: growth-machine
+    restart: unless-stopped
+    env_file:
+      # Reads API keys from .env in the docker/ folder
+      # Copy ../.env.example to .env and fill in your keys
+      - .env
+    volumes:
+      # Persist pipeline output across container restarts
+      - pipeline-output:/app/lab/stage1/output
+      # Persist alert logs
+      - alert-logs:/app/lab/stage2/part3_automation
+    # Default: run with OpenAI (works in containers, no host network needed)
+    command: >
+      --ai openai
+      --reddit-max-items 4000
+      --youtube-max-items 1500
+      --schedule 6h
+    # To use Ollama (local LLM) instead:
+    # 1. Change --ai openai to --ai ollama above
+    # 2. Uncomment the line below so container can reach host's Ollama on localhost:11434
+    # network_mode: host
+
+volumes:
+  pipeline-output:
+    # Stores: raw/, step1_cleaned/, step2_features/, step3_nlp/, clean/
+  alert-logs:
+    # Stores: alert_log.jsonl, machine_status.json

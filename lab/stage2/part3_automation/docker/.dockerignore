@@ -1,0 +1,12 @@
+# Don't copy these into the container
+.venv/
+__pycache__/
+*.pyc
+.git/
+.env
+node_modules/
+lab/stage1/output/
+lab/stage1/output_old/
+data/
+input/
+*.png
