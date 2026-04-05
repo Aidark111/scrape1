@@ -1,17 +1,17 @@
 {
   "reddit_sentiment": {
-    "mean_compound": 0.014,
+    "mean_compound": 0.026,
     "median_compound": 0.0,
-    "positive_pct": 32.5,
-    "neutral_pct": 42.5,
-    "negative_pct": 25.0,
-    "most_positive_type": "tutorial",
-    "most_negative_type": "comparison"
+    "positive_pct": 27.0,
+    "neutral_pct": 50.9,
+    "negative_pct": 22.1,
+    "most_positive_type": "praise",
+    "most_negative_type": "complaint"
   },
   "youtube_sentiment": {
-    "mean_compound": -0.001,
-    "positive_pct": 20.0,
-    "neutral_pct": 57.5,
-    "negative_pct": 22.5
+    "mean_compound": 0.05,
+    "positive_pct": 24.3,
+    "neutral_pct": 61.6,
+    "negative_pct": 14.1
   }
 }

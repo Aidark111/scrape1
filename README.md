@@ -4,6 +4,21 @@
 
 Reverse-engineering how Claude became one of the most talked-about AI products on the internet. Built scrapers to collect public discourse, a 4-step processing pipeline to enrich the data, and an automated monitoring system a growth team could use every Monday morning.
 
+## Key Findings
+
+Our analysis of 4,346 data points (3,353 Reddit posts + 993 YouTube videos) revealed 8 growth patterns:
+
+1. **Pentagon > product launches** — 72 posts, 246K upvotes, 0.23 keyword correlation. Claude hit #1 on App Store from a political stance, not a feature release.
+2. **Reactive beats educational 2.7x** — reactive content (1,681 avg engagement) vs educational (612). The content companies invest most in drives the least growth.
+3. **r/technology delivers 3.9x more than r/ClaudeAI** — viral growth happens outside the AI community, not inside it.
+4. **3 YouTube creators match Anthropic's entire channel** — Fireship + CarterPCs + AI Code Arena = 34M views from 23 videos vs Anthropic's 10.1M from 43 videos.
+5. **Complaints outperform praise** — negative content (1,462 avg) beats positive (1,342). Frustration drives more sharing than satisfaction.
+6. **Comments predict virality, formatting doesn't** — 0.67 correlation for comments vs ~0 for title length, caps, or exclamation marks.
+7. **Sunday morning is the sweet spot** — 80% higher engagement than Thursday, yet most content is posted mid-week.
+8. **Viral posts flip audience** — daily community targets developers (organic), viral moments reach general public (reactive).
+
+Full analysis with charts: [docs/playbook_analysis.md](docs/playbook_analysis.md)
+
 ## Quick Start
 
 ```bash
@@ -40,7 +55,7 @@ Three scrapers collecting public conversation about Claude AI:
 | **YouTube** | YouTube Data API v3 (free tier) | API key | 60+ search queries with relevance filtering |
 | **Twitter/X** | Google Custom Search API | CSE key | `site:twitter.com "Claude AI"` tweet discovery |
 
-Platform prioritization rationale: Reddit has the deepest technical discussion (3K+ posts). YouTube has the widest reach (242M+ total views). Twitter/X was deprioritized because direct API requires paid access ($100/month) and Nitter instances are behind JS challenges. Instagram/LinkedIn/TikTok lack text-heavy AI discourse and require login (violates "public data only" constraint).
+Platform prioritization rationale: Reddit has the deepest technical discussion (3K+ posts). YouTube has the widest reach (272M+ total views). Twitter/X was deprioritized because direct API requires paid access ($100/month) and Nitter instances are behind JS challenges. Instagram/LinkedIn/TikTok lack text-heavy AI discourse and require login (violates "public data only" constraint).
 
 ### Part 2: Decode the Playbook (30% weight)
 
@@ -82,7 +97,18 @@ Full architecture diagram, cost estimates, error recovery, and tool recommendati
 
 ### Part 4: Counter-Playbook (20% weight)
 
-Growth distribution plan for a competing AI product, grounded in data from Parts 1-2. See [docs/part4_counter_playbook.md](docs/part4_counter_playbook.md).
+6 concrete growth strategies for a competing AI product, each grounded in our data findings:
+
+1. **Engineer a values moment** — because Pentagon (246K upvotes) beat every product launch
+2. **Seed mainstream communities** — because r/technology (3,192 avg) delivers 3.9x more than r/ClaudeAI
+3. **Creator partnerships at Mega + Micro tiers** — because 3 creators matched Anthropic's 43-video channel
+4. **Optimize for reactive/competitive content** — because reactive (1,681) beats educational (612) by 2.7x
+5. **Time launches for weekends** — because Sunday (1,842) beats Thursday (1,023) by 80%
+6. **Build dual engines** — technical retention (daily) + narrative acquisition (periodic)
+
+Includes measurement framework, budget allocation, and 6-week execution calendar.
+
+Full plan: [docs/part4_counter_playbook.md](docs/part4_counter_playbook.md)
 
 ## Project Structure
 
@@ -90,7 +116,9 @@ Growth distribution plan for a competing AI product, grounded in data from Parts
 scrape1/
 ├── README.md                              # This file
 ├── docs/
-│   └── part3_build_the_machine.md         # Architecture, costs, alerts, setup
+│   ├── playbook_analysis.md               # Part 2: 8 findings with data
+│   ├── part3_build_the_machine.md         # Part 3: Architecture, costs, alerts
+│   └── part4_counter_playbook.md          # Part 4: 6 growth strategies
 │
 ├── lab/
 │   ├── requirements.txt                   # Python dependencies
@@ -123,7 +151,8 @@ scrape1/
 │   │       ├── step3_nlp/                 # After NLP processing
 │   │       └── clean/                     # Final enriched CSVs
 │   │           ├── reddit_enriched.csv    # 47 columns per post
-│   │           └── youtube_enriched.csv   # 44 columns per video
+│   │           ├── youtube_enriched.csv   # 44 columns per video
+│   │           └── llm_consumption.csv    # API token tracking
 │   │
 │   └── stage2/                            # Analysis + automation
 │       ├── v1_descriptive/
@@ -152,10 +181,12 @@ scrape1/
 |---|---|---|
 | Working scrapers + code | Python | `lab/stage1/scrapers/` |
 | Structured dataset | CSV + JSON | `lab/stage1/output/clean/` |
-| Playbook analysis with data | 16 PNG charts + stats JSON | `lab/stage2/v1_descriptive/`, `v2_sentiment/`, `v3_virality_drivers/` |
+| Playbook analysis (8 findings) | Markdown | `docs/playbook_analysis.md` |
+| Analysis charts (16) | PNG + stats JSON | `lab/stage2/v1_descriptive/`, `v2_sentiment/`, `v3_virality_drivers/` |
 | Automation architecture diagram | Mermaid | `lab/stage2/part3_automation/architecture.mmd` |
-| Counter-playbook / distribution plan | Markdown | `docs/part4_counter_playbook.md` |
-| README (setup, assumptions, tradeoffs) | Markdown | This file |
+| Automation design doc | Markdown | `docs/part3_build_the_machine.md` |
+| Counter-playbook (6 strategies) | Markdown | `docs/part4_counter_playbook.md` |
+| README | Markdown | This file |
 
 ## Assumptions & Tradeoffs
 
@@ -163,16 +194,28 @@ scrape1/
 
 **Twitter/X constraint:** The brief requires "public data only, no login-wall scraping." Twitter search requires authentication. We use Google Custom Search API (`site:twitter.com`) as a compliant workaround. Nitter instances were tested but are behind JS challenges that block automated access.
 
-**LLM classification:** Keyword-based classifiers were initially built into scrapers but misclassified ~30% of posts. We moved classification to step4 using LLM providers (Ollama local = $0, Anthropic cloud = ~$0.50/run) for ~95% accuracy. The brief explicitly allows AI assistants.
+**LLM classification over keyword matching:** Keyword-based classifiers misclassified ~30-40% of posts (51% defaulted to "Discussion"). We moved classification to step4 using LLM providers (Ollama local = $0, Anthropic cloud = ~$0.50/run) for ~95% accuracy. Token consumption tracked in `llm_consumption.csv`. The brief explicitly allows AI assistants.
 
-**Data freshness:** Scraped data is a point-in-time snapshot. Reddit's public JSON API returns at most ~1000 posts per sort/search combination. YouTube's free tier allows 10,000 API units/day. These are sufficient for trend analysis but not exhaustive.
+**Top-post sampling bias:** Reddit's API returns top posts per sort/search combination. For growth analysis this is ideal — we're studying what drives virality, not measuring average post quality. Noted in methodology.
+
+**Recent data oversampling:** Paginating r/ClaudeAI/new gives more 2026 Q1-Q2 posts. Doesn't affect pattern-level findings. Documented in playbook analysis methodology section.
 
 ## AI Tools Used
 
 - **Claude Code** (Anthropic) — code generation, architecture design, analysis planning
-- **Ollama (Qwen 3 8B)** — local LLM for post classification in step4
-- **Anthropic Claude API** — cloud LLM classification (used for initial full-dataset run)
-- **VADER (nltk)** — rule-based sentiment analysis
-- **scikit-learn TF-IDF** — keyword extraction and engagement correlation
+- **Claude (claude.ai)** — strategy planning, document drafting, data interpretation
+- **Anthropic Claude Sonnet 4 API** — batch LLM classification of all 4,346 posts (218 batches, ~530K tokens)
+- **Ollama (Qwen 3 8B)** — local LLM for post classification (free alternative to cloud)
+- **VADER (nltk)** — rule-based sentiment analysis in step3
+- **scikit-learn TF-IDF** — keyword extraction and engagement correlation in step3
 
-All AI-generated code was reviewed, tested, and validated by running the full pipeline end-to-end.
+All AI-generated code was reviewed, tested, and validated by running the full pipeline end-to-end. Scraper outputs were spot-checked against live Reddit/YouTube data.
+
+## What We'd Do With More Time
+
+- Add X/Twitter data via a paid scraping API (~$10 for 5K tweets)
+- Run Gemini Flash (free tier) as a second classifier and compare accuracy
+- Build a Streamlit dashboard for the Monday morning brief
+- Add email alerting for HIGH priority signals
+- Execute the 6-week counter-playbook calendar with tracking
+- A/B test posting times based on the temporal heatmap findings
