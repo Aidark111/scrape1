@@ -1,23 +1,23 @@
 {
   "reddit": {
-    "total_posts": 3353,
-    "subreddits": 9,
-    "date_range": "2023-01-02 to 2026-04-04",
-    "total_upvotes": 2262902,
-    "avg_upvotes": 674.9,
-    "median_upvotes": 232.0,
-    "total_comments": 370251,
+    "total_posts": 40,
+    "subreddits": 1,
+    "date_range": "2025-02-26 to 2026-04-03",
+    "total_upvotes": 173823,
+    "avg_upvotes": 4345.6,
+    "median_upvotes": 3862.0,
+    "total_comments": 12102,
     "top_content_type": "news",
-    "highest_engagement_type": "meme",
+    "highest_engagement_type": "praise",
     "top_feature": "Claude Code"
   },
   "youtube": {
-    "total_videos": 993,
-    "unique_channels": 582,
-    "date_range": "2023-01-30 to 2026-04-02",
-    "total_views": 272381984,
-    "avg_views": 274302.1,
-    "top_channel": "Prompt Guard",
+    "total_videos": 40,
+    "unique_channels": 31,
+    "date_range": "2025-02-11 to 2026-04-01",
+    "total_views": 45078844,
+    "avg_views": 1126971.1,
+    "top_channel": "CarterPCs",
     "top_content_type": "tutorial"
   }
 }

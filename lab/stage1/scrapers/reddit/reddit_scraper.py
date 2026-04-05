@@ -8,6 +8,7 @@ import json
 import csv
 import time
 import os
+import argparse
 from datetime import datetime, timezone
 
 USER_AGENT = "ClaudeGrowthResearch/1.0 (hackathon project)"
@@ -236,17 +237,35 @@ def search_subreddit(subreddit, query, sort="top", time_filter="all", limit=100)
 
 
 def main():
+    parser = argparse.ArgumentParser(description="Reddit scraper for Claude growth monitoring")
+    parser.add_argument(
+        "--max-items",
+        type=int,
+        required=True,
+        help="Maximum number of unique posts to collect before stopping.",
+    )
+    args = parser.parse_args()
+    if args.max_items <= 0:
+        parser.error("--max-items must be a positive integer")
+    max_items = args.max_items
+
     print("=" * 60)
     print("CLAUDE GROWTH — REDDIT SCRAPER v2")
     print("Enhanced time coverage for unbiased timeline analysis")
+    print(f"Max items: {max_items}")
     print("=" * 60)
 
     all_posts = []
     seen_ids = set()
+    limit_reached = False
 
     def add_posts(posts, label):
+        nonlocal limit_reached
         new = 0
         for p in posts:
+            if len(all_posts) >= max_items:
+                limit_reached = True
+                break
             if p["post_id"] not in seen_ids:
                 seen_ids.add(p["post_id"])
                 # Classification moved to stage1/analysis pipeline
@@ -273,59 +292,77 @@ def main():
         posts = scrape_subreddit_top("ClaudeAI", sort, tf)
         n = add_posts(posts, label)
         print(f"    {n} new (total: {len(all_posts)})")
+        if limit_reached:
+            break
+
+    if limit_reached:
+        print("\nCollection limit reached; skipping remaining phases.")
 
     # Also search for specific high-value terms in ClaudeAI
-    for query in ["artifacts", "sonnet", "opus", "computer use", "claude code", "MCP",
-                   "haiku", "API", "pro plan", "system prompt", "context window",
-                   "extended thinking", "claude max", "projects"]:
-        print(f"\n  r/ClaudeAI search: '{query}'")
-        posts = search_subreddit("ClaudeAI", query, "top", "all")
-        n = add_posts(posts, f"claudeai_search_{query}")
-        print(f"    {n} new (total: {len(all_posts)})")
+    if not limit_reached:
+        for query in ["artifacts", "sonnet", "opus", "computer use", "claude code", "MCP",
+                       "haiku", "API", "pro plan", "system prompt", "context window",
+                       "extended thinking", "claude max", "projects"]:
+            print(f"\n  r/ClaudeAI search: '{query}'")
+            posts = search_subreddit("ClaudeAI", query, "top", "all")
+            n = add_posts(posts, f"claudeai_search_{query}")
+            print(f"    {n} new (total: {len(all_posts)})")
+            if limit_reached:
+                break
 
     # ========================================
     # PHASE 2: Cross-community perception
     # ========================================
-    print("\n=== PHASE 2: Cross-community scrape ===")
+    if not limit_reached:
+        print("\n=== PHASE 2: Cross-community scrape ===")
 
-    for sub in SUBREDDITS_SEARCH:
-        for tf in ["all", "year"]:
-            print(f"\n  r/{sub} search 'Claude' (t={tf})")
-            posts = search_subreddit(sub, "Claude", "top", tf)
-            n = add_posts(posts, f"{sub.lower()}_claude_{tf}")
+        for sub in SUBREDDITS_SEARCH:
+            for tf in ["all", "year"]:
+                print(f"\n  r/{sub} search 'Claude' (t={tf})")
+                posts = search_subreddit(sub, "Claude", "top", tf)
+                n = add_posts(posts, f"{sub.lower()}_claude_{tf}")
+                print(f"    {n} new (total: {len(all_posts)})")
+                if limit_reached:
+                    break
+
+            if limit_reached:
+                break
+
+            # Also search for Anthropic
+            print(f"\n  r/{sub} search 'Anthropic' (t=all)")
+            posts = search_subreddit(sub, "Anthropic", "top", "all")
+            n = add_posts(posts, f"{sub.lower()}_anthropic")
             print(f"    {n} new (total: {len(all_posts)})")
-
-        # Also search for Anthropic
-        print(f"\n  r/{sub} search 'Anthropic' (t=all)")
-        posts = search_subreddit(sub, "Anthropic", "top", "all")
-        n = add_posts(posts, f"{sub.lower()}_anthropic")
-        print(f"    {n} new (total: {len(all_posts)})")
+            if limit_reached:
+                break
 
     # ========================================
     # PHASE 3: r/ClaudeAI sorted by NEW for timeline coverage
     # ========================================
-    print("\n=== PHASE 3: Recent posts for timeline density ===")
+    if not limit_reached:
+        print("\n=== PHASE 3: Recent posts for timeline density ===")
 
     # Get newest posts with pagination for better time coverage
-    url = "https://www.reddit.com/r/ClaudeAI/new.json"
-    after_token = None
-    for page in range(8):  # 8 pages x 100 = 800 recent posts
-        params = {"limit": 100}
-        if after_token:
-            params["after"] = after_token
-        print(f"\n  r/ClaudeAI/new page {page+1}")
-        data = fetch_reddit_json(url, params)
-        if not data or "data" not in data:
-            break
-        children = data["data"].get("children", [])
-        if not children:
-            break
-        posts = [extract_post(c["data"], "ClaudeAI") for c in children]
-        n = add_posts(posts, f"claudeai_new_page{page+1}")
-        print(f"    {n} new (total: {len(all_posts)})")
-        after_token = data["data"].get("after")
-        if not after_token:
-            break
+    if not limit_reached:
+        url = "https://www.reddit.com/r/ClaudeAI/new.json"
+        after_token = None
+        for page in range(8):  # 8 pages x 100 = 800 recent posts
+            params = {"limit": 100}
+            if after_token:
+                params["after"] = after_token
+            print(f"\n  r/ClaudeAI/new page {page+1}")
+            data = fetch_reddit_json(url, params)
+            if not data or "data" not in data:
+                break
+            children = data["data"].get("children", [])
+            if not children:
+                break
+            posts = [extract_post(c["data"], "ClaudeAI") for c in children]
+            n = add_posts(posts, f"claudeai_new_page{page+1}")
+            print(f"    {n} new (total: {len(all_posts)})")
+            after_token = data["data"].get("after")
+            if not after_token or limit_reached:
+                break
 
     # ========================================
     # DONE — save
@@ -377,7 +414,7 @@ def main():
         q = (month - 1) // 3 + 1
         q_counts[f"{year}-Q{q}"] += 1
     for q in sorted(q_counts.keys()):
-        bar = "█" * (q_counts[q] // 5)
+        bar = "#" * (q_counts[q] // 5)
         print(f"  {q}: {q_counts[q]:4d} {bar}")
 
 

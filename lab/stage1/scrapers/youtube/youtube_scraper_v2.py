@@ -9,6 +9,7 @@ import sys
 import json
 import csv
 import os
+import argparse
 from datetime import datetime
 from dotenv import load_dotenv
 from googleapiclient.discovery import build
@@ -117,6 +118,12 @@ REQUIRE_ANY = [
     "artifacts", "ai model", "ai chatbot", "chatbot",
     "dario", "amodei", "llm",
 ]
+
+
+def safe_console_text(text):
+    """Return text safe to print on consoles with non-UTF encodings."""
+    enc = sys.stdout.encoding or "utf-8"
+    return str(text).encode(enc, errors="replace").decode(enc, errors="replace")
 
 
 def get_video_details(youtube, video_ids):
@@ -297,8 +304,21 @@ def _classify_feature_DISABLED(title):
 
 
 def main():
+    parser = argparse.ArgumentParser(description="YouTube scraper for Claude growth monitoring")
+    parser.add_argument("api_key", nargs="?", default=None, help="Optional YouTube API key")
+    parser.add_argument(
+        "--max-items",
+        type=int,
+        required=True,
+        help="Maximum number of unique relevant videos to collect before stopping.",
+    )
+    args = parser.parse_args()
+
     load_dotenv()
-    api_key = sys.argv[1] if len(sys.argv) > 1 else os.getenv("YOUTUBE_API_KEY")
+    api_key = (args.api_key or os.getenv("YOUTUBE_API_KEY") or "").strip()
+    if args.max_items <= 0:
+        parser.error("--max-items must be a positive integer")
+    max_items = args.max_items
 
     if not api_key:
         print("ERROR: No YouTube API key provided.")
@@ -309,6 +329,7 @@ def main():
 
     print("=" * 60)
     print("CLAUDE GROWTH — YOUTUBE SCRAPER v2")
+    print(f"Max items: {max_items}")
     print(f"Running {len(SEARCH_QUERIES)} search queries")
     print(f"Estimated API cost: ~{len(SEARCH_QUERIES) * 100 + 500} / 10,000 quota units")
     print("=" * 60)
@@ -321,6 +342,9 @@ def main():
     quota_exceeded = False
 
     for i, query in enumerate(SEARCH_QUERIES):
+        if len(all_videos) >= max_items:
+            print("\nReached max-items limit; stopping query loop.")
+            break
         print(f"\n[{i+1}/{len(SEARCH_QUERIES)}] {query}")
         items, query_quota_exceeded = search_youtube(youtube, query, MAX_RESULTS_PER_QUERY)
         if query_quota_exceeded:
@@ -337,6 +361,8 @@ def main():
             break
 
         for item in items:
+            if len(all_videos) >= max_items:
+                break
             vid = item["id"].get("videoId", "")
             if not vid or vid in seen_ids:
                 continue
@@ -372,6 +398,10 @@ def main():
                 "tags": "|".join(stats.get("tags", [])[:5]),
                 "description_snippet": stats.get("description_snippet", ""),
             })
+
+        if len(all_videos) >= max_items:
+            print("  Reached max-items limit during item collection.")
+            break
 
     # Get channel subscriber counts
     print("\n\nFetching channel subscriber data...")
@@ -415,7 +445,9 @@ def main():
     # from collections import Counter
     print(f"\nTop 15 by views:")
     for v in all_videos[:15]:
-        print(f"  {v['views']:>12,} views | {v['channel']}: {v['title'][:55]}")
+        channel = safe_console_text(v.get("channel", ""))
+        title = safe_console_text(v.get("title", ""))[:55]
+        print(f"  {v['views']:>12,} views | {channel}: {title}")
 
     # Classification stats (disabled — moved to analysis pipeline)
     # print(f"\nContent types:")

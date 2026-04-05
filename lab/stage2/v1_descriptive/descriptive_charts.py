@@ -58,6 +58,14 @@ LAUNCHES = [
 ]
 
 
+def get_llm_category_col(df):
+    """Resolve standardized LLM category column with lightweight fallback."""
+    for col in ["ai_llm_content_category", "content_category"]:
+        if df is not None and col in df.columns:
+            return col
+    return None
+
+
 def load_data():
     """Load cleaned data if available, otherwise raw."""
     reddit_df = None
@@ -122,8 +130,13 @@ def chart_2_content_type_engagement(reddit_df):
     fig, axes = plt.subplots(1, 2, figsize=(14, 6))
     fig.suptitle("Content type analysis — what drives engagement?", fontsize=16, color=ACCENT, fontweight='bold')
 
+    llm_category_col = get_llm_category_col(reddit_df)
+    if llm_category_col is None:
+        print("  Chart 2: Skipped (missing ai_llm_content_category)")
+        return
+
     # Volume by type
-    type_counts = reddit_df['anthropic_content_category'].value_counts()
+    type_counts = reddit_df[llm_category_col].value_counts()
     bars1 = axes[0].barh(type_counts.index, type_counts.values, color=ACCENT, alpha=0.7)
     axes[0].set_title("Volume (post count)", fontsize=12)
     axes[0].set_xlabel("Number of posts")
@@ -132,7 +145,7 @@ def chart_2_content_type_engagement(reddit_df):
                      va='center', fontsize=9, color='white')
 
     # Avg engagement by type
-    avg_engagement = reddit_df.groupby('anthropic_content_category')['upvotes'].mean().sort_values(ascending=True)
+    avg_engagement = reddit_df.groupby(llm_category_col)['upvotes'].mean().sort_values(ascending=True)
     colors = [ACCENT3 if v == avg_engagement.max() else ACCENT2 for v in avg_engagement.values]
     bars2 = axes[1].barh(avg_engagement.index, avg_engagement.values, color=colors, alpha=0.7)
     axes[1].set_title("Avg upvotes per post", fontsize=12)
@@ -213,12 +226,17 @@ def chart_5_cross_platform_comparison(reddit_df, youtube_df):
 
     # Unify categories across both platforms
     shared_types = ["Comparison", "Use Case", "Reaction", "News", "Tutorial", "Discussion", "Review", "Explainer"]
+    reddit_col = get_llm_category_col(reddit_df)
+    youtube_col = get_llm_category_col(youtube_df)
+    if reddit_col is None or youtube_col is None:
+        print("  Chart 5: Skipped (missing ai_llm_content_category)")
+        return
 
     reddit_pcts = {}
     yt_pcts = {}
     for ct in shared_types:
-        reddit_pcts[ct] = (reddit_df['anthropic_content_category'] == ct).sum() / len(reddit_df) * 100
-        yt_pcts[ct] = (youtube_df['anthropic_content_category'] == ct).sum() / len(youtube_df) * 100
+        reddit_pcts[ct] = (reddit_df[reddit_col] == ct).sum() / len(reddit_df) * 100
+        yt_pcts[ct] = (youtube_df[youtube_col] == ct).sum() / len(youtube_df) * 100
 
     # Sort by Reddit percentage
     sorted_types = sorted(shared_types, key=lambda x: reddit_pcts[x])
@@ -270,8 +288,13 @@ def chart_6_engagement_vs_comments(reddit_df):
         'Feature Request': '#E17055', 'Other': '#636e72'
     }
 
-    for ctype in reddit_df['anthropic_content_category'].unique():
-        subset = reddit_df[reddit_df['anthropic_content_category'] == ctype]
+    llm_category_col = get_llm_category_col(reddit_df)
+    if llm_category_col is None:
+        print("  Chart 6: Skipped (missing ai_llm_content_category)")
+        return
+
+    for ctype in reddit_df[llm_category_col].dropna().unique():
+        subset = reddit_df[reddit_df[llm_category_col] == ctype]
         color = type_colors.get(ctype, '#636e72')
         ax.scatter(subset['upvotes'], subset['comments'], alpha=0.5, s=30,
                    color=color, label=ctype, edgecolors='none')
@@ -346,6 +369,12 @@ def generate_summary_stats(reddit_df, youtube_df):
     stats = {}
 
     if reddit_df is not None and len(reddit_df) > 0:
+        reddit_cat_col = get_llm_category_col(reddit_df)
+        top_type = reddit_df[reddit_cat_col].value_counts().index[0] if reddit_cat_col else "unknown"
+        high_eng_type = (
+            reddit_df.groupby(reddit_cat_col)['upvotes'].mean().idxmax()
+            if reddit_cat_col else "unknown"
+        )
         stats["reddit"] = {
             "total_posts": len(reddit_df),
             "subreddits": reddit_df['subreddit'].nunique(),
@@ -354,12 +383,14 @@ def generate_summary_stats(reddit_df, youtube_df):
             "avg_upvotes": round(reddit_df['upvotes'].mean(), 1),
             "median_upvotes": round(reddit_df['upvotes'].median(), 1),
             "total_comments": int(reddit_df['comments'].sum()),
-            "top_content_type": reddit_df['anthropic_content_category'].value_counts().index[0],
-            "highest_engagement_type": reddit_df.groupby('anthropic_content_category')['upvotes'].mean().idxmax(),
+            "top_content_type": top_type,
+            "highest_engagement_type": high_eng_type,
             "top_feature": reddit_df['features_mentioned'].value_counts().index[0],
         }
 
     if youtube_df is not None and len(youtube_df) > 0:
+        youtube_cat_col = get_llm_category_col(youtube_df)
+        yt_top_type = youtube_df[youtube_cat_col].value_counts().index[0] if youtube_cat_col else "unknown"
         stats["youtube"] = {
             "total_videos": len(youtube_df),
             "unique_channels": youtube_df['channel'].nunique(),
@@ -367,7 +398,7 @@ def generate_summary_stats(reddit_df, youtube_df):
             "total_views": int(youtube_df['views'].sum()),
             "avg_views": round(youtube_df['views'].mean(), 1),
             "top_channel": youtube_df.groupby('channel')['views'].sum().idxmax(),
-            "top_content_type": youtube_df['anthropic_content_category'].value_counts().index[0],
+            "top_content_type": yt_top_type,
         }
 
     output_file = os.path.join(SCRIPT_DIR, "summary_stats.json")

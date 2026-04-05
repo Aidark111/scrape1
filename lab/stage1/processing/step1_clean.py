@@ -74,7 +74,7 @@ def clean_reddit(path):
             df = df.drop(columns=[col])
 
     n_after = len(df)
-    print(f"  Reddit: {n_before} → {n_after} ({n_before - n_after} removed)")
+    print(f"  Reddit: {n_before} -> {n_after} ({n_before - n_after} removed)")
     return df
 
 
@@ -113,7 +113,7 @@ def clean_youtube(path):
             df = df.drop(columns=[col])
 
     n_after = len(df)
-    print(f"  YouTube: {n_before} → {n_after} ({n_before - n_after} removed)")
+    print(f"  YouTube: {n_before} -> {n_after} ({n_before - n_after} removed)")
     return df
 
 
@@ -168,7 +168,7 @@ def clean_twitter(path):
     df["platform"] = "Twitter"
 
     n_after = len(df)
-    print(f"  Twitter: {n_before} → {n_after} ({n_before - n_after} removed)")
+    print(f"  Twitter: {n_before} -> {n_after} ({n_before - n_after} removed)")
     return df
 
 

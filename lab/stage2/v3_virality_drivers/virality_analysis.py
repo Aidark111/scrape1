@@ -50,6 +50,14 @@ ACCENT2 = "#00D4FF"
 ACCENT3 = "#FF6B6B"
 
 
+def get_llm_category_col(df):
+    """Resolve standardized LLM category column with lightweight fallback."""
+    for col in ["ai_llm_content_category", "content_category"]:
+        if df is not None and col in df.columns:
+            return col
+    return None
+
+
 # ── Data loading ─────────────────────────────────────────────────────────────
 def load_data():
     reddit_df = None
@@ -290,8 +298,17 @@ def generate_virality_stats(reddit_df, youtube_df):
     stats = {}
 
     if reddit_df is not None and len(reddit_df) > 0:
+        llm_category_col = get_llm_category_col(reddit_df)
         viral = reddit_df[reddit_df["is_viral"]]
         normal = reddit_df[~reddit_df["is_viral"]]
+        most_viral_type = (
+            viral[llm_category_col].value_counts().index[0]
+            if llm_category_col and len(viral) > 0 else "unknown"
+        )
+        most_controversial_type = (
+            reddit_df.groupby(llm_category_col)["comment_ratio"].mean().idxmax()
+            if llm_category_col else "unknown"
+        )
         stats["reddit_virality"] = {
             "viral_threshold_upvotes": int(reddit_df["upvotes"].quantile(0.9)),
             "viral_count": int(len(viral)),
@@ -301,11 +318,8 @@ def generate_virality_stats(reddit_df, youtube_df):
             "normal_question_pct": round(normal["has_question"].mean() * 100, 1),
             "viral_avg_upvote_ratio": round(viral["upvote_ratio"].mean(), 3),
             "normal_avg_upvote_ratio": round(normal["upvote_ratio"].mean(), 3),
-            "most_viral_content_type": viral["anthropic_content_category"].value_counts().index[0],
-            "most_controversial_type": (
-                reddit_df.groupby("anthropic_content_category")["comment_ratio"]
-                .mean().idxmax()
-            ),
+            "most_viral_content_type": most_viral_type,
+            "most_controversial_type": most_controversial_type,
         }
 
     if youtube_df is not None and "channel_subscribers" in youtube_df.columns:

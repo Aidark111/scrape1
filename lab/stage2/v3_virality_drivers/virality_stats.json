@@ -1,20 +1,20 @@
 {
   "reddit_virality": {
-    "viral_threshold_upvotes": 1433,
-    "viral_count": 336,
-    "viral_avg_title_length": 71.0,
-    "normal_avg_title_length": 72.7,
-    "viral_question_pct": 8.0,
-    "normal_question_pct": 12.9,
-    "viral_avg_upvote_ratio": 0.934,
-    "normal_avg_upvote_ratio": 0.862,
-    "most_viral_content_type": "news",
-    "most_controversial_type": "question"
+    "viral_threshold_upvotes": 7063,
+    "viral_count": 4,
+    "viral_avg_title_length": 65.0,
+    "normal_avg_title_length": 52.3,
+    "viral_question_pct": 0.0,
+    "normal_question_pct": 5.6,
+    "viral_avg_upvote_ratio": 0.89,
+    "normal_avg_upvote_ratio": 0.964,
+    "most_viral_content_type": "praise",
+    "most_controversial_type": "tutorial"
   },
   "youtube_creator_tiers": {
-    "mega_videos": 171,
-    "mega_total_views": 103673002,
-    "micro_videos": 101,
-    "micro_total_views": 38773282
+    "mega_videos": 20,
+    "mega_total_views": 26923339,
+    "micro_videos": 0,
+    "micro_total_views": 0
   }
 }

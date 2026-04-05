@@ -66,6 +66,14 @@ LAUNCHES = [
 ]
 
 
+def get_llm_category_col(df):
+    """Resolve standardized LLM category column with lightweight fallback."""
+    for col in ["ai_llm_content_category", "content_category"]:
+        if df is not None and col in df.columns:
+            return col
+    return None
+
+
 # ── Data loading ─────────────────────────────────────────────────────────────
 def load_data():
     reddit_df = None
@@ -176,15 +184,20 @@ def chart_9_sentiment_by_content_type(reddit_df):
     fig.suptitle("Sentiment by content type — where is the love (and hate)?",
                  fontsize=16, color=ACCENT, fontweight="bold")
 
+    llm_category_col = get_llm_category_col(reddit_df)
+    if llm_category_col is None:
+        print("  Chart 9: Skipped (missing ai_llm_content_category)")
+        return
+
     # Order by median sentiment
-    order = (reddit_df.groupby("anthropic_content_category")["sentiment_compound"]
+    order = (reddit_df.groupby(llm_category_col)["sentiment_compound"]
              .median().sort_values().index.tolist())
 
-    palette = {ct: ACCENT if reddit_df[reddit_df["anthropic_content_category"] == ct]["sentiment_compound"].median() >= 0
+    palette = {ct: ACCENT if reddit_df[reddit_df[llm_category_col] == ct]["sentiment_compound"].median() >= 0
                else ACCENT3 for ct in order}
 
     sns.boxplot(
-        data=reddit_df, y="anthropic_content_category", x="sentiment_compound",
+        data=reddit_df, y=llm_category_col, x="sentiment_compound",
         order=order, palette=palette, fliersize=2, linewidth=0.8,
         ax=ax, orient="h",
     )
@@ -354,6 +367,15 @@ def generate_sentiment_stats(reddit_df, youtube_df):
     stats = {}
 
     if reddit_df is not None and len(reddit_df) > 0:
+        llm_category_col = get_llm_category_col(reddit_df)
+        most_positive = (
+            reddit_df.groupby(llm_category_col)["sentiment_compound"].mean().idxmax()
+            if llm_category_col else "unknown"
+        )
+        most_negative = (
+            reddit_df.groupby(llm_category_col)["sentiment_compound"].mean().idxmin()
+            if llm_category_col else "unknown"
+        )
         label_dist = reddit_df["sentiment_label"].value_counts().to_dict()
         stats["reddit_sentiment"] = {
             "mean_compound": round(reddit_df["sentiment_compound"].mean(), 3),
@@ -361,10 +383,8 @@ def generate_sentiment_stats(reddit_df, youtube_df):
             "positive_pct": round(label_dist.get("Positive", 0) / len(reddit_df) * 100, 1),
             "neutral_pct": round(label_dist.get("Neutral", 0) / len(reddit_df) * 100, 1),
             "negative_pct": round(label_dist.get("Negative", 0) / len(reddit_df) * 100, 1),
-            "most_positive_type": (reddit_df.groupby("anthropic_content_category")["sentiment_compound"]
-                                   .mean().idxmax()),
-            "most_negative_type": (reddit_df.groupby("anthropic_content_category")["sentiment_compound"]
-                                   .mean().idxmin()),
+            "most_positive_type": most_positive,
+            "most_negative_type": most_negative,
         }
 
     if youtube_df is not None and len(youtube_df) > 0:

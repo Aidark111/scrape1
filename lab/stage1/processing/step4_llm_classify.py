@@ -213,35 +213,47 @@ def call_provider_response(provider, model, prompt):
             ),
         }
         return data.get("response", ""), usage
-
+    
     # ── OpenAI (cloud, paid) ──
     if provider == "openai":
         api_key = os.getenv("OPENAI_API_KEY", "").strip()
-        resp = requests.post(
-            "https://api.openai.com/v1/chat/completions",
-            headers={
-                "Authorization": f"Bearer {api_key}",
-                "Content-Type": "application/json",
-            },
-            json={
-                "model": model,
-                "temperature": 0.3,
-                "messages": [
-                    {"role": "system", "content": SYSTEM_PROMPT},
+        if not api_key:
+            raise ValueError("OPENAI_API_KEY is missing or empty")
+
+        from openai import OpenAI
+        client = OpenAI(api_key=api_key)
+        try:
+            response = client.chat.completions.create(
+                model=model,
+                temperature=0.3,
+                response_format={"type": "json_object"},
+                messages=[
+                    {
+                        "role": "system",
+                        "content": (
+                            SYSTEM_PROMPT
+                            + "\nOutput format requirement: "
+                              '{"classifications": [ ... ]} where classifications is an array.'
+                        ),
+                    },
                     {"role": "user", "content": prompt},
                 ],
-            },
-            timeout=120,
-        )
-        resp.raise_for_status()
-        data = resp.json()
-        usage_raw = data.get("usage", {})
+            )
+        except Exception as exc:
+            msg = str(exc)
+            if "401" in msg or "Unauthorized" in msg:
+                raise RuntimeError(
+                    "OpenAI auth failed (401). Check OPENAI_API_KEY and project permissions."
+                ) from exc
+            raise
+
+        usage_raw = response.usage
         usage = {
-            "prompt_tokens": _to_int_or_none(usage_raw.get("prompt_tokens")),
-            "completion_tokens": _to_int_or_none(usage_raw.get("completion_tokens")),
-            "total_tokens": _to_int_or_none(usage_raw.get("total_tokens")),
+            "prompt_tokens": _to_int_or_none(getattr(usage_raw, "prompt_tokens", None)),
+            "completion_tokens": _to_int_or_none(getattr(usage_raw, "completion_tokens", None)),
+            "total_tokens": _to_int_or_none(getattr(usage_raw, "total_tokens", None)),
         }
-        return data["choices"][0]["message"]["content"], usage
+        return response.choices[0].message.content or "", usage
 
     # ── Google Gemini (cloud, free tier available) ──
     if provider == "gemini":
@@ -348,7 +360,11 @@ def parse_llm_json(response_text):
     try:
         result = json.loads(text)
         if isinstance(result, dict):
-            return result.get("classifications", [result])
+            for key in ["classifications", "results", "items", "data", "predictions"]:
+                value = result.get(key)
+                if isinstance(value, list):
+                    return value
+            return [result]
         return result
     except json.JSONDecodeError:
         pass
@@ -392,7 +408,8 @@ def classify_batch(df, provider, model, platform, out_path, usage_csv_path, batc
         posts_text = format_posts_for_llm(batch, i)
         prompt = (
             f"Task: Classify these {len(batch)} posts. "
-            f"Return JSON array ONLY.\n\n{posts_text}"
+            f"Return JSON object with key 'classifications' containing exactly {len(batch)} items.\n\n"
+            f"{posts_text}"
         )
 
         started_at = datetime.now(timezone.utc)
@@ -452,7 +469,12 @@ def classify_batch(df, provider, model, platform, out_path, usage_csv_path, batc
         batch_usage["ended_at_utc"] = datetime.now(timezone.utc).isoformat()
 
         # Save partial classified output after each batch for crash-safe progress.
-        partial_df = merge_results(df.copy(), all_results, prefix=provider)
+        partial_df = merge_results(
+            df.copy(),
+            all_results,
+            prefix="ai_llm",
+            source_provider=provider,
+        )
         partial_df.to_csv(out_path, index=False, encoding="utf-8")
 
         # Persist usage row immediately after each batch.
@@ -465,20 +487,19 @@ def classify_batch(df, provider, model, platform, out_path, usage_csv_path, batc
     return all_results
 
 
-def merge_results(df, results, prefix="llm"):
+def merge_results(df, results, prefix="ai_llm", source_provider=None):
     """
-    Maps LLM JSON responses back to dataframe rows.
-    - Writes UNPREFIXED column names (content_category, sentiment, etc.)
-      so all downstream code works regardless of which provider was used.
-    - Stores the provider name in 'classification_source' for traceability.
-    - Handles None results (failed batches) by leaving those cells as NA.
+        Maps LLM JSON responses back to dataframe rows.
+        - Writes stable ai_llm_* columns regardless of selected provider.
+        - Stores the selected provider in classification_source.
+        - Handles None results (failed batches) by leaving those cells as NA.
     """
     fields = ["content_category", "sentiment", "virality_potential",
               "growth_type", "target_audience", "key_insight"]
 
-    # Pre-populate empty columns (no prefix — standardized names)
+    # Pre-populate empty columns with stable ai_llm_* prefix.
     for field in fields:
-        df[field] = pd.NA
+        df[f"{prefix}_{field}"] = pd.NA
 
     # Map results by row index
     classified = 0
@@ -486,10 +507,11 @@ def merge_results(df, results, prefix="llm"):
         if i < len(df) and isinstance(result, dict):
             for field in fields:
                 if field in result:
-                    df.loc[df.index[i], field] = result[field]
+                    df.loc[df.index[i], f"{prefix}_{field}"] = result[field]
             classified += 1
 
-    df["classification_source"] = prefix if classified > 0 else "none"
+            source = source_provider or prefix
+            df["classification_source"] = source if classified > 0 else "none"
     return df
 
 
@@ -534,7 +556,7 @@ def main():
         
         out_path = os.path.join(OUT_DIR, f"{name}_enriched.csv")
         results = classify_batch(df, provider, model, name, out_path, usage_out_path)
-        df = merge_results(df, results, prefix=provider)
+        df = merge_results(df, results, prefix="ai_llm", source_provider=provider)
 
         # Final write still happens for clarity (already checkpointed every batch).
         df.to_csv(out_path, index=False, encoding="utf-8")

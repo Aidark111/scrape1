@@ -223,7 +223,7 @@ def run_all_checks():
     alerts = []
     detected_at = datetime.now().isoformat()
 
-    for platform in ["reddit", "youtube", "twitter"]:
+    for platform in ["reddit", "youtube"]:
         df = load_enriched(platform)
         if df is None:
             continue
