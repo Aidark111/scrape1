@@ -108,7 +108,7 @@ Full architecture diagram, cost estimates, error recovery, and tool recommendati
 
 Includes measurement framework, budget allocation, and 6-week execution calendar.
 
-Full plan: [docs/part4_counter_playbook.md](docs/part4_counter_playbook.md)
+Full plan: [docs/counter_playbook_final.md](docs/counter_playbook_final.md)
 
 ## Project Structure
 
